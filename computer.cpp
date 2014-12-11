@@ -7,3 +7,7 @@ Computer::Computer() {
     type = "";
     built = "";
 }
+
+bool Computer::contains(std::string str) {
+
+}

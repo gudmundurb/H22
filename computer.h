@@ -11,6 +11,7 @@ public:
     std::string dateOfBuild;
     std::string type;
     std::string built;
+    bool contains(std::string str);
 };
 
 #endif // COMPUTER_H

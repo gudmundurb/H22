@@ -29,4 +29,11 @@ namespace util {
         }
         return true;
     }
+    std::string stringToLower(std::string input) {
+        std::string newString = "";
+        for(unsigned int i = 0; i < input.size(); i++) {
+            newString += tolower(input[i]);
+        }
+        return newString;
+    }
 }
