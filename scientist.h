@@ -12,6 +12,8 @@ public:
     std::string dateOfBirth;
     std::string dateOfDeath;
     std::string gender;
+    bool contains(std::string str);
+    std::string toString();
 };
 
 #endif // SCIENTIST_H
