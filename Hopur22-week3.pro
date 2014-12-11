@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += core sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,7 +17,6 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     computer.cpp \
     computerrepository.cpp \
-    consoleui.cpp \
     linkrepository.cpp \
     link.cpp \
     scientist.cpp \
@@ -27,7 +27,6 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     computer.h \
     computerrepository.h \
-    consoleui.h \
     linkrepository.h \
     link.h \
     scientist.h \
