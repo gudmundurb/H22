@@ -12,3 +12,7 @@ addScientistDialog::~addScientistDialog()
 {
     delete ui;
 }
+
+Scientist addScientistDialog::getScientist(){
+    return newScientist;
+}
