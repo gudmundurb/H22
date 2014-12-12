@@ -20,10 +20,15 @@ void MainWindow::setTable () {
     QString selectedTable = ui->display_table_combo->currentText();
     if(selectedTable == "Scientists") {
         hideAllTables();
+
         ui->scientist_table->show();
+        ui->sort_combo_scientist->show();
         setTableScientist();
     }
     else if(selectedTable == "Computers") {
+        hideAllTables();
+        ui->computer_table->show();
+        ui->sort_combo_computer->show();
         setTableComputer();
     }
 }
@@ -31,13 +36,17 @@ void MainWindow::hideAllTables() {
     ui->scientist_table->hide();
     ui->computer_table->hide();
 }
+void MainWindow::hideAllSortCombos() {
+    ui->sort_combo_computer->hide();
+    ui->sort_combo_scientist->hide();
+}
 
 void MainWindow::setTableScientist() {
-    ui->sort_combo->clear();
+
     currentlyDisplayedScientists.clear();
     ui->scientist_table->clearContents();
     std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
-    int sortIndex = ui->sort_combo->currentIndex() + 1;
+    int sortIndex = ui->sort_combo_scientist->currentIndex() + 1;
     std::string sortingIndex = QString::number(sortIndex).toStdString();
     std::string searchSelection = ui->search_text->text().toStdString();
 
@@ -70,7 +79,7 @@ void MainWindow::setTableComputer() {
     currentlyDisplayedComputers.clear();
     ui->computer_table->clearContents();
     std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
-    int sortIndex = ui->sort_combo->currentIndex() + 1;
+    int sortIndex = ui->sort_combo_computer->currentIndex() + 1;
     std::string sortingIndex = QString::number(sortIndex).toStdString();
     std::string searchSelection = ui->search_text->text().toStdString();
 
@@ -100,7 +109,7 @@ void MainWindow::setTableComputer() {
 
 }
 
-void MainWindow::on_sort_combo_currentTextChanged(const QString &arg1)
+void MainWindow::on_sort_combo_scientist_currentTextChanged(const QString &arg1)
 {
     setTable();
 }
@@ -112,8 +121,19 @@ void MainWindow::on_sort_combo_order_currentTextChanged(const QString &arg1)
 
 void MainWindow::on_search_text_textChanged(const QString &arg1)
 {
-    ui->sort_combo_order->setCurrentIndex(0);
-    ui->sort_combo->setCurrentIndex(0);
+    if(ui->search_text->text() != "") {
+        ui->sort_combo_order->setCurrentIndex(0);
+        ui->sort_combo_scientist->setCurrentIndex(0);
+        ui->sort_combo_computer->setCurrentIndex(0);
+        ui->sort_combo_computer->setEnabled(false);
+        ui->sort_combo_scientist->setEnabled(false);
+        ui->sort_combo_order->setEnabled(false);
+    }
+    else {
+        ui->sort_combo_computer->setEnabled(true);
+        ui->sort_combo_scientist->setEnabled(true);
+        ui->sort_combo_order->setEnabled(true);
+    }
     setTable();
 }
 

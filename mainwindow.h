@@ -21,7 +21,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_sort_combo_currentTextChanged(const QString &arg1);
+    void on_sort_combo_scientist_currentTextChanged(const QString &arg1);
 
     void on_sort_combo_order_currentTextChanged(const QString &arg1);
 
@@ -42,6 +42,7 @@ private:
     void setTableComputer();
     void setTable ();
     void hideAllTables();
+    void hideAllSortCombos();
 };
 
 #endif // MAINWINDOW_H

@@ -115,7 +115,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QComboBox" name="sort_combo">
+   <widget class="QComboBox" name="sort_combo_scientist">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -277,16 +277,52 @@
      </property>
     </column>
    </widget>
+   <widget class="QComboBox" name="sort_combo_computer">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>30</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Year of build</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Type</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Was built</string>
+     </property>
+    </item>
+   </widget>
    <zorder>scientist_table</zorder>
    <zorder>computer_table</zorder>
    <zorder>link_button</zorder>
    <zorder>add_button</zorder>
    <zorder>search_button</zorder>
-   <zorder>sort_combo</zorder>
+   <zorder>sort_combo_scientist</zorder>
    <zorder>search_text</zorder>
    <zorder>display_table_combo</zorder>
    <zorder>countof</zorder>
    <zorder>sort_combo_order</zorder>
+   <zorder>sort_combo_computer</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
