@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     currentComputers = service.getComputersOrderedBy("ID", "ASC");
     //currentLinks = service.getLinksOrderedBy("ID", "ASC");
 
-    setTableScientist();
+    setTable();
 }
 
 MainWindow::~MainWindow()
@@ -28,15 +28,14 @@ void MainWindow::setTable () {
 
 void MainWindow::setTableScientist() {
     currentlyDisplayedScientists.clear();
-    std::string sortSelection = ui->sort_combo_scientist->currentText().toStdString();
+    ui->scientist_table->clearContents();
+    ui->scientist_table->setRowCount(currentScientists.size());
     std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
     int sortIndex = ui->sort_combo_scientist->currentIndex() + 1;
-    std::string selectionIndex = QString::number(sortIndex).toStdString();
+    std::string sortingIndex = QString::number(sortIndex).toStdString();
     std::string searchSelection = ui->search_text->text().toStdString();
+    currentScientists = service.getScientistsOrderedBy(sortingIndex, orderSelection);
 
-    ui->countof->setText(QString::fromStdString(searchSelection));
-    currentScientists = service.getScientistsOrderedBy(selectionIndex, orderSelection);
-    ui->scientist_table->setRowCount(currentScientists.size());
     for(unsigned int i = 0; i < currentScientists.size(); i++) {
         Scientist currentScientist = currentScientists[i];
         if(currentScientist.contains(searchSelection)) {
@@ -55,6 +54,8 @@ void MainWindow::setTableScientist() {
             currentlyDisplayedScientists.push_back(currentScientist);
         }
     }
+
+    ui->countof->setText(QString::number(currentlyDisplayedScientists.size()));
 }
 
 void MainWindow::on_sort_combo_scientist_currentTextChanged(const QString &arg1)
