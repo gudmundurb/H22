@@ -9,7 +9,18 @@ Scientist::Scientist() {
 }
 
 bool Scientist::contains(std::string str) {
-    return this->toString().find(str) != std::string::npos;
+    if(str == "") {
+        return true;
+    }
+
+    std::string searchStringToLower = util::stringToLower(str);
+
+    if(util::stringToLower(this->toString()).find(searchStringToLower) != std::string::npos) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 std::string Scientist::toString() {

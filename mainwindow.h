@@ -20,6 +20,15 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_sort_combo_scientist_currentTextChanged(const QString &arg1);
+
+    void on_sort_combo_order_currentTextChanged(const QString &arg1);
+
+    void on_search_text_textChanged(const QString &arg1);
+
+    void on_add_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     Services service;
@@ -30,6 +39,7 @@ private:
     std::vector<Computer> currentlyDisplayedComputers;
     std::vector<Link> currentlyDislayedLinks;
     void setTableScientist();
+    void setTable ();
 };
 
 #endif // MAINWINDOW_H

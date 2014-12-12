@@ -2,6 +2,7 @@
 #define SCIENTIST_H
 
 #include <string>
+#include "utilities.h"
 
 // DTO for scientists
 class Scientist {
