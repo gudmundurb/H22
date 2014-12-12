@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "addcomputerdialog.h"
-#include "addscientist.h"
+#include "addscientistdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -143,9 +143,17 @@ void MainWindow::on_search_text_textChanged(const QString &arg1)
 
 void MainWindow::on_add_button_clicked()
 {
-    addComputerDialog add;
-    add.exec();
-    service.addComputer(add.getComputer());
+    QString selectedTable = ui->display_table_combo->currentText();
+    if(selectedTable == "Scientists") {
+        AddScientistDialog addSci;
+        addSci.exec();
+        service.addScientist(addSci.getScientist());
+    }
+    else if(selectedTable == "Computers") {
+        addComputerDialog addComp;
+        addComp.exec();
+        service.addComputer(addComp.getComputer());
+    }
     setTable();
 }
 
