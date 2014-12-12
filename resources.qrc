@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>computer2.png</file>
+        <file>scientist.jpg</file>
+    </qresource>
+</RCC>
