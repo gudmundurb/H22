@@ -10,6 +10,12 @@
     <height>453</height>
    </rect>
   </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -64,6 +70,9 @@
     </rect>
    </property>
    <widget class="QMenu" name="menuRusci_DB">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Rusci DB</string>
     </property>
