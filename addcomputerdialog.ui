@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>570</width>
+    <width>540</width>
     <height>411</height>
    </rect>
   </property>
@@ -16,9 +16,9 @@
   <widget class="QLineEdit" name="InputComputerName">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>200</y>
-     <width>541</width>
+     <x>10</x>
+     <y>220</y>
+     <width>521</width>
      <height>31</height>
     </rect>
    </property>
@@ -26,10 +26,10 @@
   <widget class="QLabel" name="TitleomputerName">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>180</y>
-     <width>53</width>
-     <height>16</height>
+     <x>10</x>
+     <y>190</y>
+     <width>111</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
@@ -40,7 +40,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>250</y>
+     <y>260</y>
      <width>53</width>
      <height>16</height>
     </rect>
@@ -53,7 +53,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>10</y>
      <width>201</width>
      <height>171</height>
     </rect>
@@ -66,7 +66,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>270</y>
+     <y>280</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -75,8 +75,8 @@
   <widget class="QComboBox" name="TypeDropDown">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>270</y>
+     <x>230</x>
+     <y>280</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -103,14 +103,14 @@
    </item>
    <item>
     <property name="text">
-     <string>Other....</string>
+     <string>Other...</string>
     </property>
    </item>
   </widget>
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>440</x>
      <y>370</y>
      <width>93</width>
      <height>28</height>
@@ -136,7 +136,7 @@
   <widget class="QPushButton" name="C_add_ok">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>340</x>
      <y>370</y>
      <width>93</width>
      <height>28</height>
@@ -172,17 +172,17 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Add new computer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="checkBox">
+  <widget class="QLineEdit" name="InputComputerName_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>320</y>
-     <width>81</width>
-     <height>20</height>
+     <x>380</x>
+     <y>280</y>
+     <width>131</width>
+     <height>31</height>
     </rect>
-   </property>
-   <property name="text">
-    <string>CheckBox</string>
    </property>
   </widget>
  </widget>
