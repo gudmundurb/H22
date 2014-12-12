@@ -23,6 +23,7 @@ private slots:
 
 private:
     Ui::addComputerDialog *ui;
+    Services service;
 };
 
 #endif // ADDCOMPUTERDIALOG_H
