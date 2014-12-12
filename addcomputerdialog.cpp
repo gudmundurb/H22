@@ -19,7 +19,9 @@ void addComputerDialog::on_C_add_ok_clicked()
 {
     Computer newComputer;
     newComputer.name =  ui->InputComputerName->text().toStdString();
-    if(ui->RadioWasBuilt){
+    bool checked = false;
+    ui->RadioWasBuilt->toggled(checked);
+    if(checked){
         newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
     }
     else{
