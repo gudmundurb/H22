@@ -21,7 +21,7 @@ void addComputerDialog::on_C_add_ok_clicked()
     bool checked = false;
     ui->RadioWasBuilt->toggled(checked);
     if(!checked){
-        newComputer.dateOfBuild = "----";
+        newComputer.dateOfBuild = "0";
     }
     if(ui->TypeDropDown->currentText().toStdString() == "Other..."){
 
@@ -29,7 +29,6 @@ void addComputerDialog::on_C_add_ok_clicked()
     else{
         newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
-    close();
 }
 
 void addComputerDialog::on_RadioWasBuilt_toggled(bool checked)
@@ -52,9 +51,4 @@ void addComputerDialog::on_InputComputerName_textChanged(const QString &arg1)
 void addComputerDialog::on_InputBuiltYear_textChanged(const QString &arg1)
 {
     newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
-}
-
-void addComputerDialog::on_Cancel_clicked()
-{
-    close();
 }
