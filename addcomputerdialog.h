@@ -28,10 +28,12 @@ private slots:
     void on_InputBuiltYear_textChanged(const QString &arg1);
 
     void on_Cancel_clicked();
+    void on_TypeDropDown_currentIndexChanged(const QString &arg1);
 
 private:
     Ui::addComputerDialog *ui;
     Computer newComputer;
+    Services service;
 };
 
 #endif // ADDCOMPUTERDIALOG_H

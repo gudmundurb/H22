@@ -172,7 +172,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Add new computer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="InputComputerName_2">
+  <widget class="QLineEdit" name="InputComputerType">
    <property name="enabled">
     <bool>false</bool>
    </property>

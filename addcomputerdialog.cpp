@@ -18,17 +18,11 @@ Computer addComputerDialog::getComputer() {
 
 void addComputerDialog::on_C_add_ok_clicked()
 {
-    bool checked = false;
-    ui->RadioWasBuilt->toggled(checked);
-    if(!checked){
+    if(newComputer.built != "yes"){
+        newComputer.built = "no";
         newComputer.dateOfBuild = "----";
     }
-    if(ui->TypeDropDown->currentText().toStdString() == "Other..."){
-
-    }
-    else{
-        newComputer.type = ui->TypeDropDown->currentText().toStdString();
-    }
+    service.addComputer(newComputer);
     close();
 }
 
@@ -39,7 +33,6 @@ void addComputerDialog::on_RadioWasBuilt_toggled(bool checked)
         ui->InputBuiltYear->setEnabled(true);
     }
     else {
-        newComputer.built = "no";
         ui->InputBuiltYear->setEnabled(false);
     }
 }
@@ -57,4 +50,16 @@ void addComputerDialog::on_InputBuiltYear_textChanged(const QString &arg1)
 void addComputerDialog::on_Cancel_clicked()
 {
     close();
+}
+
+
+void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
+{
+    if(ui->TypeDropDown->currentText().toStdString() == "Other..."){
+        ui->InputComputerType->setEnabled(true);
+    }
+    else{
+        ui->InputComputerType->setEnabled(false);
+        newComputer.type = ui->TypeDropDown->currentText().toStdString();
+    }
 }
