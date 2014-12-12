@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QComboBox" name="ScientistComputer">
+  <widget class="QComboBox" name="ScientistGender">
    <property name="geometry">
     <rect>
      <x>230</x>
