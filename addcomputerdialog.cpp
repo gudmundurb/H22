@@ -65,5 +65,5 @@ void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
 
 void addComputerDialog::on_InputComputerType_textChanged(const QString &arg1)
 {
-    newComputer.type = ui->InputBuiltYear->text().toStdString();
+    newComputer.type = ui->InputComputerType->text().toStdString();
 }

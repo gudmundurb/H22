@@ -26,7 +26,7 @@ private slots:
     void on_InputComputerName_textChanged(const QString &arg1);
 
     void on_InputBuiltYear_textChanged(const QString &arg1);
-
+    void on_InputComputerType_textChanged(const QString &arg1);
     void on_Cancel_clicked();
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
 
