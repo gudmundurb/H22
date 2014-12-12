@@ -52,7 +52,7 @@
   <widget class="QGraphicsView" name="addComputerPicture">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>10</y>
      <width>201</width>
      <height>171</height>
