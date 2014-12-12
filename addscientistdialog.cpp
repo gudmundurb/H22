@@ -2,7 +2,7 @@
 #include "ui_addscientistdialog.h"
 
 AddScientistDialog::AddScientistDialog(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::AddScientistDialog)
 {
     ui->setupUi(this);

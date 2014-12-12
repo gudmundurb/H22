@@ -1,13 +1,13 @@
 #ifndef ADDSCIENTISTDIALOG_H
 #define ADDSCIENTISTDIALOG_H
 
-#include <QWidget>
+#include <QDialog>
 #include "scientist.h"
 namespace Ui {
 class AddScientistDialog;
 }
 
-class AddScientistDialog : public QWidget
+class AddScientistDialog : public QDialog
 {
     Q_OBJECT
 
