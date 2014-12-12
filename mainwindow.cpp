@@ -22,7 +22,7 @@ void MainWindow::setTable () {
         setTableScientist();
     }
     else if(selectedTable == "Computers") {
-        //setTableComputers();
+        //setTableComputer();
     }
 }
 
@@ -54,8 +54,41 @@ void MainWindow::setTableScientist() {
             ui->scientist_table->setItem(i,3, new QTableWidgetItem(scientistDod));
             ui->scientist_table->setItem(i,4, new QTableWidgetItem(scientistGender));
 
-
             currentlyDisplayedScientists.push_back(currentScientist);
+        }
+    }
+
+}
+
+void MainWindow::setTableComputer() {
+    currentlyDisplayedcomputers.clear();
+    ui->computer_table->clearContents();
+    std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
+    int sortIndex = ui->sort_combo_computer->currentIndex() + 1;
+    std::string sortingIndex = QString::number(sortIndex).toStdString();
+    std::string searchSelection = ui->search_text->text().toStdString();
+
+    currentcomputers = service.getcomputersOrderedBy(sortingIndex, orderSelection);
+    ui->computer_table->setRowCount(currentcomputers.size());
+
+    for(unsigned int i = 0; i < currentcomputers.size(); i++) {
+        computer currentcomputer = currentcomputers[i];
+        if(currentcomputer.contains(searchSelection)) {
+
+            ui->countof->setText(QString::number(currentlyDisplayedcomputers.size()));
+            QString computerId = QString::fromStdString(currentcomputer.id);
+            QString computerName = QString::fromStdString(currentcomputer.name);
+            QString computerDob = QString::fromStdString(currentcomputer.dateOfBirth);
+            QString computerDod = QString::fromStdString(currentcomputer.dateOfDeath);
+            QString computerGender = QString::fromStdString(currentcomputer.gender);
+
+            ui->computer_table->setItem(i,0, new QTableWidgetItem(computerId));
+            ui->computer_table->setItem(i,1, new QTableWidgetItem(computerName));
+            ui->computer_table->setItem(i,2, new QTableWidgetItem(computerDob));
+            ui->computer_table->setItem(i,3, new QTableWidgetItem(computerDod));
+            ui->computer_table->setItem(i,4, new QTableWidgetItem(computerGender));
+
+            currentlyDisplayedcomputers.push_back(currentcomputer);
         }
     }
 
