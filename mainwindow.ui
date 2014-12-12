@@ -17,7 +17,7 @@
    <enum>Qt::DefaultContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Listinn</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="link_button">
@@ -76,6 +76,15 @@
     </property>
     <property name="cursor" stdset="0">
      <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
     </property>
     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
      <bool>false</bool>
@@ -188,19 +197,6 @@
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="countof">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>46</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="sort_combo_order">
     <property name="geometry">
      <rect>
@@ -238,6 +234,18 @@
     </property>
     <property name="cursor" stdset="0">
      <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
     </property>
     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
      <bool>false</bool>
@@ -312,6 +320,22 @@
      </property>
     </item>
    </widget>
+   <widget class="QLabel" name="sort_label">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>10</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sorting options</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <zorder>scientist_table</zorder>
    <zorder>computer_table</zorder>
    <zorder>link_button</zorder>
@@ -320,9 +344,9 @@
    <zorder>sort_combo_scientist</zorder>
    <zorder>search_text</zorder>
    <zorder>display_table_combo</zorder>
-   <zorder>countof</zorder>
    <zorder>sort_combo_order</zorder>
    <zorder>sort_combo_computer</zorder>
+   <zorder>sort_label</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
