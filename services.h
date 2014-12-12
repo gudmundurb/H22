@@ -14,14 +14,14 @@ public:
     void addComputer (Computer computer);
     void addLink(Link link);
     //Search functions
-    std::list<Scientist> scientistSearch(std::string searchTerm);
-    std::list<Computer> computerSearch(std::string searchTerm);
+    std::vector<Scientist> scientistSearch(std::string searchTerm);
+    std::vector<Computer> computerSearch(std::string searchTerm);
     //List functions
-    std::list<Scientist> getScientistsOrderedBy(std::string,std::string);
-    std::list<Computer> getComputersOrderedBy(std::string col,std::string mod);
+    std::vector<Scientist> getScientistsOrderedBy(std::string,std::string);
+    std::vector<Computer> getComputersOrderedBy(std::string col,std::string mod);
     //Link functions
-    std::list<Scientist> scientistLink(std::string c_id);
-    std::list<Computer> computerLink(std::string s_id);
+    std::vector<Scientist> scientistLink(std::string c_id);
+    std::vector<Computer> computerLink(std::string s_id);
 private:
     ScientistRepository scientistRepository;
     ComputerRepository computerRepository;

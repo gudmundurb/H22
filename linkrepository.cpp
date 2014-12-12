@@ -32,8 +32,8 @@ void LinkRepository::add(Link link) {
     linkDB.close();
 }
 
-std::list<Link> LinkRepository::getList(QString sQuery) {
-    std::list<Link> newList = std::list<Link>();
+std::vector<Link> LinkRepository::getList(QString sQuery) {
+    std::vector<Link> newList = std::vector<Link>();
     linkDB = getDatabaseConnection();
     if(linkDB.isOpen()) {
         QSqlQuery query(linkDB);
@@ -66,8 +66,8 @@ QSqlDatabase LinkRepository::getDatabaseConnection() {
     return db;
 }
 
-std::list<Scientist> LinkRepository::getScientists(std::string computer_id) {
-    std::list<Scientist> newList = std::list<Scientist>();
+std::vector<Scientist> LinkRepository::getScientists(std::string computer_id) {
+    std::vector<Scientist> newList = std::vector<Scientist>();
     QString q = "SELECT s.ID, s.Name, s.Dob, s.Dod, s.Gender FROM Scientists s ";
     q +=        "INNER JOIN Links l ";
     q +=        "ON l.s_id = s.id ";
@@ -93,8 +93,8 @@ std::list<Scientist> LinkRepository::getScientists(std::string computer_id) {
     return newList;
 }
 
-std::list<Computer> LinkRepository::getComputers(std::string scientist_id) {
-    std::list<Computer> newList = std::list<Computer>();
+std::vector<Computer> LinkRepository::getComputers(std::string scientist_id) {
+    std::vector<Computer> newList = std::vector<Computer>();
     QString q =   "SELECT c.ID, c.Computer, c.BuiltYear, c.Type, c.WasBuilt FROM Computers c ";
     q +=          "INNER JOIN Links l ";
     q +=          "ON l.c_id = c.id ";

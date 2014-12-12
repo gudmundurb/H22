@@ -19,16 +19,16 @@ public:
     //Gets a new connection to the database file
     QSqlDatabase getDatabaseConnection();
     // Returns all scientists that match the search term
-    std::list<Scientist> search(std::string searchTerm);
+    std::vector<Scientist> search(std::string searchTerm);
     // Returns a list ordered by column and modifier
-    std::list<Scientist> list(std::string col,std::string mod);
+    std::vector<Scientist> list(std::string col,std::string mod);
 private:
     //The database connection that is used to retrieve data and persist data
     QSqlDatabase scientistDB;
     // The filename of the file that is used to persist data
     QString filename;
     // Executes a query and loads all the results into a list which is returned
-    std::list<Scientist> getList(QString sQuery);
+    std::vector<Scientist> getList(QString sQuery);
 };
 
 #endif // SCIENTISTREPOSITORY_H

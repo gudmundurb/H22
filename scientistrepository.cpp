@@ -26,16 +26,16 @@ void ScientistRepository::add(Scientist scientist) {
     scientistDB.close();
 }
 
-std::list<Scientist> ScientistRepository::list(std::string col, std::string mod) {
-    std::list<Scientist> outList = std::list<Scientist>();
+std::vector<Scientist> ScientistRepository::list(std::string col, std::string mod) {
+    std::vector<Scientist> outList = std::vector<Scientist>();
     QString query = "SELECT * FROM Scientists ORDER BY " + QString::fromStdString(col)
             + " " + QString::fromStdString(mod);
     outList = getList(query);
     return outList;
 }
 
-std::list<Scientist> ScientistRepository::getList(QString sQuery) {
-    std::list<Scientist> newList = std::list<Scientist>();
+std::vector<Scientist> ScientistRepository::getList(QString sQuery) {
+    std::vector<Scientist> newList = std::vector<Scientist>();
     scientistDB = getDatabaseConnection();
     if(scientistDB.isOpen()) {
         QSqlQuery query(scientistDB);
@@ -57,10 +57,10 @@ std::list<Scientist> ScientistRepository::getList(QString sQuery) {
     return newList;
 }
 
-std::list<Scientist> ScientistRepository::search(std::string searchTerm) {
+std::vector<Scientist> ScientistRepository::search(std::string searchTerm) {
     QString search = QString::fromStdString(searchTerm);
     QString query = "SELECT * FROM Scientists WHERE Name LIKE '%" + search + "%'";
-    std::list<Scientist> newList = getList(query);
+    std::vector<Scientist> newList = getList(query);
     return newList;
 }
 

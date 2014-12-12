@@ -18,16 +18,16 @@ public:
     //Gets a new connection to the database file
     QSqlDatabase getDatabaseConnection();
     // Returns all computers that match the search term
-    std::list<Computer> search(std::string searchTerm);
+    std::vector<Computer> search(std::string searchTerm);
     // Returns a list ordered by column and modifier
-    std::list<Computer> list(std::string col,std::string mod);
+    std::vector<Computer> list(std::string col,std::string mod);
 private:
     //The database connection that is used to retrieve data and persist data
     QSqlDatabase computerDB;
     // The filename of the database that is used to persist data
     QString filename;
     // Executes a query and loads all the results into a list which is returned
-    std::list<Computer> getList(QString sQuery);
+    std::vector<Computer> getList(QString sQuery);
 };
 
 #endif // COMPUTERREPOSITORY_H

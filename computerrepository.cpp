@@ -26,16 +26,16 @@ void ComputerRepository::add(Computer computer) {
     computerDB.close();
 }
 
-std::list<Computer> ComputerRepository::list(std::string col, std::string mod) {
-    std::list<Computer> outList = std::list<Computer>();
+std::vector<Computer> ComputerRepository::list(std::string col, std::string mod) {
+    std::vector<Computer> outList = std::vector<Computer>();
     QString query = "SELECT * FROM Computers ORDER BY " + QString::fromStdString(col)
             + " " + QString::fromStdString(mod);
     outList = getList(query);
     return outList;
 }
 
-std::list<Computer> ComputerRepository::getList(QString sQuery) {
-    std::list<Computer> newList = std::list<Computer>();
+std::vector<Computer> ComputerRepository::getList(QString sQuery) {
+    std::vector<Computer> newList = std::vector<Computer>();
     computerDB = getDatabaseConnection();
     if(computerDB.isOpen()) {
         QSqlQuery query(computerDB);
@@ -57,10 +57,10 @@ std::list<Computer> ComputerRepository::getList(QString sQuery) {
     return newList;
 }
 
-std::list<Computer> ComputerRepository::search(std::string searchTerm) {
+std::vector<Computer> ComputerRepository::search(std::string searchTerm) {
     QString search = QString::fromStdString(searchTerm);
     QString query = "SELECT * FROM Computers WHERE Computer LIKE '%" + search + "%'";
-    std::list<Computer> newList = getList(query);
+    std::vector<Computer> newList = getList(query);
     return newList;
 }
 
