@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>540</width>
-    <height>411</height>
+    <width>542</width>
+    <height>287</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,37 +16,14 @@
   <widget class="QLineEdit" name="InputComputerName">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>220</y>
-     <width>521</width>
+     <x>230</x>
+     <y>50</y>
+     <width>291</width>
      <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="TitleomputerName">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>190</y>
-     <width>111</width>
-     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Name</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="BuiltYear">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>260</y>
-     <width>53</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Built Year</string>
    </property>
   </widget>
   <widget class="QGraphicsView" name="addComputerPicture">
@@ -65,19 +42,22 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>280</y>
+     <x>340</x>
+     <y>130</y>
      <width>81</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>Built year</string>
    </property>
   </widget>
   <widget class="QComboBox" name="TypeDropDown">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>280</y>
-     <width>131</width>
+     <y>90</y>
+     <width>91</width>
      <height>31</height>
     </rect>
    </property>
@@ -110,8 +90,8 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>370</y>
+     <x>420</x>
+     <y>220</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -123,10 +103,10 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>370</y>
-     <width>93</width>
-     <height>28</height>
+     <x>220</x>
+     <y>220</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -136,8 +116,8 @@
   <widget class="QPushButton" name="C_add_ok">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>370</y>
+     <x>320</x>
+     <y>220</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -149,8 +129,8 @@
   <widget class="QRadioButton" name="RadioWasBuilt">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>280</y>
+     <x>230</x>
+     <y>140</y>
      <width>95</width>
      <height>20</height>
     </rect>
@@ -178,9 +158,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>280</y>
-     <width>131</width>
+     <x>340</x>
+     <y>90</y>
+     <width>81</width>
      <height>31</height>
     </rect>
    </property>
