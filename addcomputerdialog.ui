@@ -13,21 +13,21 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="InputComputerName">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>140</y>
-     <width>401</width>
+     <x>0</x>
+     <y>200</y>
+     <width>541</width>
      <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="TitleomputerName">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>110</y>
+     <x>0</x>
+     <y>180</y>
      <width>53</width>
      <height>16</height>
     </rect>
@@ -36,11 +36,11 @@
     <string>Name</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="BuiltYear">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>240</y>
+     <x>120</x>
+     <y>250</y>
      <width>53</width>
      <height>16</height>
     </rect>
@@ -54,28 +54,28 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>151</width>
+     <width>201</width>
      <height>171</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="InputBuiltYear">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>190</y>
+     <x>120</x>
+     <y>270</y>
      <width>81</width>
      <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="TypeDropDown">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>270</x>
      <y>270</y>
      <width>131</width>
      <height>31</height>
@@ -107,24 +107,24 @@
     </property>
    </item>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>350</y>
+     <x>340</x>
+     <y>370</y>
      <width>93</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Cancel</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>350</y>
+     <x>240</x>
+     <y>370</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -133,24 +133,24 @@
     <string>PushButton</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="C_add_ok">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>350</y>
+     <x>440</x>
+     <y>370</y>
      <width>93</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Ok</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
+  <widget class="QRadioButton" name="RadioWasBuilt">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>190</y>
+     <x>10</x>
+     <y>280</y>
      <width>95</width>
      <height>20</height>
     </rect>
@@ -159,17 +159,30 @@
     <string>Was It built</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="TitleComputerAdd">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>10</y>
+     <x>230</x>
+     <y>0</y>
      <width>231</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Add new computer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CheckBox</string>
    </property>
   </widget>
  </widget>
