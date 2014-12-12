@@ -12,8 +12,9 @@ addComputerDialog::~addComputerDialog()
 {
     delete ui;
 }
-
-
+Computer addComputerDialog::getComputer() {
+    return newComputer;
+}
 
 void addComputerDialog::on_C_add_ok_clicked()
 {
@@ -28,20 +29,15 @@ void addComputerDialog::on_C_add_ok_clicked()
     else{
         newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
-    service.addComputer(newComputer);
 }
-
-
-
 
 void addComputerDialog::on_RadioWasBuilt_toggled(bool checked)
 {
-    if(checked){
-
+    if(checked) {
         newComputer.built = "yes";
         ui->InputBuiltYear->setEnabled(true);
     }
-    else{
+    else {
         newComputer.built = "no";
         ui->InputBuiltYear->setEnabled(false);
     }

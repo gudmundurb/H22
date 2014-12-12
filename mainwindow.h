@@ -21,7 +21,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_sort_combo_scientist_currentTextChanged(const QString &arg1);
+    void on_sort_combo_currentTextChanged(const QString &arg1);
 
     void on_sort_combo_order_currentTextChanged(const QString &arg1);
 
@@ -39,7 +39,9 @@ private:
     std::vector<Computer> currentlyDisplayedComputers;
     std::vector<Link> currentlyDislayedLinks;
     void setTableScientist();
+    void setTableComputer();
     void setTable ();
+    void hideAllTables();
 };
 
 #endif // MAINWINDOW_H

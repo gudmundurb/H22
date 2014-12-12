@@ -15,7 +15,7 @@ class addComputerDialog : public QDialog
 public:
     explicit addComputerDialog(QWidget *parent = 0);
     ~addComputerDialog();
-
+    Computer getComputer();
 private slots:
 
 
@@ -29,7 +29,6 @@ private slots:
 
 private:
     Ui::addComputerDialog *ui;
-    Services service;
     Computer newComputer;
 };
 

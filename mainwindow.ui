@@ -115,7 +115,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QComboBox" name="sort_combo_scientist">
+   <widget class="QComboBox" name="sort_combo">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -282,7 +282,7 @@
    <zorder>link_button</zorder>
    <zorder>add_button</zorder>
    <zorder>search_button</zorder>
-   <zorder>sort_combo_scientist</zorder>
+   <zorder>sort_combo</zorder>
    <zorder>search_text</zorder>
    <zorder>display_table_combo</zorder>
    <zorder>countof</zorder>
