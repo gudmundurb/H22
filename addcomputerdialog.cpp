@@ -22,7 +22,6 @@ void addComputerDialog::on_C_add_ok_clicked()
         newComputer.built = "no";
         newComputer.dateOfBuild = "----";
     }
-    service.addComputer(newComputer);
     close();
 }
 

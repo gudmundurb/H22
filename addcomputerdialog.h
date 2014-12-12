@@ -33,7 +33,6 @@ private slots:
 private:
     Ui::addComputerDialog *ui;
     Computer newComputer;
-    Services service;
 };
 
 #endif // ADDCOMPUTERDIALOG_H
