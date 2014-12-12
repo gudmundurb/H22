@@ -21,9 +21,16 @@ private slots:
 
     void on_C_add_ok_clicked();
 
+    void on_RadioWasBuilt_toggled(bool checked);
+
+    void on_InputComputerName_textChanged(const QString &arg1);
+
+    void on_InputBuiltYear_textChanged(const QString &arg1);
+
 private:
     Ui::addComputerDialog *ui;
     Services service;
+    Computer newComputer;
 };
 
 #endif // ADDCOMPUTERDIALOG_H
