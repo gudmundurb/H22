@@ -27,6 +27,8 @@ private slots:
 
     void on_InputBuiltYear_textChanged(const QString &arg1);
 
+    void on_Cancel_clicked();
+
 private:
     Ui::addComputerDialog *ui;
     Computer newComputer;
