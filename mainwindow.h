@@ -29,6 +29,10 @@ private slots:
 
     void on_add_button_clicked();
 
+    void on_display_table_combo_currentTextChanged(const QString &arg1);
+
+    void on_sort_combo_computer_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     Services service;

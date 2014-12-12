@@ -2,6 +2,7 @@
 #define COMPUTER_H
 
 #include <string>
+#include "utilities.h"
 
 class Computer {
 public:
