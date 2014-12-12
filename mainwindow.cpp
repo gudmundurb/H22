@@ -29,16 +29,19 @@ void MainWindow::setTable () {
 void MainWindow::setTableScientist() {
     currentlyDisplayedScientists.clear();
     ui->scientist_table->clearContents();
-    ui->scientist_table->setRowCount(currentScientists.size());
     std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
     int sortIndex = ui->sort_combo_scientist->currentIndex() + 1;
     std::string sortingIndex = QString::number(sortIndex).toStdString();
     std::string searchSelection = ui->search_text->text().toStdString();
+
     currentScientists = service.getScientistsOrderedBy(sortingIndex, orderSelection);
+    ui->scientist_table->setRowCount(currentScientists.size());
 
     for(unsigned int i = 0; i < currentScientists.size(); i++) {
         Scientist currentScientist = currentScientists[i];
         if(currentScientist.contains(searchSelection)) {
+
+            ui->countof->setText(QString::number(currentlyDisplayedScientists.size()));
             QString scientistId = QString::fromStdString(currentScientist.id);
             QString scientistName = QString::fromStdString(currentScientist.name);
             QString scientistDob = QString::fromStdString(currentScientist.dateOfBirth);
@@ -51,11 +54,11 @@ void MainWindow::setTableScientist() {
             ui->scientist_table->setItem(i,3, new QTableWidgetItem(scientistDod));
             ui->scientist_table->setItem(i,4, new QTableWidgetItem(scientistGender));
 
+
             currentlyDisplayedScientists.push_back(currentScientist);
         }
     }
 
-    ui->countof->setText(QString::number(currentlyDisplayedScientists.size()));
 }
 
 void MainWindow::on_sort_combo_scientist_currentTextChanged(const QString &arg1)
@@ -70,6 +73,8 @@ void MainWindow::on_sort_combo_order_currentTextChanged(const QString &arg1)
 
 void MainWindow::on_search_text_textChanged(const QString &arg1)
 {
+    ui->sort_combo_order->setCurrentIndex(0);
+    ui->sort_combo_scientist->setCurrentIndex(0);
     setTable();
 }
 
