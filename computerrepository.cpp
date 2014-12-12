@@ -77,5 +77,3 @@ QSqlDatabase ComputerRepository::getDatabaseConnection() {
     }
     return db;
 }
-
-//ignore this line
