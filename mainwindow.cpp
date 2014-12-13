@@ -8,10 +8,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    currentComputers = service.getComputersOrderedBy("ID", "ASC");
-    //currentLinks = service.getLinksOrderedBy("ID", "ASC");
-
     setTable();
+    setLinkTableComputer();
+    setLinkTableScientist();
+    ui->scientist_table->setColumnWidth(1,200);
+    ui->computer_table->setColumnWidth(1,200);
 }
 
 MainWindow::~MainWindow()
@@ -74,9 +75,33 @@ void MainWindow::setTableScientist() {
             currentlyDisplayedScientists.push_back(currentScientist);
         }
     }
+}
+void MainWindow::setLinkTableScientist() {
+
+    currentlyDisplayedScientists.clear();
+    ui->scientist_table_link->clearContents();
+    /*std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
+    int sortIndex = ui->sort_combo_scientist->currentIndex() + 1;
+    std::string sortingIndex = QString::number(sortIndex).toStdString();
+    std::string searchSelection = ui->search_text->text().toStdString();
+
+    currentScientists = service.getScientistsOrderedBy(sortingIndex, orderSelection);*/
+    currentScientists = service.getScientistsOrderedBy("1", "ASC");
+    ui->scientist_table_link->setRowCount(currentScientists.size());
+    for(unsigned int i = 0; i < currentScientists.size(); i++) {
+        Scientist currentScientist = currentScientists[i];
+        //if(currentScientist.contains(searchSelection)) {
+            QString scientistId = QString::fromStdString(currentScientist.id);
+            QString scientistName = QString::fromStdString(currentScientist.name);
+            int currentIndex = currentlyDisplayedScientists.size();
+            ui->scientist_table_link->setItem(currentIndex,0, new QTableWidgetItem(scientistId));
+            ui->scientist_table_link->setItem(currentIndex,1, new QTableWidgetItem(scientistName));
+
+            currentlyDisplayedScientists.push_back(currentScientist);
+        //}
+    }
 
 }
-
 void MainWindow::setTableComputer() {
     currentlyDisplayedComputers.clear();
     ui->computer_table->clearContents();
@@ -109,6 +134,31 @@ void MainWindow::setTableComputer() {
     }
 
 }
+
+
+void MainWindow::setLinkTableComputer() {
+    currentlyDisplayedComputers.clear();
+    ui->computer_table_link->clearContents();
+    /*std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
+    int sortIndex = ui->sort_combo_computer->currentIndex() + 1;
+    std::string sortingIndex = QString::number(sortIndex).toStdString();
+    std::string searchSelection = ui->search_text->text().toStdString();
+    currentComputers = service.getComputersOrderedBy(sortingIndex, orderSelection);*/
+    currentComputers = service.getComputersOrderedBy("1", "ASC");
+    for(unsigned int i = 0; i < currentComputers.size(); i++) {
+        Computer currentComputer = currentComputers[i];
+        //if(currentComputer.contains(searchSelection)) {
+            ui->computer_table_link->setRowCount(currentlyDisplayedComputers.size() + 1);
+            QString computerId = QString::fromStdString(currentComputer.id);
+            QString computerName = QString::fromStdString(currentComputer.name);
+            int currentIndex = currentlyDisplayedComputers.size();
+            ui->computer_table_link->setItem(currentIndex,0, new QTableWidgetItem(computerId));
+            ui->computer_table_link->setItem(currentIndex,1, new QTableWidgetItem(computerName));
+            currentlyDisplayedComputers.push_back(currentComputer);
+        //}
+    }
+}
+
 
 void MainWindow::on_sort_combo_scientist_currentTextChanged(const QString &arg1)
 {
@@ -147,12 +197,16 @@ void MainWindow::on_add_button_clicked()
     if(selectedTable == "Scientists") {
         AddScientistDialog addSci;
         addSci.exec();
-        service.addScientist(addSci.getScientist());
+        /*if(addSci.success) {
+            service.addScientist(addSci.getScientist());
+        }*/
     }
     else if(selectedTable == "Computers") {
         addComputerDialog addComp;
         addComp.exec();
-        service.addComputer(addComp.getComputer());
+        if(addComp.success()) {
+            service.addComputer(addComp.getComputer());
+        }
     }
     setTable();
 }
@@ -165,4 +219,39 @@ void MainWindow::on_display_table_combo_currentTextChanged(const QString &arg1)
 void MainWindow::on_sort_combo_computer_currentIndexChanged(int index)
 {
     setTable();
+}
+
+void MainWindow::on_tabWidget_currentChanged(int index)
+{
+    if(index == 0) {
+        setTable();
+    }
+    else if(index == 1) {
+        setLinkTableComputer();
+        setLinkTableScientist();
+    }
+}
+
+void MainWindow::on_scientist_table_link_clicked(const QModelIndex &index)
+{
+    QString currentID = QString::number(ui->scientist_table_link->currentRow() + 1);
+    ui->link_scientist_selected->setText(currentID);
+}
+
+void MainWindow::on_computer_table_link_clicked(const QModelIndex &index)
+{
+    QString currentID = QString::number(ui->computer_table_link->currentRow() + 1);
+    ui->link_computer_selected->setText(currentID);
+}
+
+void MainWindow::on_link_button_clicked()
+{
+    std::string selSciID = ui->link_scientist_selected->text().toStdString();
+    std::string selComID = ui->link_computer_selected->text().toStdString();
+    if((selComID != "") && (selSciID != "")) {
+        Link newLink = Link(selSciID,selComID);
+        service.addLink(newLink);
+        ui->link_computer_selected->clear();
+        ui->link_scientist_selected->clear();
+    }
 }

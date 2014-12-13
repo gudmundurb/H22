@@ -33,6 +33,14 @@ private slots:
 
     void on_sort_combo_computer_currentIndexChanged(int index);
 
+    void on_tabWidget_currentChanged(int index);
+
+    void on_scientist_table_link_clicked(const QModelIndex &index);
+
+    void on_computer_table_link_clicked(const QModelIndex &index);
+
+    void on_link_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     Services service;
@@ -43,6 +51,8 @@ private:
     std::vector<Computer> currentlyDisplayedComputers;
     std::vector<Link> currentlyDislayedLinks;
     void setTableScientist();
+    void setLinkTableScientist();
+    void setLinkTableComputer();
     void setTableComputer();
     void setTable ();
     void hideAllTables();

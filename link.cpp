@@ -1,6 +1,10 @@
 #include "linkrepository.h"
 
 Link::Link() {
-   c_ID = "";
    s_ID = "";
+   c_ID = "";
+}
+Link::Link(std::string s, std::string c) {
+   s_ID = s;
+   c_ID = c;
 }
