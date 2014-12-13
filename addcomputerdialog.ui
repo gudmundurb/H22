@@ -23,6 +23,9 @@
     </rect>
    </property>
    <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
     <string>Name</string>
    </property>
   </widget>
@@ -49,7 +52,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Built year</string>
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Build year</string>
    </property>
   </widget>
   <widget class="QComboBox" name="TypeDropDown">
@@ -136,7 +142,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Was It built</string>
+    <string>Was built?</string>
    </property>
   </widget>
   <widget class="QLabel" name="TitleComputerAdd">

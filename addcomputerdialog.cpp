@@ -3,32 +3,45 @@
 
 addComputerDialog::addComputerDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::addComputerDialog)
-{
+    ui(new Ui::addComputerDialog) {
     ui->setupUi(this);
+    successful = false;
 }
 
-addComputerDialog::~addComputerDialog()
-{
+addComputerDialog::~addComputerDialog() {
     delete ui;
 }
 Computer addComputerDialog::getComputer() {
     return newComputer;
 }
+bool addComputerDialog::success() {
+    return successful;
+}
 
-void addComputerDialog::on_C_add_ok_clicked()
-{
-    if(newComputer.built != "yes"){
+void addComputerDialog::on_C_add_ok_clicked() {
+
+    if(ui->RadioWasBuilt->isChecked()) {
+        newComputer.built = "yes";
+        newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
+    }
+    else {
         newComputer.built = "no";
         newComputer.dateOfBuild = "----";
     }
+    if(ui->TypeDropDown->currentText() == "Other...") {
+        newComputer.type = ui->InputComputerType->text().toStdString();
+    }
+    else {
+        newComputer.type = ui->TypeDropDown->currentText().toStdString();
+    }
+    newComputer.name = ui->InputComputerName->text().toStdString();
+    successful = true;
     close();
 }
 
-void addComputerDialog::on_RadioWasBuilt_toggled(bool checked)
-{
+void addComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
     if(checked) {
-        newComputer.built = "yes";
+        //newComputer.built = "yes";
         ui->InputBuiltYear->setEnabled(true);
     }
     else {
@@ -36,34 +49,29 @@ void addComputerDialog::on_RadioWasBuilt_toggled(bool checked)
     }
 }
 
-void addComputerDialog::on_InputComputerName_textChanged(const QString &arg1)
-{
-    newComputer.name =  ui->InputComputerName->text().toStdString();
+void addComputerDialog::on_InputComputerName_textChanged(const QString &arg1) {
+    //newComputer.name =  ui->InputComputerName->text().toStdString();
 }
 
-void addComputerDialog::on_InputBuiltYear_textChanged(const QString &arg1)
-{
-    newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
+void addComputerDialog::on_InputBuiltYear_textChanged(const QString &arg1) {
+    //newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
 }
 
-void addComputerDialog::on_Cancel_clicked()
-{
+void addComputerDialog::on_Cancel_clicked() {
     close();
 }
 
 
-void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
-{
-    if(ui->TypeDropDown->currentText().toStdString() == "Other..."){
+void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
+    if(ui->TypeDropDown->currentText().toStdString() == "Other...") {
         ui->InputComputerType->setEnabled(true);
     }
-    else{
+    else {
         ui->InputComputerType->setEnabled(false);
-        newComputer.type = ui->TypeDropDown->currentText().toStdString();
+        //newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
 }
 
-void addComputerDialog::on_InputComputerType_textChanged(const QString &arg1)
-{
-    newComputer.type = ui->InputComputerType->text().toStdString();
+void addComputerDialog::on_InputComputerType_textChanged(const QString &arg1) {
+    //newComputer.type = ui->InputComputerType->text().toStdString();
 }
