@@ -36,7 +36,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Name</string>
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Scientist name</string>
    </property>
   </widget>
   <widget class="QLabel" name="TitleScientistAdd">
@@ -65,19 +68,11 @@
     </rect>
    </property>
    <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
     <string>Birth year</string>
    </property>
-  </widget>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>9</y>
-     <width>531</width>
-     <height>241</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout"/>
   </widget>
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
@@ -105,6 +100,9 @@
     </rect>
    </property>
    <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
     <string>Death year</string>
    </property>
   </widget>
