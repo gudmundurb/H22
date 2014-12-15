@@ -1,7 +1,7 @@
 #include "addcomputerdialog.h"
 #include "ui_addcomputerdialog.h"
 #include <QFileDialog>
-//#include <QDebug>
+#include <QDebug>
 
 addComputerDialog::addComputerDialog(QWidget *parent) :
     QDialog(parent),
@@ -102,6 +102,6 @@ void addComputerDialog::on_browseImagePath_clicked()
                                  "",
                                  "Image files (*.png *.jpg *.jpeg)"
                                  );
-    //qDebug() << filename;
+   qDebug() << filename;
     ui->C_input_imagepath->setText(filename);
 }

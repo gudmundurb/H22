@@ -17,12 +17,12 @@ ComputerRepository::~ComputerRepository() {
 void ComputerRepository::add(Computer computer) {
     computerDB = getDatabaseConnection();
     QSqlQuery query(computerDB);
-    query.prepare("INSERT INTO Computers (Computer, BuiltYear, Type, WasBuilt, ComputerImagePath )VALUES(:name, :dateOfBuild, :type, :built, :computerimagepath)");
+    query.prepare("INSERT INTO Computers (Computer, BuiltYear, Type, WasBuilt, ComputerImagePath )VALUES(:name, :dateOfBuild, :type, :built, :computerImagePath)");
     query.bindValue(":name",        QString::fromStdString(computer.name));
     query.bindValue(":dateOfBuild", QString::fromStdString(computer.dateOfBuild));
     query.bindValue(":type",        QString::fromStdString(computer.type));
     query.bindValue(":built",       QString::fromStdString(computer.built));
-    query.bindValue(":ComputerImagePath",   QString::fromStdString(computer.c_imagefilepath));
+    query.bindValue(":computerImagePath",   QString::fromStdString(computer.c_imagefilepath));
     query.exec();
     computerDB.close();
 }
