@@ -37,7 +37,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Display information from the database.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="display_tab">
      <attribute name="title">
@@ -119,7 +119,7 @@
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="contextMenuPolicy">
-       <enum>Qt::DefaultContextMenu</enum>
+       <enum>Qt::CustomContextMenu</enum>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
@@ -327,7 +327,7 @@
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="contextMenuPolicy">
-       <enum>Qt::DefaultContextMenu</enum>
+       <enum>Qt::CustomContextMenu</enum>
       </property>
       <property name="acceptDrops">
        <bool>false</bool>
@@ -339,7 +339,7 @@
        <bool>true</bool>
       </property>
       <property name="selectionMode">
-       <enum>QAbstractItemView::NoSelection</enum>
+       <enum>QAbstractItemView::SingleSelection</enum>
       </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
@@ -693,6 +693,16 @@
     <bool>false</bool>
    </attribute>
   </widget>
+  <action name="actionAdd_a_scientist">
+   <property name="text">
+    <string>Add a scientist</string>
+   </property>
+  </action>
+  <action name="actionRemove_scientist">
+   <property name="text">
+    <string>Remove scientist</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

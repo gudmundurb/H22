@@ -4,6 +4,7 @@ ScientistRepository::ScientistRepository() {
     filename = "scicomp.sqlite";
     scientistDB = QSqlDatabase::addDatabase("QSQLITE", "ScientistConnection");
     scientistDB.setDatabaseName(filename);
+    scientistDB.open();
 }
 
 ScientistRepository::~ScientistRepository() {
@@ -28,6 +29,7 @@ void ScientistRepository::add(Scientist scientist) {
 
 void ScientistRepository::remove(std::string id)
 {
+    //scientistDB = getDatabaseConnection();
     QString q = "DELETE FROM Scientists WHERE ID = " + QString::fromStdString(id);
     QSqlQuery query(scientistDB);
     query.exec(q);
@@ -76,6 +78,7 @@ QSqlDatabase ScientistRepository::getDatabaseConnection() {
     QSqlDatabase db;
     if(QSqlDatabase::contains(connectionName)) {
         db = QSqlDatabase::database(connectionName);
+        db.open();
     }
     else {
         db = QSqlDatabase::addDatabase("QSQLITE", connectionName);

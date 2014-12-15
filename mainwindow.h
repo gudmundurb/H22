@@ -41,6 +41,12 @@ private slots:
 
     void on_link_button_clicked();
 
+    void on_scientist_table_customContextMenuRequested(const QPoint &pos);
+
+    void on_actionAdd_a_scientist_triggered();
+
+    void on_actionRemove_scientist_triggered();
+
 private:
     Ui::MainWindow *ui;
     Services service;

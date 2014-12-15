@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "addcomputerdialog.h"
 #include "addscientistdialog.h"
+#include <QMenu>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -254,4 +255,24 @@ void MainWindow::on_link_button_clicked()
         ui->link_computer_selected->clear();
         ui->link_scientist_selected->clear();
     }
+}
+
+void MainWindow::on_scientist_table_customContextMenuRequested(const QPoint &pos)
+{
+    QMenu menu;
+    menu.addAction(ui->actionRemove_scientist);
+    menu.exec(QCursor::pos());
+}
+
+void MainWindow::on_actionAdd_a_scientist_triggered()
+{
+    AddScientistDialog addSci;
+    addSci.exec();
+}
+
+void MainWindow::on_actionRemove_scientist_triggered()
+{
+    int row = ui->scientist_table->currentRow();
+    std::string id = ui->scientist_table->item(row, 0)->text().toStdString();
+    service.removeScientist(id);
 }
