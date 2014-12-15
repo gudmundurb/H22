@@ -140,7 +140,6 @@ void MainWindow::setTableComputer() {
     }
 
 }
-
 void MainWindow::setLinkTableComputer() {
     currentlyDisplayedComputers.clear();
     ui->computer_table_link->clearContents();
@@ -163,8 +162,6 @@ void MainWindow::setLinkTableComputer() {
         //}
     }
 }
-
-
 void MainWindow::on_sort_combo_scientist_currentTextChanged(const QString &arg1)
 {
     setTable();
@@ -177,40 +174,24 @@ void MainWindow::on_sort_combo_order_currentTextChanged(const QString &arg1)
 
 void MainWindow::on_search_text_textChanged(const QString &arg1)
 {
-#if 0
-    if(ui->search_text->text() != "") {
-        ui->sort_combo_order->setCurrentIndex(0);
-        ui->sort_combo_scientist->setCurrentIndex(0);
-        ui->sort_combo_computer->setCurrentIndex(0);
-        ui->sort_combo_computer->setEnabled(false);
-        ui->sort_combo_scientist->setEnabled(false);
-        ui->sort_combo_order->setEnabled(false);
-    }
-    else {
-        ui->sort_combo_computer->setEnabled(true);
-        ui->sort_combo_scientist->setEnabled(true);
-        ui->sort_combo_order->setEnabled(true);
-    }
-#endif
     setTable();
-
 }
 
 void MainWindow::on_add_button_clicked()
 {
     QString selectedTable = ui->display_table_combo->currentText();
     if(selectedTable == "Scientists") {
-        AddScientistDialog addSci;
-        addSci.exec();
-        /*if(addSci.success) {
-            service.addScientist(addSci.getScientist());
-        }*/
+        AddScientistDialog add;
+        add.exec();
+        if(add.success()) {
+            service.addScientist(add.getScientist());
+        }
     }
     else if(selectedTable == "Computers") {
-        addComputerDialog addComp;
-        addComp.exec();
-        if(addComp.success()) {
-            service.addComputer(addComp.getComputer());
+        addComputerDialog add;
+        add.exec();
+        if(add.success()) {
+            service.addComputer(add.getComputer());
         }
     }
     setTable();
@@ -258,6 +239,9 @@ void MainWindow::on_link_button_clicked()
     if((selComID != "") && (selSciID != "")) {
         Link newLink = Link(selSciID,selComID);
         service.addLink(newLink);
+        ui->statusBar->showMessage("Scientist with ID: " + QString::fromStdString(selSciID)
+                                   + " and computer with ID: " + QString::fromStdString(selComID)
+                                   + " have been linked.", 4000);
         ui->link_computer_selected->clear();
         ui->link_scientist_selected->clear();
     }
@@ -280,7 +264,16 @@ void MainWindow::on_actionRemove_scientist_triggered()
 {
     int row = ui->scientist_table->currentRow();
     std::string id = ui->scientist_table->item(row, 0)->text().toStdString();
-    service.removeScientist(id);
+    int reply = QMessageBox::question(this, "Removing Scientist",
+                                      "Do you really want to remove scientist with ID: " +
+                                      QString::fromStdString(id),
+                                      QMessageBox::Yes | QMessageBox::No);
+    if(reply == QMessageBox::Yes) {
+        service.removeScientist(id);
+        ui->statusBar->showMessage("Scientist with ID: " +
+                                   QString::fromStdString(id) +
+                                   " has been removed.", 2500);
+    }
     setTable();
 }
 
@@ -296,15 +289,14 @@ void MainWindow::on_actionRemove_Computer_triggered()
     int row = ui->computer_table->currentRow();
     std::string id = ui->computer_table->item(row, 0)->text().toStdString();
     int reply = QMessageBox::question(this, "Removing computer",
-                                      "Do you really want to remove computer with ID:" +
+                                      "Do you really want to remove computer with ID: " +
                                       QString::fromStdString(id),
                                       QMessageBox::Yes | QMessageBox::No);
     if(reply == QMessageBox::Yes) {
         service.removeComputer(id);
-        ui->statusBar->showMessage("Computer with ID:" +
+        ui->statusBar->showMessage("Computer with ID: " +
                                    QString::fromStdString(id) +
                                    " has been removed.", 2000);
     }
-
     setTable();
 }
