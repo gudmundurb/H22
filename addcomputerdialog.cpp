@@ -10,7 +10,6 @@ addComputerDialog::addComputerDialog(QWidget *parent) :
     newComputer.dateOfBuild = "";
     newComputer.name = "";
     newComputer.type = "";
-    ui->InvalidInput->setEnabled(true);
     ui->InvalidInput->hide();
 }
 

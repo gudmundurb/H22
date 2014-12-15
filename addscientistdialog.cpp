@@ -11,7 +11,6 @@ AddScientistDialog::AddScientistDialog(QWidget *parent) :
     newScientist.name = "";
     newScientist.gender = "";
     succesful = false;
-    ui->InvalidInput->setEnabled(true);
     ui->InvalidInput->hide();
 }
 

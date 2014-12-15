@@ -6,22 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>264</height>
+    <width>520</width>
+    <height>260</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>520</width>
+    <height>260</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Add a new scientist</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
   </property>
   <property name="sizeGripEnabled">
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <widget class="QLineEdit" name="InputScientistName">
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>40</y>
-     <width>281</width>
+     <y>50</y>
+     <width>291</width>
      <height>31</height>
     </rect>
    </property>
@@ -32,19 +48,6 @@
     <string>Scientist name</string>
    </property>
   </widget>
-  <widget class="QLabel" name="TitleScientistAdd">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>0</y>
-     <width>231</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Add new scientist&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="InputBirthYear">
    <property name="enabled">
     <bool>true</bool>
@@ -52,8 +55,8 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>80</y>
-     <width>81</width>
+     <y>100</y>
+     <width>100</width>
      <height>31</height>
     </rect>
    </property>
@@ -67,8 +70,8 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>210</y>
+     <x>420</x>
+     <y>220</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -83,9 +86,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>80</y>
-     <width>81</width>
+     <x>410</x>
+     <y>100</y>
+     <width>100</width>
      <height>31</height>
     </rect>
    </property>
@@ -100,8 +103,8 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>120</y>
-     <width>131</width>
+     <y>150</y>
+     <width>101</width>
      <height>31</height>
     </rect>
    </property>
@@ -119,18 +122,18 @@
   <widget class="QGraphicsView" name="addScientistPicture">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>10</y>
      <width>201</width>
-     <height>171</height>
+     <height>241</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="S_add_ok">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>210</y>
+     <x>320</x>
+     <y>220</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -142,14 +145,14 @@
   <widget class="QRadioButton" name="RadioStillAlive">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>80</y>
+     <x>360</x>
+     <y>100</y>
      <width>71</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Still alive</string>
+    <string>Alive</string>
    </property>
   </widget>
   <widget class="QLabel" name="InvalidInput">
@@ -158,11 +161,16 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>170</y>
-     <width>91</width>
+     <x>220</x>
+     <y>180</y>
+     <width>291</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Invalid input</string>
@@ -172,6 +180,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
