@@ -24,6 +24,8 @@ private slots:
     void on_RadioWasBuilt_toggled(bool checked);
     void on_Cancel_clicked();
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
+    void on_browseImagePath_clicked();
+
 private:
     bool successful;
     Ui::addComputerDialog *ui;

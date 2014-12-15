@@ -48,16 +48,6 @@
     <string>Name</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="addComputerPicture">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>201</width>
-     <height>241</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="InputBuiltYear">
    <property name="enabled">
     <bool>false</bool>
@@ -191,6 +181,45 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QLabel" name="ComputerImageLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>191</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Browse...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="browseImagePath">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>220</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Browse...</string>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>InputComputerName</tabstop>
@@ -200,7 +229,6 @@
   <tabstop>InputBuiltYear</tabstop>
   <tabstop>C_add_ok</tabstop>
   <tabstop>Cancel</tabstop>
-  <tabstop>addComputerPicture</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>

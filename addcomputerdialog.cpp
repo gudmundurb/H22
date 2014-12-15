@@ -1,5 +1,7 @@
 #include "addcomputerdialog.h"
 #include "ui_addcomputerdialog.h"
+#include <QFileDialog>
+#include <QDebug>
 
 addComputerDialog::addComputerDialog(QWidget *parent) :
     QDialog(parent),
@@ -89,4 +91,15 @@ bool addComputerDialog::correctInput() {
     }
     ui->InvalidInput->hide();
     return true;
+}
+
+void addComputerDialog::on_browseImagePath_clicked()
+{
+    QString filename = QFileDialog::getOpenFileName(
+                                this,
+                                "Browse for image",
+                                 "",
+                                 "Image files (*.png *.jpg *.jpeg)"
+                                 );
+    qDebug() << filename;
 }
