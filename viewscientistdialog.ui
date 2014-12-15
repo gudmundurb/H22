@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Information about scientist</string>
+   <string>Additional information</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -159,6 +159,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Connected computers</string>
    </property>
@@ -170,9 +175,9 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>300</y>
+     <y>290</y>
      <width>541</width>
-     <height>141</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="sizePolicy">

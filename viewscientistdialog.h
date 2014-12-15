@@ -18,6 +18,7 @@ public:
     ~ViewScientistDialog();
     void setConnectedComputers(const std::vector<Computer> &input);
     void setScientist(const Scientist &input);
+    void setup();
 private:
     std::vector<Computer> connectedComputers;
     Scientist scientist;

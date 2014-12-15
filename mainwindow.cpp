@@ -326,11 +326,10 @@ void MainWindow::on_actionView_Scientist_triggered() {
             break;
         }
     }
-    qDebug() << QString::fromStdString(tempScientist.id);
     std::vector<Computer> tempComputers = service.computerLink(tempScientist.id);
-    qDebug() << "Size of links: " << tempComputers.size();
     ViewScientistDialog viewDialog;
     viewDialog.setConnectedComputers(tempComputers);
     viewDialog.setScientist(tempScientist);
+    viewDialog.setup();
     viewDialog.exec();
 }

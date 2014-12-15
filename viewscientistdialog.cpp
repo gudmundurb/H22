@@ -6,9 +6,6 @@ ViewScientistDialog::ViewScientistDialog(QWidget *parent) :
     ui(new Ui::ViewScientistDialog)
 {
     ui->setupUi(this);
-    setTable();
-    displayScientist();
-    scientist.name = "Siggi";
 }
 
 ViewScientistDialog::~ViewScientistDialog() {
@@ -21,7 +18,14 @@ void ViewScientistDialog::setConnectedComputers(const std::vector<Computer> &inp
 
 void ViewScientistDialog::setScientist(const Scientist &input) {
     scientist = input;
-    qDebug() << QString::fromStdString(scientist.name);
+}
+
+void ViewScientistDialog::setup() {
+    setTable();
+    displayScientist();
+    ui->computer_table->setColumnWidth(0, 35);
+    ui->computer_table->setColumnWidth(1, 200);
+    ui->computer_table->setColumnWidth(3, 150);
 }
 
 void ViewScientistDialog::setTable() {
@@ -45,8 +49,13 @@ void ViewScientistDialog::displayScientist() {
     ui->scientist_name->setText(QString::fromStdString(scientist.name));
     ui->born_year->setText(QString::fromStdString(scientist.dateOfBirth));
     ui->dead_year->setText(QString::fromStdString(scientist.dateOfDeath));
-    ui->gender->setText(QString::fromStdString(scientist.gender));
+    if(scientist.gender == "M") {
+        ui->gender->setText("Male");
+    }
+    else {
+        ui->gender->setText("Female");
+    }
+
     QString age = QString::number(QString::fromStdString(scientist.dateOfDeath).toInt() - QString::fromStdString(scientist.dateOfBirth).toInt());
-    ui->aged->setText(age);
-    ui->label->setText(QString::number(connectedComputers.size()));
+    ui->aged->setText("Age: " + age);
 }

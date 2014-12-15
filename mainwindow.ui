@@ -788,7 +788,7 @@
      <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
    </property>
    <property name="text">
-    <string>view Scientist</string>
+    <string>View scientist</string>
    </property>
   </action>
   <action name="actionView_Computer">
@@ -797,7 +797,7 @@
      <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
    </property>
    <property name="text">
-    <string>View_Computer</string>
+    <string>View computer</string>
    </property>
   </action>
  </widget>
