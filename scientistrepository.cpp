@@ -26,8 +26,7 @@ void ScientistRepository::add(Scientist scientist) {
     scientistDB.close();
 }
 
-void ScientistRepository::remove(std::string id)
-{
+void ScientistRepository::remove(std::string id) {
     scientistDB = getDatabaseConnection();
     QString q = "DELETE FROM Scientists WHERE ID = " + QString::fromStdString(id);
     QSqlQuery query(scientistDB);

@@ -7,6 +7,7 @@ Computer::Computer() {
     type = "";
     built = "";
 }
+
 Computer::Computer(std::string name, std::string dateOfBuild, std::string type, std::string built) {
     this->id = "";
     this->name = name;
