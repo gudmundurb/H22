@@ -98,6 +98,9 @@ bool addComputerDialog::correctInput() {
                 return false;
             }
         }
+        if(newComputer.dateOfBuild.length() < 4){
+            return false;
+        }
     }
     return true;
 }

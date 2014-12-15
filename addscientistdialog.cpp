@@ -6,6 +6,10 @@ AddScientistDialog::AddScientistDialog(QWidget *parent) :
     ui(new Ui::AddScientistDialog)
 {
     ui->setupUi(this);
+    newScientist.dateOfBirth = "";
+    newScientist.dateOfDeath = "";
+    newScientist.name = "";
+    newScientist.gender = "";
 }
 
 AddScientistDialog::~AddScientistDialog()
@@ -63,4 +67,8 @@ void AddScientistDialog::on_Cancel_clicked()
 void AddScientistDialog::on_S_add_ok_clicked()
 {
     close();
+}
+
+bool AddScientistDialog::correctInput(){
+
 }

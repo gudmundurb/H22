@@ -15,6 +15,7 @@ public:
     explicit AddScientistDialog(QWidget *parent = 0);
     ~AddScientistDialog();
     Scientist getScientist();
+    bool correctInput();
 private slots:
     void on_InputScientistName_textChanged(const QString &arg1);
 

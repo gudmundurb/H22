@@ -18,6 +18,7 @@ public:
     ~addComputerDialog();
     Computer getComputer();
     bool success();
+    bool correctInput();
 private slots:
     void on_C_add_ok_clicked();
     void on_RadioWasBuilt_toggled(bool checked);
@@ -26,7 +27,6 @@ private slots:
     void on_InputComputerType_textChanged(const QString &arg1);
     void on_Cancel_clicked();
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
-    bool correctInput();
 private:
     bool successful;
     Ui::addComputerDialog *ui;
