@@ -55,3 +55,4 @@ std::vector<Scientist> Services::scientistLink(std::string computer_id) {
 std::vector<Computer> Services::computerLink(std::string scientist_id) {
     return linkRepository.getComputers(scientist_id);
 }
+

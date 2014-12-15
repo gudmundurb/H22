@@ -17,11 +17,12 @@ ComputerRepository::~ComputerRepository() {
 void ComputerRepository::add(Computer computer) {
     computerDB = getDatabaseConnection();
     QSqlQuery query(computerDB);
-    query.prepare("INSERT INTO Computers (Computer, BuiltYear, Type, WasBuilt)VALUES(:name, :dateOfBuild, :type, :built)");
+    query.prepare("INSERT INTO Computers (Computer, BuiltYear, Type, WasBuilt, ComputerImagePath )VALUES(:name, :dateOfBuild, :type, :built, :computerimagepath)");
     query.bindValue(":name",        QString::fromStdString(computer.name));
     query.bindValue(":dateOfBuild", QString::fromStdString(computer.dateOfBuild));
     query.bindValue(":type",        QString::fromStdString(computer.type));
     query.bindValue(":built",       QString::fromStdString(computer.built));
+    query.bindValue(":ComputerImagePath",   QString::fromStdString(computer.c_imagefilepath));
     query.exec();
     computerDB.close();
 }
@@ -54,6 +55,7 @@ std::vector<Computer> ComputerRepository::getList(QString sQuery) {
             c.dateOfBuild = query.value("BuiltYear").toString().toStdString();
             c.type =        query.value("Type").toString().toStdString();
             c.built =       query.value("WasBuilt").toString().toStdString();
+            c.c_imagefilepath = query.value("ComputerImagePath").toString().toStdString();
             newList.push_back(c);
         }
         computerDB.close();

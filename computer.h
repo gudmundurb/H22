@@ -7,7 +7,7 @@
 class Computer {
 public:
     Computer();
-    Computer(std::string name, std::string dateOfBuild, std::string type, std::string built);
+    Computer(std::string name, std::string dateOfBuild, std::string type, std::string built, std::string c_imagefilepath);
     std::string id;
     std::string name;
     std::string dateOfBuild;
@@ -15,6 +15,7 @@ public:
     std::string built;
     bool contains(std::string str);
     std::string toString();
+    std::string c_imagefilepath;
 };
 
 #endif // COMPUTER_H
