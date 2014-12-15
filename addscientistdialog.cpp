@@ -10,6 +10,7 @@ AddScientistDialog::AddScientistDialog(QWidget *parent) :
     newScientist.dateOfDeath = "";
     newScientist.name = "";
     newScientist.gender = "";
+    succesful = false;
 }
 
 AddScientistDialog::~AddScientistDialog()
@@ -19,6 +20,10 @@ AddScientistDialog::~AddScientistDialog()
 
 Scientist AddScientistDialog::getScientist(){
     return newScientist;
+}
+
+bool AddScientistDialog::success(){
+    return succesful;
 }
 
 
@@ -66,9 +71,33 @@ void AddScientistDialog::on_Cancel_clicked()
 
 void AddScientistDialog::on_S_add_ok_clicked()
 {
-    close();
+    if(correctInput()) {
+        succesful = true;
+        close();
+    }
+    else{
+        ui->InvalidInput->setEnabled(true);
+    }
 }
 
 bool AddScientistDialog::correctInput(){
-
+    if(newScientist.name == "") {
+        return false;
+    }
+    for(unsigned int i = 0; i < newScientist.dateOfBirth.length(); i++) {
+        if(!isdigit(newScientist.dateOfBirth[i])){
+            return false;
+        }
+    }
+    for(unsigned int i = 0; i < newScientist.dateOfDeath.length(); i++) {
+        if(!isdigit(newScientist.dateOfDeath[i])){
+            return false;
+        }
+    }
+    if(!(ui->RadioStillAlive->isEnabled())){
+        if(newScientist.dateOfDeath.length() < 4) {
+            return false;
+        }
+    }
+    return true;
 }

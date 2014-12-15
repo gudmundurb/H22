@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "scientist.h"
+#include <cctype>
 namespace Ui {
 class AddScientistDialog;
 }
@@ -34,6 +35,7 @@ private slots:
 private:
     Ui::AddScientistDialog *ui;
     Scientist newScientist;
+    bool succesful;
 };
 
 #endif // ADDSCIENTISTDIALOG_H

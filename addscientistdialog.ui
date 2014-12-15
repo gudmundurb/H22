@@ -162,6 +162,22 @@
     <string>Still alive</string>
    </property>
   </widget>
+  <widget class="QLabel" name="InvalidInput">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>190</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Invalid input</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
