@@ -32,22 +32,22 @@ void LinkRepository::add(Link link) {
     linkDB.close();
 }
 
-void LinkRepository::removeScientist(std::string s_id)
-{
+void LinkRepository::removeScientist(std::string s_id) {
+    linkDB = getDatabaseConnection();
     QString q = "DELETE FROM Links WHERE s_id = " + QString::fromStdString(s_id);
     QSqlQuery query(linkDB);
     query.exec(q);
 }
 
-void LinkRepository::removeComputer(std::string c_id)
-{
+void LinkRepository::removeComputer(std::string c_id) {
+    linkDB = getDatabaseConnection();
     QString q = "DELETE FROM Links WHERE c_id = " + QString::fromStdString(c_id);
     QSqlQuery query(linkDB);
     query.exec(q);
 }
 
-void LinkRepository::remove(std::string s_id, std::string c_id)
-{
+void LinkRepository::remove(std::string s_id, std::string c_id) {
+    linkDB = getDatabaseConnection();
     QString q = "DELETE FROM Links WHERE s_id = " + QString::fromStdString(s_id);
     q +=                          " AND c_id = " + QString::fromStdString(c_id);
     QSqlQuery query(linkDB);
@@ -79,6 +79,7 @@ QSqlDatabase LinkRepository::getDatabaseConnection() {
     QSqlDatabase db;
     if(QSqlDatabase::contains(connectionName)) {
         db = QSqlDatabase::database(connectionName);
+        db.open();
     }
     else {
         db = QSqlDatabase::addDatabase("QSQLITE", connectionName);

@@ -131,7 +131,7 @@
        <bool>true</bool>
       </property>
       <property name="selectionMode">
-       <enum>QAbstractItemView::NoSelection</enum>
+       <enum>QAbstractItemView::SingleSelection</enum>
       </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
@@ -701,6 +701,11 @@
   <action name="actionRemove_scientist">
    <property name="text">
     <string>Remove scientist</string>
+   </property>
+  </action>
+  <action name="actionRemove_Computer">
+   <property name="text">
+    <string>Remove Computer</string>
    </property>
   </action>
  </widget>

@@ -26,8 +26,8 @@ void ComputerRepository::add(Computer computer) {
     computerDB.close();
 }
 
-void ComputerRepository::remove(std::string id)
-{
+void ComputerRepository::remove(std::string id) {
+    computerDB = getDatabaseConnection();
     QString q = "DELETE FROM Computers WHERE ID = " + QString::fromStdString(id);
     QSqlQuery query(computerDB);
     query.exec(q);

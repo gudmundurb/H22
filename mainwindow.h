@@ -47,6 +47,10 @@ private slots:
 
     void on_actionRemove_scientist_triggered();
 
+    void on_computer_table_customContextMenuRequested(const QPoint &pos);
+
+    void on_actionRemove_Computer_triggered();
+
 private:
     Ui::MainWindow *ui;
     Services service;

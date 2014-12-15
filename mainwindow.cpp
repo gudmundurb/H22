@@ -3,6 +3,7 @@
 #include "addcomputerdialog.h"
 #include "addscientistdialog.h"
 #include <QMenu>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
     setLinkTableScientist();
     ui->scientist_table->setColumnWidth(1,200);
     ui->computer_table->setColumnWidth(1,200);
+    ui->scientist_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->scientist_table_link->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->computer_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->computer_table_link->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 MainWindow::~MainWindow()
@@ -136,7 +141,6 @@ void MainWindow::setTableComputer() {
 
 }
 
-
 void MainWindow::setLinkTableComputer() {
     currentlyDisplayedComputers.clear();
     ui->computer_table_link->clearContents();
@@ -235,13 +239,15 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 
 void MainWindow::on_scientist_table_link_clicked(const QModelIndex &index)
 {
-    QString currentID = QString::number(ui->scientist_table_link->currentRow() + 1);
+    int row = ui->scientist_table_link->currentRow();
+    QString currentID = ui->scientist_table_link->item(row, 0)->text();
     ui->link_scientist_selected->setText(currentID);
 }
 
 void MainWindow::on_computer_table_link_clicked(const QModelIndex &index)
 {
-    QString currentID = QString::number(ui->computer_table_link->currentRow() + 1);
+    int row = ui->computer_table_link->currentRow();
+    QString currentID = ui->computer_table_link->item(row, 0)->text();
     ui->link_computer_selected->setText(currentID);
 }
 
@@ -275,4 +281,30 @@ void MainWindow::on_actionRemove_scientist_triggered()
     int row = ui->scientist_table->currentRow();
     std::string id = ui->scientist_table->item(row, 0)->text().toStdString();
     service.removeScientist(id);
+    setTable();
+}
+
+void MainWindow::on_computer_table_customContextMenuRequested(const QPoint &pos)
+{
+    QMenu menu;
+    menu.addAction(ui->actionRemove_Computer);
+    menu.exec(QCursor::pos());
+}
+
+void MainWindow::on_actionRemove_Computer_triggered()
+{
+    int row = ui->computer_table->currentRow();
+    std::string id = ui->computer_table->item(row, 0)->text().toStdString();
+    int reply = QMessageBox::question(this, "Removing computer",
+                                      "Do you really want to remove computer with ID:" +
+                                      QString::fromStdString(id),
+                                      QMessageBox::Yes | QMessageBox::No);
+    if(reply == QMessageBox::Yes) {
+        service.removeComputer(id);
+        ui->statusBar->showMessage("Computer with ID:" +
+                                   QString::fromStdString(id) +
+                                   " has been removed.", 2000);
+    }
+
+    setTable();
 }
