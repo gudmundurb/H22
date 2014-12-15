@@ -51,6 +51,10 @@ private slots:
 
     void on_actionRemove_Computer_triggered();
 
+    void on_search_link_scientist_textChanged(const QString &arg1);
+
+    void on_search_link_computer_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Services service;

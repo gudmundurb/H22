@@ -72,15 +72,18 @@ void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
 
 bool addComputerDialog::correctInput() {
     if(newComputer.name == "") {
+        ui->InvalidInput->setText("Invalid name.");
         ui->InvalidInput->show();
         return false;
     }
     if(newComputer.type == "") {
+        ui->InvalidInput->setText("Invalid type.");
         ui->InvalidInput->show();
         return false;
     }
     if(newComputer.built == "yes") {
         if(!util::validYear(newComputer.dateOfBuild)) {
+            ui->InvalidInput->setText("Invalid build year.");
             ui->InvalidInput->show();
             return false;
         }

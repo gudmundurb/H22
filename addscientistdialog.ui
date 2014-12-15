@@ -96,7 +96,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>420</x>
      <y>80</y>
      <width>81</width>
      <height>31</height>
@@ -112,8 +112,8 @@
   <widget class="QComboBox" name="ScientistGender">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>130</y>
+     <x>220</x>
+     <y>120</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -155,10 +155,10 @@
   <widget class="QRadioButton" name="RadioStillAlive">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>90</y>
-     <width>95</width>
-     <height>20</height>
+     <x>350</x>
+     <y>80</y>
+     <width>71</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -171,14 +171,17 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>190</y>
-     <width>101</width>
-     <height>21</height>
+     <x>330</x>
+     <y>170</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Invalid input</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

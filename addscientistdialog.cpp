@@ -14,8 +14,7 @@ AddScientistDialog::AddScientistDialog(QWidget *parent) :
     ui->InvalidInput->hide();
 }
 
-AddScientistDialog::~AddScientistDialog()
-{
+AddScientistDialog::~AddScientistDialog() {
     delete ui;
 }
 
@@ -27,23 +26,19 @@ bool AddScientistDialog::success() {
     return succesful;
 }
 
-
-void AddScientistDialog::on_InputScientistName_textChanged(const QString &arg1)
-{
+void AddScientistDialog::on_InputScientistName_textChanged(const QString &arg1) {
     newScientist.name = ui->InputScientistName->text().toStdString();
 }
 
-void AddScientistDialog::on_InputBirthYear_textChanged(const QString &arg1)
-{
+void AddScientistDialog::on_InputBirthYear_textChanged(const QString &arg1) {
     newScientist.dateOfBirth = ui->InputBirthYear->text().toStdString();
 }
 
-void AddScientistDialog::on_InputDeathYear_textChanged(const QString &arg1)
-{
+void AddScientistDialog::on_InputDeathYear_textChanged(const QString &arg1) {
     newScientist.dateOfDeath = ui->InputDeathYear->text().toStdString();
 }
-void AddScientistDialog::on_ScientistGender_currentIndexChanged(const QString &arg1)
-{
+
+void AddScientistDialog::on_ScientistGender_currentIndexChanged(const QString &arg1) {
     if(ui->ScientistGender->currentText().toStdString() == "Male"){
         newScientist.gender = "M";
     }
@@ -52,10 +47,7 @@ void AddScientistDialog::on_ScientistGender_currentIndexChanged(const QString &a
     }
 }
 
-
-
-void AddScientistDialog::on_RadioStillAlive_toggled(bool checked)
-{
+void AddScientistDialog::on_RadioStillAlive_toggled(bool checked) {
     if(checked){
         ui->InputDeathYear->setEnabled(false);
         newScientist.dateOfDeath = "0";
@@ -65,13 +57,11 @@ void AddScientistDialog::on_RadioStillAlive_toggled(bool checked)
     }
 }
 
-void AddScientistDialog::on_Cancel_clicked()
-{
+void AddScientistDialog::on_Cancel_clicked() {
     close();
 }
 
-void AddScientistDialog::on_S_add_ok_clicked()
-{
+void AddScientistDialog::on_S_add_ok_clicked() {
     if(correctInput()) {
         succesful = true;
         close();
@@ -86,13 +76,12 @@ bool AddScientistDialog::correctInput(){
         return false;
     }
     if(!util::validYear(newScientist.dateOfBirth)) {
-            return false;
+        return false;
     }
     if(!(ui->RadioStillAlive->isEnabled())){
         if(!util::validYear(newScientist.dateOfDeath)) {
             return false;
         }
     }
-
     return true;
 }

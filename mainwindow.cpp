@@ -57,21 +57,28 @@ void MainWindow::hideAllSortCombos() {
 void MainWindow::setTableScientist() {
     currentlyDisplayedScientists.clear();
     ui->scientist_table->clearContents();
+
     std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
     int sortIndex = ui->sort_combo_scientist->currentIndex() + 1;
     std::string sortingIndex = QString::number(sortIndex).toStdString();
     std::string searchSelection = ui->search_text->text().toStdString();
+
     currentScientists = service.getScientistsOrderedBy(sortingIndex, orderSelection);
-    ui->scientist_table->setRowCount(currentScientists.size());
+
     for(unsigned int i = 0; i < currentScientists.size(); i++) {
         Scientist currentScientist = currentScientists[i];
+
         if(currentScientist.contains(searchSelection)) {
-            QString scientistId = QString::fromStdString(currentScientist.id);
-            QString scientistName = QString::fromStdString(currentScientist.name);
-            QString scientistDob = QString::fromStdString(currentScientist.dateOfBirth);
-            QString scientistDod = QString::fromStdString(currentScientist.dateOfDeath);
-            QString scientistGender = QString::fromStdString(currentScientist.gender);
+            ui->scientist_table->setRowCount(currentlyDisplayedScientists.size() + 1);
+
+            QString scientistId =       QString::fromStdString(currentScientist.id);
+            QString scientistName =     QString::fromStdString(currentScientist.name);
+            QString scientistDob =      QString::fromStdString(currentScientist.dateOfBirth);
+            QString scientistDod =      QString::fromStdString(currentScientist.dateOfDeath);
+            QString scientistGender =   QString::fromStdString(currentScientist.gender);
+
             int currentIndex = currentlyDisplayedScientists.size();
+
             ui->scientist_table->setItem(currentIndex,0, new QTableWidgetItem(scientistId));
             ui->scientist_table->setItem(currentIndex,1, new QTableWidgetItem(scientistName));
             ui->scientist_table->setItem(currentIndex,2, new QTableWidgetItem(scientistDob));
@@ -85,23 +92,26 @@ void MainWindow::setTableScientist() {
 void MainWindow::setLinkTableScientist() {
     currentlyDisplayedScientists.clear();
     ui->scientist_table_link->clearContents();
-    /*std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
-    int sortIndex = ui->sort_combo_scientist->currentIndex() + 1;
-    std::string sortingIndex = QString::number(sortIndex).toStdString();
-    std::string searchSelection = ui->search_text->text().toStdString();
-    currentScientists = service.getScientistsOrderedBy(sortingIndex, orderSelection);*/
-    currentScientists = service.getScientistsOrderedBy("1", "ASC");
-    ui->scientist_table_link->setRowCount(currentScientists.size());
+
+    std::string searchSelection = ui->search_link_scientist->text().toStdString();
+
+    currentScientists = service.getScientistsOrderedBy("ID", "ASC");
+
     for(unsigned int i = 0; i < currentScientists.size(); i++) {
         Scientist currentScientist = currentScientists[i];
-        //if(currentScientist.contains(searchSelection)) {
-            QString scientistId = QString::fromStdString(currentScientist.id);
+
+        if(currentScientist.contains(searchSelection)) {
+            ui->scientist_table_link->setRowCount(currentlyDisplayedScientists.size() + 1);
+
+            QString scientistId =   QString::fromStdString(currentScientist.id);
             QString scientistName = QString::fromStdString(currentScientist.name);
+
             int currentIndex = currentlyDisplayedScientists.size();
+
             ui->scientist_table_link->setItem(currentIndex,0, new QTableWidgetItem(scientistId));
             ui->scientist_table_link->setItem(currentIndex,1, new QTableWidgetItem(scientistName));
             currentlyDisplayedScientists.push_back(currentScientist);
-        //}
+        }
     }
 
 }
@@ -109,21 +119,28 @@ void MainWindow::setLinkTableScientist() {
 void MainWindow::setTableComputer() {
     currentlyDisplayedComputers.clear();
     ui->computer_table->clearContents();
+
     std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
     int sortIndex = ui->sort_combo_computer->currentIndex() + 1;
     std::string sortingIndex = QString::number(sortIndex).toStdString();
     std::string searchSelection = ui->search_text->text().toStdString();
+
     currentComputers = service.getComputersOrderedBy(sortingIndex, orderSelection);
+
     for(unsigned int i = 0; i < currentComputers.size(); i++) {
         Computer currentComputer = currentComputers[i];
+
         if(currentComputer.contains(searchSelection)) {
             ui->computer_table->setRowCount(currentlyDisplayedComputers.size() + 1);
-            QString computerId = QString::fromStdString(currentComputer.id);
-            QString computerName = QString::fromStdString(currentComputer.name);
-            QString computerDob = QString::fromStdString(currentComputer.dateOfBuild);
-            QString computerDod = QString::fromStdString(currentComputer.type);
-            QString computerGender = QString::fromStdString(currentComputer.built);
+
+            QString computerId =        QString::fromStdString(currentComputer.id);
+            QString computerName =      QString::fromStdString(currentComputer.name);
+            QString computerDob =       QString::fromStdString(currentComputer.dateOfBuild);
+            QString computerDod =       QString::fromStdString(currentComputer.type);
+            QString computerGender =    QString::fromStdString(currentComputer.built);
+
             int currentIndex = currentlyDisplayedComputers.size();
+
             ui->computer_table->setItem(currentIndex,0, new QTableWidgetItem(computerId));
             ui->computer_table->setItem(currentIndex,1, new QTableWidgetItem(computerName));
             ui->computer_table->setItem(currentIndex,2, new QTableWidgetItem(computerDob));
@@ -132,29 +149,31 @@ void MainWindow::setTableComputer() {
             currentlyDisplayedComputers.push_back(currentComputer);
         }
     }
-
 }
 
 void MainWindow::setLinkTableComputer() {
     currentlyDisplayedComputers.clear();
     ui->computer_table_link->clearContents();
-    /*std::string orderSelection = ui->sort_combo_order->currentText().toStdString();
-    int sortIndex = ui->sort_combo_computer->currentIndex() + 1;
-    std::string sortingIndex = QString::number(sortIndex).toStdString();
-    std::string searchSelection = ui->search_text->text().toStdString();
-    currentComputers = service.getComputersOrderedBy(sortingIndex, orderSelection);*/
-    currentComputers = service.getComputersOrderedBy("1", "ASC");
+
+    std::string searchSelection = ui->search_link_computer->text().toStdString();
+
+    currentComputers = service.getComputersOrderedBy("ID", "ASC");
+
     for(unsigned int i = 0; i < currentComputers.size(); i++) {
         Computer currentComputer = currentComputers[i];
-        //if(currentComputer.contains(searchSelection)) {
+
+        if(currentComputer.contains(searchSelection)) {
             ui->computer_table_link->setRowCount(currentlyDisplayedComputers.size() + 1);
-            QString computerId = QString::fromStdString(currentComputer.id);
-            QString computerName = QString::fromStdString(currentComputer.name);
+
+            QString computerId =    QString::fromStdString(currentComputer.id);
+            QString computerName =  QString::fromStdString(currentComputer.name);
+
             int currentIndex = currentlyDisplayedComputers.size();
+
             ui->computer_table_link->setItem(currentIndex,0, new QTableWidgetItem(computerId));
             ui->computer_table_link->setItem(currentIndex,1, new QTableWidgetItem(computerName));
             currentlyDisplayedComputers.push_back(currentComputer);
-        //}
+        }
     }
 }
 
@@ -282,4 +301,14 @@ void MainWindow::on_actionRemove_Computer_triggered() {
                                    " has been removed.", 2000);
     }
     setTable();
+}
+
+void MainWindow::on_search_link_scientist_textChanged(const QString &arg1)
+{
+    setLinkTableScientist();
+}
+
+void MainWindow::on_search_link_computer_textChanged(const QString &arg1)
+{
+    setLinkTableComputer();
 }
