@@ -26,6 +26,13 @@ void ComputerRepository::add(Computer computer) {
     computerDB.close();
 }
 
+void ComputerRepository::remove(std::string id)
+{
+    QString q = "DELETE FROM Computers WHERE ID = " + QString::fromStdString(id);
+    QSqlQuery query(computerDB);
+    query.exec(q);
+}
+
 std::vector<Computer> ComputerRepository::list(std::string col, std::string mod) {
     std::vector<Computer> outList = std::vector<Computer>();
     QString query = "SELECT * FROM Computers ORDER BY " + QString::fromStdString(col)

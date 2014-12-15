@@ -26,6 +26,13 @@ void ScientistRepository::add(Scientist scientist) {
     scientistDB.close();
 }
 
+void ScientistRepository::remove(std::string id)
+{
+    QString q = "DELETE FROM Scientists WHERE ID = " + QString::fromStdString(id);
+    QSqlQuery query(scientistDB);
+    query.exec(q);
+}
+
 std::vector<Scientist> ScientistRepository::list(std::string col, std::string mod) {
     std::vector<Scientist> outList = std::vector<Scientist>();
     QString query = "SELECT * FROM Scientists ORDER BY " + QString::fromStdString(col)

@@ -13,6 +13,10 @@ public:
     void addScientist(Scientist scientist);
     void addComputer (Computer computer);
     void addLink(Link link);
+    //Remove functions
+    void removeScientist(std::string s_id);
+    void removeComputer(std::string c_id);
+    void removeLink(std::string s_id, std::string c_id);
     //Search functions
     std::vector<Scientist> scientistSearch(std::string searchTerm);
     std::vector<Computer> computerSearch(std::string searchTerm);

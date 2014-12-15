@@ -32,6 +32,28 @@ void LinkRepository::add(Link link) {
     linkDB.close();
 }
 
+void LinkRepository::removeScientist(std::string s_id)
+{
+    QString q = "DELETE FROM Links WHERE s_id = " + QString::fromStdString(s_id);
+    QSqlQuery query(linkDB);
+    query.exec(q);
+}
+
+void LinkRepository::removeComputer(std::string c_id)
+{
+    QString q = "DELETE FROM Links WHERE c_id = " + QString::fromStdString(c_id);
+    QSqlQuery query(linkDB);
+    query.exec(q);
+}
+
+void LinkRepository::remove(std::string s_id, std::string c_id)
+{
+    QString q = "DELETE FROM Links WHERE s_id = " + QString::fromStdString(s_id);
+    q +=                          " AND c_id = " + QString::fromStdString(c_id);
+    QSqlQuery query(linkDB);
+    query.exec(q);
+}
+
 std::vector<Link> LinkRepository::getList(QString sQuery) {
     std::vector<Link> newList = std::vector<Link>();
     linkDB = getDatabaseConnection();

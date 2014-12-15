@@ -18,6 +18,23 @@ void Services::addLink(Link link) {
     linkRepository.add(link);
 }
 
+void Services::removeScientist(std::string s_id)
+{
+    scientistRepository.remove(s_id);
+    linkRepository.removeScientist(s_id);
+}
+
+void Services::removeComputer(std::string c_id)
+{
+    computerRepository.remove(c_id);
+    linkRepository.removeComputer(c_id);
+}
+
+void Services::removeLink(std::string s_id, std::string c_id)
+{
+    linkRepository.remove(s_id, c_id);
+}
+
 std::vector<Scientist> Services::getScientistsOrderedBy(std::string col, std::string mod) {
     return scientistRepository.list(col,mod);
 }

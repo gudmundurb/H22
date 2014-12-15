@@ -17,6 +17,9 @@ public:
     LinkRepository();
     ~LinkRepository();
     void add(Link);
+    void removeScientist(std::string s_id);
+    void removeComputer(std::string c_id);
+    void remove(std::string s_id, std::string c_id);
      //Gets a new connection to the database file
     QSqlDatabase getDatabaseConnection();
     //Returns a list of scientists connected to a certain computer ID

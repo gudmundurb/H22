@@ -15,6 +15,7 @@ public:
     ComputerRepository();
     ~ComputerRepository();
     void add(Computer);
+    void remove(std::string id);
     //Gets a new connection to the database file
     QSqlDatabase getDatabaseConnection();
     // Returns all computers that match the search term
