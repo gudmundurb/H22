@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string> </string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
   </property>
   <widget class="QLineEdit" name="InputComputerName">
    <property name="geometry">
@@ -170,6 +174,9 @@
      <height>28</height>
     </rect>
    </property>
+   <property name="placeholderText">
+    <string>Type</string>
+   </property>
   </widget>
   <widget class="QLabel" name="InvalidInput">
    <property name="enabled">
@@ -177,17 +184,38 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>190</y>
-     <width>81</width>
+     <x>320</x>
+     <y>180</y>
+     <width>101</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Invalid input</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
  </widget>
- <resources/>
+ <tabstops>
+  <tabstop>InputComputerName</tabstop>
+  <tabstop>TypeDropDown</tabstop>
+  <tabstop>InputComputerType</tabstop>
+  <tabstop>RadioWasBuilt</tabstop>
+  <tabstop>InputBuiltYear</tabstop>
+  <tabstop>C_add_ok</tabstop>
+  <tabstop>Cancel</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>addComputerPicture</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

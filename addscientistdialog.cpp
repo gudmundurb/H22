@@ -18,11 +18,11 @@ AddScientistDialog::~AddScientistDialog()
     delete ui;
 }
 
-Scientist AddScientistDialog::getScientist(){
+Scientist AddScientistDialog::getScientist() {
     return newScientist;
 }
 
-bool AddScientistDialog::success(){
+bool AddScientistDialog::success() {
     return succesful;
 }
 

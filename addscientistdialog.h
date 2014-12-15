@@ -17,6 +17,7 @@ public:
     ~AddScientistDialog();
     Scientist getScientist();
     bool correctInput();
+    bool success();
 private slots:
     void on_InputScientistName_textChanged(const QString &arg1);
 

@@ -22,9 +22,6 @@ public:
 private slots:
     void on_C_add_ok_clicked();
     void on_RadioWasBuilt_toggled(bool checked);
-    void on_InputComputerName_textChanged(const QString &arg1);
-    void on_InputBuiltYear_textChanged(const QString &arg1);
-    void on_InputComputerType_textChanged(const QString &arg1);
     void on_Cancel_clicked();
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
 private:

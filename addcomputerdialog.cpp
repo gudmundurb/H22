@@ -10,6 +10,8 @@ addComputerDialog::addComputerDialog(QWidget *parent) :
     newComputer.dateOfBuild = "";
     newComputer.name = "";
     newComputer.type = "";
+    ui->InvalidInput->setEnabled(true);
+    ui->InvalidInput->hide();
 }
 
 addComputerDialog::~addComputerDialog() {
@@ -23,7 +25,6 @@ bool addComputerDialog::success() {
 }
 
 void addComputerDialog::on_C_add_ok_clicked() {
-
     if(ui->RadioWasBuilt->isChecked()) {
         newComputer.built = "yes";
         newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
@@ -43,14 +44,10 @@ void addComputerDialog::on_C_add_ok_clicked() {
         successful = true;
         close();
     }
-    else{
-        ui->InvalidInput->setEnabled(true);
-    }
 }
 
 void addComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
     if(checked) {
-        //newComputer.built = "yes";
         ui->InputBuiltYear->setEnabled(true);
     }
     else {
@@ -58,18 +55,9 @@ void addComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
     }
 }
 
-void addComputerDialog::on_InputComputerName_textChanged(const QString &arg1) {
-    //newComputer.name =  ui->InputComputerName->text().toStdString();
-}
-
-void addComputerDialog::on_InputBuiltYear_textChanged(const QString &arg1) {
-    //newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
-}
-
 void addComputerDialog::on_Cancel_clicked() {
     close();
 }
-
 
 void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
     if(ui->TypeDropDown->currentText().toStdString() == "Other...") {
@@ -77,30 +65,24 @@ void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
     }
     else {
         ui->InputComputerType->setEnabled(false);
-        //newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
-}
-
-void addComputerDialog::on_InputComputerType_textChanged(const QString &arg1) {
-    //newComputer.type = ui->InputComputerType->text().toStdString();
 }
 
 bool addComputerDialog::correctInput() {
     if(newComputer.name == "") {
+        ui->InvalidInput->show();
         return false;
     }
     if(newComputer.type == "") {
+        ui->InvalidInput->show();
         return false;
     }
     if(newComputer.built == "yes") {
-        for(unsigned int i = 0; i < newComputer.dateOfBuild.length(); i++) {
-            if(!isdigit(newComputer.dateOfBuild[i])){
-                return false;
-            }
-        }
-        if(newComputer.dateOfBuild.length() < 4){
+        if(!util::validYear(newComputer.dateOfBuild)) {
+            ui->InvalidInput->show();
             return false;
         }
     }
+    ui->InvalidInput->hide();
     return true;
 }
