@@ -19,14 +19,6 @@ public:
     bool correctInput();
     bool success();
 private slots:
-    void on_InputScientistName_textChanged(const QString &arg1);
-
-    void on_InputBirthYear_textChanged(const QString &arg1);
-
-    void on_InputDeathYear_textChanged(const QString &arg1);
-
-    void on_ScientistGender_currentIndexChanged(const QString &arg1);
-
     void on_RadioStillAlive_toggled(bool checked);
 
     void on_Cancel_clicked();

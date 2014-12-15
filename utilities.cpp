@@ -16,6 +16,9 @@ namespace util {
         return elems;
     }
     bool validYear(const std::string &s) {
+        if(s.length() == 0) {
+            return false;
+        }
         for(unsigned int i = 0; i < s.length(); i++) {
             if(!isdigit(s.at(i))) {
                 return false;
