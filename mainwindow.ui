@@ -6,9 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>592</width>
-    <height>452</height>
+    <width>600</width>
+    <height>450</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
   </property>
   <property name="mouseTracking">
    <bool>false</bool>
@@ -29,8 +52,8 @@
      <rect>
       <x>6</x>
       <y>9</y>
-      <width>581</width>
-      <height>411</height>
+      <width>590</width>
+      <height>410</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -436,10 +459,10 @@
      <widget class="QTableWidget" name="computer_table_link">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>370</x>
         <y>20</y>
-        <width>200</width>
-        <height>300</height>
+        <width>201</width>
+        <height>351</height>
        </rect>
       </property>
       <property name="font">
@@ -479,7 +502,7 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>20</number>
+       <number>35</number>
       </attribute>
       <attribute name="horizontalHeaderMinimumSectionSize">
        <number>20</number>
@@ -513,10 +536,10 @@
      <widget class="QTableWidget" name="scientist_table_link">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>9</x>
         <y>20</y>
-        <width>200</width>
-        <height>300</height>
+        <width>201</width>
+        <height>351</height>
        </rect>
       </property>
       <property name="font">
@@ -556,7 +579,7 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>20</number>
+       <number>35</number>
       </attribute>
       <attribute name="horizontalHeaderMinimumSectionSize">
        <number>20</number>
@@ -592,7 +615,7 @@
        <rect>
         <x>230</x>
         <y>150</y>
-        <width>46</width>
+        <width>51</width>
         <height>27</height>
        </rect>
       </property>
@@ -617,9 +640,9 @@
      <widget class="QLabel" name="link_computer_selected">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>300</x>
         <y>150</y>
-        <width>46</width>
+        <width>51</width>
         <height>27</height>
        </rect>
       </property>
@@ -644,9 +667,9 @@
      <widget class="QLabel" name="link_selected">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>220</x>
         <y>130</y>
-        <width>111</width>
+        <width>141</width>
         <height>20</height>
        </rect>
       </property>
@@ -663,15 +686,15 @@
      <widget class="QPushButton" name="link_button">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>230</x>
         <y>190</y>
-        <width>91</width>
+        <width>121</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>8</pointsize>
        </font>
       </property>
       <property name="text">

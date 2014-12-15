@@ -17,9 +17,11 @@ addComputerDialog::addComputerDialog(QWidget *parent) :
 addComputerDialog::~addComputerDialog() {
     delete ui;
 }
+
 Computer addComputerDialog::getComputer() {
     return newComputer;
 }
+
 bool addComputerDialog::success() {
     return successful;
 }
