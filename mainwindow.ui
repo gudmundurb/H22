@@ -44,7 +44,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
+    <normaloff>:/icons/icon.png</normaloff>:/icons/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -765,13 +765,39 @@
    </property>
   </action>
   <action name="actionRemove_scientist">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/White_X_in_red_background.png</normaloff>:/icons/White_X_in_red_background.png</iconset>
+   </property>
    <property name="text">
     <string>Remove scientist</string>
    </property>
   </action>
   <action name="actionRemove_Computer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/White_X_in_red_background.png</normaloff>:/icons/White_X_in_red_background.png</iconset>
+   </property>
    <property name="text">
     <string>Remove Computer</string>
+   </property>
+  </action>
+  <action name="actionView_Scientist">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>view Scientist</string>
+   </property>
+  </action>
+  <action name="actionView_Computer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
+   </property>
+   <property name="text">
+    <string>View_Computer</string>
    </property>
   </action>
  </widget>

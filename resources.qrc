@@ -2,6 +2,7 @@
     <qresource prefix="/icons">
         <file>computer2.png</file>
         <file>scientist.jpg</file>
-        <file>icon.jpg</file>
+        <file>icon.png</file>
+        <file>White_X_in_red_background.png</file>
     </qresource>
 </RCC>

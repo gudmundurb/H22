@@ -2,8 +2,11 @@
 #include "ui_mainwindow.h"
 #include "addcomputerdialog.h"
 #include "addscientistdialog.h"
+#include "viewscientistdialog.h"
+
 #include <QMenu>
 #include <QMessageBox>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -133,19 +136,19 @@ void MainWindow::setTableComputer() {
         if(currentComputer.contains(searchSelection)) {
             ui->computer_table->setRowCount(currentlyDisplayedComputers.size() + 1);
 
-            QString computerId =        QString::fromStdString(currentComputer.id);
-            QString computerName =      QString::fromStdString(currentComputer.name);
-            QString computerDob =       QString::fromStdString(currentComputer.dateOfBuild);
-            QString computerDod =       QString::fromStdString(currentComputer.type);
-            QString computerGender =    QString::fromStdString(currentComputer.built);
+            QString computerId =      QString::fromStdString(currentComputer.id);
+            QString computerName =    QString::fromStdString(currentComputer.name);
+            QString computerDob =     QString::fromStdString(currentComputer.dateOfBuild);
+            QString computerType =    QString::fromStdString(currentComputer.type);
+            QString computerBuilt =   QString::fromStdString(currentComputer.built);
 
             int currentIndex = currentlyDisplayedComputers.size();
 
             ui->computer_table->setItem(currentIndex,0, new QTableWidgetItem(computerId));
             ui->computer_table->setItem(currentIndex,1, new QTableWidgetItem(computerName));
             ui->computer_table->setItem(currentIndex,2, new QTableWidgetItem(computerDob));
-            ui->computer_table->setItem(currentIndex,3, new QTableWidgetItem(computerDod));
-            ui->computer_table->setItem(currentIndex,4, new QTableWidgetItem(computerGender));
+            ui->computer_table->setItem(currentIndex,3, new QTableWidgetItem(computerType));
+            ui->computer_table->setItem(currentIndex,4, new QTableWidgetItem(computerBuilt));
             currentlyDisplayedComputers.push_back(currentComputer);
         }
     }
@@ -256,6 +259,7 @@ void MainWindow::on_link_button_clicked() {
 
 void MainWindow::on_scientist_table_customContextMenuRequested(const QPoint &pos) {
     QMenu menu;
+    menu.addAction(ui->actionView_Scientist);
     menu.addAction(ui->actionRemove_scientist);
     menu.exec(QCursor::pos());
 }
@@ -283,6 +287,7 @@ void MainWindow::on_actionRemove_scientist_triggered() {
 
 void MainWindow::on_computer_table_customContextMenuRequested(const QPoint &pos) {
     QMenu menu;
+    menu.addAction(ui->actionView_Computer);
     menu.addAction(ui->actionRemove_Computer);
     menu.exec(QCursor::pos());
 }
@@ -303,12 +308,29 @@ void MainWindow::on_actionRemove_Computer_triggered() {
     setTable();
 }
 
-void MainWindow::on_search_link_scientist_textChanged(const QString &arg1)
-{
+void MainWindow::on_search_link_scientist_textChanged(const QString &arg1) {
     setLinkTableScientist();
 }
 
-void MainWindow::on_search_link_computer_textChanged(const QString &arg1)
-{
+void MainWindow::on_search_link_computer_textChanged(const QString &arg1) {
     setLinkTableComputer();
+}
+
+void MainWindow::on_actionView_Scientist_triggered() {
+    int row = ui->scientist_table->currentRow();
+    std::string scientistId = ui->scientist_table->item(row, 0)->text().toStdString();
+    Scientist tempScientist;
+    for(unsigned int i = 0; i < currentlyDisplayedScientists.size(); i++) {
+        if(currentlyDisplayedScientists[i].id == scientistId) {
+            tempScientist = currentlyDisplayedScientists[i];
+            break;
+        }
+    }
+    qDebug() << QString::fromStdString(tempScientist.id);
+    std::vector<Computer> tempComputers = service.computerLink(tempScientist.id);
+    qDebug() << "Size of links: " << tempComputers.size();
+    ViewScientistDialog viewDialog;
+    viewDialog.setConnectedComputers(tempComputers);
+    viewDialog.setScientist(tempScientist);
+    viewDialog.exec();
 }

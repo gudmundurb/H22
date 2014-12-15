@@ -55,6 +55,8 @@ private slots:
 
     void on_search_link_computer_textChanged(const QString &arg1);
 
+    void on_actionView_Scientist_triggered();
+
 private:
     Ui::MainWindow *ui;
     Services service;
