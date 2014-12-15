@@ -194,7 +194,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="C_input_imagepath">
    <property name="geometry">
     <rect>
      <x>10</x>
