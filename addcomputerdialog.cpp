@@ -43,7 +43,7 @@ void addComputerDialog::on_C_add_ok_clicked() {
         newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
     newComputer.name = ui->InputComputerName->text().toStdString();
-    newComputer.c_imagefilepath = ui->browseImagePath->text().toStdString();
+    newComputer.c_imagefilepath = ui->C_input_imagepath->text().toStdString();
     if(correctInput()) {
         successful = true;
         close();
@@ -102,6 +102,6 @@ void addComputerDialog::on_browseImagePath_clicked()
                                  "",
                                  "Image files (*.png *.jpg *.jpeg)"
                                  );
-   qDebug() << filename;
+    qDebug() << filename;
     ui->C_input_imagepath->setText(filename);
 }
