@@ -171,6 +171,22 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="InvalidInput">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>190</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Invalid input</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

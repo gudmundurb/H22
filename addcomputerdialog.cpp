@@ -6,6 +6,10 @@ addComputerDialog::addComputerDialog(QWidget *parent) :
     ui(new Ui::addComputerDialog) {
     ui->setupUi(this);
     successful = false;
+    newComputer.built = "";
+    newComputer.dateOfBuild = "";
+    newComputer.name = "";
+    newComputer.type = "";
 }
 
 addComputerDialog::~addComputerDialog() {
@@ -35,8 +39,13 @@ void addComputerDialog::on_C_add_ok_clicked() {
         newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
     newComputer.name = ui->InputComputerName->text().toStdString();
-    successful = true;
-    close();
+    if(correctInput()) {
+        successful = true;
+        close();
+    }
+    else{
+        ui->InvalidInput->setEnabled(true);
+    }
 }
 
 void addComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
@@ -74,4 +83,21 @@ void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
 
 void addComputerDialog::on_InputComputerType_textChanged(const QString &arg1) {
     //newComputer.type = ui->InputComputerType->text().toStdString();
+}
+
+bool addComputerDialog::correctInput() {
+    if(newComputer.name == "") {
+        return false;
+    }
+    if(newComputer.type == "") {
+        return false;
+    }
+    if(newComputer.built == "yes") {
+        for(unsigned int i = 0; i < newComputer.dateOfBuild.length(); i++) {
+            if(!isdigit(newComputer.dateOfBuild[i])){
+                return false;
+            }
+        }
+    }
+    return true;
 }

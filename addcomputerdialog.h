@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <services.h>
+#include <cctype>
 
 namespace Ui {
 class addComputerDialog;
@@ -25,6 +26,7 @@ private slots:
     void on_InputComputerType_textChanged(const QString &arg1);
     void on_Cancel_clicked();
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
+    bool correctInput();
 private:
     bool successful;
     Ui::addComputerDialog *ui;
