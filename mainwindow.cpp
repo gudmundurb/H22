@@ -5,6 +5,7 @@
 #include "viewscientistdialog.h"
 #include "viewcomputerdialog.h"
 #include "editscientist.h"
+#include "editcomputer.h"
 
 #include <QMenu>
 #include <QMessageBox>
@@ -425,11 +426,12 @@ void MainWindow::on_actionEdit_computer_triggered() {
             break;
         }
     }
-    /*EditComputer dialog;
+    editComputer dialog;
     dialog.startingInput(tempComputer);
+    dialog.exec();
     if(dialog.success()) {
-        service.updateComputer(tempComputer, dialog.getcomputer());
+        service.updateComputer(tempComputer, dialog.getComputer());
         ui->statusBar->showMessage("Computer was updated.", 4500);
     }
-    setTable();*/
+    setTable();
 }
