@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>520</width>
-    <height>450</height>
+    <width>500</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>520</width>
-    <height>450</height>
+    <width>500</width>
+    <height>300</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -83,7 +83,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>290</y>
+     <y>230</y>
      <width>311</width>
      <height>20</height>
     </rect>
@@ -125,7 +125,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>270</y>
+     <y>210</y>
      <width>451</width>
      <height>20</height>
     </rect>
@@ -137,9 +137,9 @@
   <widget class="QLabel" name="built_year">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>330</x>
      <y>150</y>
-     <width>71</width>
+     <width>51</width>
      <height>31</height>
     </rect>
    </property>
@@ -180,7 +180,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>320</y>
+     <y>260</y>
      <width>451</width>
      <height>121</height>
     </rect>
@@ -289,7 +289,7 @@
      <x>220</x>
      <y>150</y>
      <width>111</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
