@@ -1,5 +1,8 @@
 #include "addscientistdialog.h"
 #include "ui_addscientistdialog.h"
+#include <QPixmap>
+#include <QFileDialog>
+#include <QDebug>
 
 AddScientistDialog::AddScientistDialog(QWidget *parent) :
     QDialog(parent),
@@ -83,4 +86,21 @@ bool AddScientistDialog::correctInput(){
     }
     ui->InvalidInput->hide();
     return true;
+}
+
+void AddScientistDialog::on_browseImagePath_clicked()
+{
+    QString filename = QFileDialog::getOpenFileName(
+                                this,
+                                "Browse for image",
+                                 "",
+                                 "Image files (*.png *.jpg *.jpeg)"
+                                 );
+    qDebug() << filename;
+    ui->C_input_imagepath->setText(filename);
+//myndakóði hefst hér (debug)
+    QPixmap pixmap(filename);
+    ui->ComputerImageLabel->setPixmap(pixmap);
+    ui->ComputerImageLabel->setScaledContents(true);
+//myndakóði endar hér
 }

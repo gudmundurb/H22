@@ -6,6 +6,7 @@ Scientist::Scientist() {
     dateOfBirth = "";
     dateOfDeath = "";
     gender = "";
+    s_imagefilepath = "";
 }
 
 bool Scientist::contains(std::string str) {

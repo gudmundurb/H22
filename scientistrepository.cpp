@@ -17,11 +17,12 @@ ScientistRepository::~ScientistRepository() {
 void ScientistRepository::add(Scientist scientist) {
     scientistDB = getDatabaseConnection();
     QSqlQuery query(scientistDB);
-    query.prepare("INSERT INTO Scientists (Name, Dob, Dod, Gender)VALUES(:name, :dob, :dod, :gender)");
+    query.prepare("INSERT INTO Scientists (Name, Dob, Dod, Gender, ScientistImagePath)VALUES(:name, :dob, :dod, :gender, :scientistImagePath)");
     query.bindValue(":name",   QString::fromStdString(scientist.name));
     query.bindValue(":dob",    QString::fromStdString(scientist.dateOfBirth));
     query.bindValue(":dod",    QString::fromStdString(scientist.dateOfDeath));
     query.bindValue(":gender", QString::fromStdString(scientist.gender));
+    query.bindValue(":scientistImagePath",   QString::fromStdString(scientist.s_imagefilepath));
     query.exec();
     scientistDB.close();
 }
@@ -48,13 +49,14 @@ std::vector<Scientist> ScientistRepository::getList(QString sQuery) {
         QSqlQuery query(scientistDB);
         query.exec(sQuery);
         while(query.next()) {
-            Scientist c = Scientist();
-            c.id =          query.value("ID").toString().toStdString();
-            c.name =        query.value("Name").toString().toStdString();
-            c.dateOfBirth = query.value("Dob").toString().toStdString();
-            c.dateOfDeath = query.value("Dod").toString().toStdString();
-            c.gender =      query.value("Gender").toString().toStdString();
-            newList.push_back(c);
+            Scientist s = Scientist();
+            s.id =          query.value("ID").toString().toStdString();
+            s.name =        query.value("Name").toString().toStdString();
+            s.dateOfBirth = query.value("Dob").toString().toStdString();
+            s.dateOfDeath = query.value("Dod").toString().toStdString();
+            s.gender =      query.value("Gender").toString().toStdString();
+            s.s_imagefilepath = query.value("ScientistImagePath").toString().toStdString();
+            newList.push_back(s);
         }
         scientistDB.close();
     }

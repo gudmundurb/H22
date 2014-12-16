@@ -15,6 +15,7 @@ public:
     std::string gender;
     bool contains(std::string str);
     std::string toString();
+    std::string s_imagefilepath;
 };
 
 #endif // SCIENTIST_H
