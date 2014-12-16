@@ -32,7 +32,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Add a new computer</string>
+   <string>Add</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -44,7 +44,7 @@
   <widget class="QLineEdit" name="InputComputerName">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>210</x>
      <y>60</y>
      <width>291</width>
      <height>24</height>
@@ -63,7 +63,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>330</x>
      <y>130</y>
      <width>93</width>
      <height>21</height>
@@ -79,7 +79,7 @@
   <widget class="QComboBox" name="TypeDropDown">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>210</x>
      <y>100</y>
      <width>101</width>
      <height>21</height>
@@ -114,7 +114,7 @@
   <widget class="QPushButton" name="Cancel">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>410</x>
      <y>220</y>
      <width>93</width>
      <height>21</height>
@@ -127,7 +127,7 @@
   <widget class="QPushButton" name="C_add_ok">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>310</x>
      <y>220</y>
      <width>93</width>
      <height>21</height>
@@ -140,7 +140,7 @@
   <widget class="QRadioButton" name="RadioWasBuilt">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>210</x>
      <y>130</y>
      <width>101</width>
      <height>21</height>
@@ -156,7 +156,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>330</x>
      <y>100</y>
      <width>93</width>
      <height>21</height>
@@ -237,9 +237,9 @@
   <widget class="QPushButton" name="browseImagePath">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>210</x>
      <y>220</y>
-     <width>75</width>
+     <width>93</width>
      <height>21</height>
     </rect>
    </property>
@@ -263,7 +263,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>210</x>
      <y>20</y>
      <width>201</width>
      <height>21</height>
@@ -287,10 +287,10 @@
   <tabstop>InputComputerType</tabstop>
   <tabstop>RadioWasBuilt</tabstop>
   <tabstop>InputBuiltYear</tabstop>
+  <tabstop>C_input_imagepath</tabstop>
   <tabstop>browseImagePath</tabstop>
   <tabstop>C_add_ok</tabstop>
   <tabstop>Cancel</tabstop>
-  <tabstop>C_input_imagepath</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>
