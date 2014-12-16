@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>520</width>
     <height>450</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>600</width>
+    <width>520</width>
     <height>450</height>
    </size>
   </property>
@@ -38,15 +38,17 @@
   <widget class="QLabel" name="computer_name">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>210</x>
      <y>10</y>
-     <width>561</width>
+     <width>241</width>
      <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>17</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -59,9 +61,9 @@
   <widget class="QLabel" name="type">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>70</y>
-     <width>381</width>
+     <x>230</x>
+     <y>50</y>
+     <width>211</width>
      <height>41</height>
     </rect>
    </property>
@@ -80,9 +82,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>80</x>
      <y>290</y>
-     <width>551</width>
+     <width>311</width>
      <height>20</height>
     </rect>
    </property>
@@ -101,10 +103,10 @@
   <widget class="QLabel" name="aged">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>120</y>
-     <width>81</width>
-     <height>16</height>
+     <x>10</x>
+     <y>180</y>
+     <width>171</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -122,8 +124,8 @@
   <widget class="Line" name="name_line">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>50</y>
+     <x>30</x>
+     <y>270</y>
      <width>451</width>
      <height>20</height>
     </rect>
@@ -135,15 +137,15 @@
   <widget class="QLabel" name="built_year">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>80</y>
-     <width>81</width>
+     <x>340</x>
+     <y>150</y>
+     <width>71</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>17</pointsize>
+     <pointsize>16</pointsize>
     </font>
    </property>
    <property name="text">
@@ -156,15 +158,15 @@
   <widget class="QLabel" name="was_built">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>80</y>
-     <width>81</width>
+     <x>350</x>
+     <y>110</y>
+     <width>31</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>17</pointsize>
+     <pointsize>16</pointsize>
     </font>
    </property>
    <property name="text">
@@ -177,9 +179,9 @@
   <widget class="QTableWidget" name="scientist_table">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>30</x>
      <y>320</y>
-     <width>561</width>
+     <width>451</width>
      <height>121</height>
     </rect>
    </property>
@@ -281,30 +283,19 @@
     </property>
    </column>
   </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>60</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Was built?</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>60</y>
-     <width>61</width>
+     <x>220</x>
+     <y>150</y>
+     <width>111</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Build year:</string>
@@ -316,8 +307,8 @@
   <widget class="QLabel" name="ComputerImageLabel">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>120</y>
+     <x>10</x>
+     <y>10</y>
      <width>181</width>
      <height>161</height>
     </rect>
@@ -342,6 +333,24 @@
    </property>
    <property name="scaledContents">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>110</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Was it built?</string>
    </property>
   </widget>
   <action name="actionUnlink_scientist">
