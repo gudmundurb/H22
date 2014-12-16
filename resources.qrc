@@ -6,5 +6,6 @@
         <file>White_X_in_red_background.png</file>
         <file>broken_link.png</file>
         <file>Update.png</file>
+        <file>../../../Pictures/noImage.png</file>
     </qresource>
 </RCC>

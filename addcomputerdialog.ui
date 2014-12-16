@@ -19,6 +19,12 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>520</width>
+    <height>260</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>520</width>
@@ -58,7 +64,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>140</y>
+     <y>130</y>
      <width>93</width>
      <height>21</height>
     </rect>
@@ -135,7 +141,7 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>140</y>
+     <y>130</y>
      <width>101</width>
      <height>21</height>
     </rect>
@@ -167,7 +173,7 @@
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>180</y>
+     <y>190</y>
      <width>291</width>
      <height>20</height>
     </rect>
@@ -188,19 +194,31 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
-     <width>191</width>
-     <height>191</height>
+     <y>20</y>
+     <width>181</width>
+     <height>161</height>
     </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Sunken</enum>
    </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="midLineWidth">
+    <number>0</number>
+   </property>
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="resources.qrc">:/icons/Pictures/noImage.png</pixmap>
+   </property>
    <property name="scaledContents">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLineEdit" name="C_input_imagepath">
@@ -227,6 +245,52 @@
    </property>
    <property name="text">
     <string>Browse...</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addWebpage">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>160</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add webpage...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="c_showUrl">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>160</y>
+     <width>171</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>20</y>
+     <width>201</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Add new computer</string>
    </property>
   </widget>
  </widget>
