@@ -90,13 +90,10 @@ void ScientistRepository::editScientist(Scientist oldScientist, Scientist newSci
     scientistDB = getDatabaseConnection();
     QSqlQuery query(scientistDB);
     QString qu =    "UPDATE Scientists ";
-    qu +=           "SET Name=':name',Dob=':dob',Dod=':dod',Gender=':gender'";
-    qu +=           "WHERE ID=:id";
-    query.prepare(qu);
-    query.bindValue(":name", QString::fromStdString(newScientist.name));
-    query.bindValue(":dob", QString::fromStdString(newScientist.dateOfBirth));
-    query.bindValue(":dod", QString::fromStdString(newScientist.dateOfDeath));
-    query.bindValue(":gender", QString::fromStdString(newScientist.gender));
-    query.bindValue(":id", QString::fromStdString(oldScientist.id));
-    query.exec();
+    qu +=           "SET Name='" +  QString::fromStdString(newScientist.name) + "', ";
+    qu +=           "Dob='" +       QString::fromStdString(newScientist.dateOfBirth) + "', ";
+    qu +=           "Dod='" +       QString::fromStdString(newScientist.dateOfDeath) + "', ";
+    qu +=           "Gender='" + QString::fromStdString(newScientist.gender) + "' ";
+    qu +=           "WHERE ID=" + QString::fromStdString(oldScientist.id);
+    query.exec(qu);
 }
