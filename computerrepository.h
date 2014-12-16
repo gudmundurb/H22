@@ -22,6 +22,8 @@ public:
     std::vector<Computer> search(std::string searchTerm);
     // Returns a list ordered by column and modifier
     std::vector<Computer> list(std::string col,std::string mod);
+
+    void editComputer(Computer oldComputer, Computer newComputer);
 private:
     //The database connection that is used to retrieve data and persist data
     QSqlDatabase computerDB;

@@ -26,8 +26,9 @@ public:
     //Link functions
     std::vector<Scientist> scientistLink(std::string c_id);
     std::vector<Computer> computerLink(std::string s_id);
-
+    //Editing functions
     void updateScientist(Scientist oldScientist, Scientist newScientist);
+    void updateComputer(Computer oldComputer, Computer newComputer);
 private:
     ScientistRepository scientistRepository;
     ComputerRepository computerRepository;
