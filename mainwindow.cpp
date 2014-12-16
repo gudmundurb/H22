@@ -262,8 +262,12 @@ void MainWindow::on_link_button_clicked() {
         ui->statusBar->showMessage("Scientist with ID: " + QString::fromStdString(selSciID)
                                    + " and computer with ID: " + QString::fromStdString(selComID)
                                    + " have been linked.", 4000);
-        ui->link_computer_selected->clear();
-        ui->link_scientist_selected->clear();
+        if(currentlyDisplayedComputers.size() != 1) {
+            ui->link_computer_selected->clear();
+        }
+        if(currentlyDisplayedScientists.size() != 1) {
+            ui->link_scientist_selected->clear();
+        }
     }
 }
 

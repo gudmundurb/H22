@@ -482,6 +482,12 @@
       <property name="editTriggers">
        <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
       </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::DragDrop</enum>
+      </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
       </property>
@@ -558,6 +564,15 @@
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="dragDropOverwriteMode">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropMode">
+       <enum>QAbstractItemView::NoDragDrop</enum>
       </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
@@ -722,27 +737,27 @@
      <widget class="QLineEdit" name="search_link_scientist">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>10</x>
         <y>20</y>
-        <width>121</width>
+        <width>101</width>
         <height>20</height>
        </rect>
       </property>
       <property name="placeholderText">
-       <string>Search...</string>
+       <string>Search name...</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="search_link_computer">
       <property name="geometry">
        <rect>
-        <x>450</x>
+        <x>470</x>
         <y>20</y>
-        <width>121</width>
+        <width>101</width>
         <height>20</height>
        </rect>
       </property>
       <property name="placeholderText">
-       <string>Search...</string>
+       <string>Search name...</string>
       </property>
      </widget>
     </widget>
