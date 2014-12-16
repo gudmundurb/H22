@@ -65,6 +65,7 @@ void ViewComputerDialog::displayComputer() {
     else {
         ui->aged->setText("");
     }
+    displayPicture();
 }
 
 void ViewComputerDialog::on_scientist_table_customContextMenuRequested(const QPoint &pos) {
@@ -79,4 +80,12 @@ void ViewComputerDialog::on_actionUnlink_scientist_triggered() {
     ui->scientist_table->setRowHidden(currentRow, true);
     idsToRemove.push_back(scientistId);
     wantsToRemoveLinks = true;
+}
+
+void ViewComputerDialog::displayPicture() {
+    if(computer.c_imagefilepath != "") {
+        QPixmap pixmap(QString::fromStdString(computer.c_imagefilepath));
+        ui->ComputerImageLabel->setPixmap(pixmap);
+        ui->ComputerImageLabel->setScaledContents(true);
+    }
 }

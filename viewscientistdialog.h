@@ -35,6 +35,7 @@ private:
     std::vector<std::string> idsToRemove;
     void setTable();
     void displayScientist();
+    void displayPicture();
     Ui::ViewScientistDialog *ui;
     Services service;
 };

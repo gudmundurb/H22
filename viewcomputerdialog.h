@@ -35,6 +35,7 @@ private:
     std::vector<std::string> idsToRemove;
     void setTable();
     void displayComputer();
+    void displayPicture();
     Ui::ViewComputerDialog *ui;
 };
 
