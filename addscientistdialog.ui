@@ -253,6 +253,17 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>InputScientistName</tabstop>
+  <tabstop>InputBirthYear</tabstop>
+  <tabstop>RadioStillAlive</tabstop>
+  <tabstop>InputDeathYear</tabstop>
+  <tabstop>ScientistGender</tabstop>
+  <tabstop>browseImagePath</tabstop>
+  <tabstop>S_add_ok</tabstop>
+  <tabstop>Cancel</tabstop>
+  <tabstop>C_input_imagepath</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
