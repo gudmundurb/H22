@@ -1,8 +1,5 @@
 #include "addscientistdialog.h"
 #include "ui_addscientistdialog.h"
-#include <QPixmap>
-#include <QFileDialog>
-#include <QDebug>
 
 AddScientistDialog::AddScientistDialog(QWidget *parent) :
     QDialog(parent),

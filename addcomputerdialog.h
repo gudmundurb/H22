@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <services.h>
-#include <cctype>
 #include <QFileDialog>
 #include <QDebug>
 #include <QPixmap>

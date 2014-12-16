@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include "scientist.h"
-#include <cctype>
+#include <QPixmap>
+#include <QFileDialog>
+#include <QDebug>
 namespace Ui {
 class AddScientistDialog;
 }
