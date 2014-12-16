@@ -110,7 +110,7 @@
     <rect>
      <x>10</x>
      <y>180</y>
-     <width>171</width>
+     <width>181</width>
      <height>20</height>
     </rect>
    </property>
@@ -186,8 +186,8 @@
     <rect>
      <x>10</x>
      <y>260</y>
-     <width>471</width>
-     <height>121</height>
+     <width>480</width>
+     <height>130</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -285,9 +285,6 @@
    <column>
     <property name="text">
      <string>Gender</string>
-    </property>
-    <property name="textAlignment">
-     <set>AlignHCenter|AlignVCenter|AlignCenter</set>
     </property>
    </column>
   </widget>

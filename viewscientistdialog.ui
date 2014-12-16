@@ -96,7 +96,7 @@
   <widget class="QLabel" name="dead_year">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>400</x>
      <y>90</y>
      <width>81</width>
      <height>31</height>
@@ -117,9 +117,9 @@
   <widget class="QLabel" name="aged">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>180</y>
-     <width>151</width>
+     <width>181</width>
      <height>20</height>
     </rect>
    </property>
@@ -183,9 +183,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
-     <width>471</width>
-     <height>121</height>
+     <y>260</y>
+     <width>480</width>
+     <height>130</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -329,7 +329,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>340</x>
      <y>100</y>
      <width>16</width>
      <height>16</height>

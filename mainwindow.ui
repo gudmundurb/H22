@@ -43,7 +43,7 @@
    <string>Listinn</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/icon.png</normaloff>:/icons/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -53,7 +53,7 @@
       <x>6</x>
       <y>9</y>
       <width>590</width>
-      <height>410</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -285,13 +285,13 @@
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>340</y>
+        <y>350</y>
         <width>131</width>
         <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Add new entry</string>
+       <string>Add new entry...</string>
       </property>
      </widget>
      <widget class="QComboBox" name="sort_combo_computer">
@@ -338,7 +338,7 @@
         <x>10</x>
         <y>50</y>
         <width>561</width>
-        <height>281</height>
+        <height>291</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -809,17 +809,6 @@
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <action name="actionAdd_a_scientist">
    <property name="text">
     <string>Add a scientist</string>
@@ -827,7 +816,7 @@
   </action>
   <action name="actionRemove_scientist">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/White_X_in_red_background.png</normaloff>:/icons/White_X_in_red_background.png</iconset>
    </property>
    <property name="text">
@@ -836,7 +825,7 @@
   </action>
   <action name="actionRemove_Computer">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/White_X_in_red_background.png</normaloff>:/icons/White_X_in_red_background.png</iconset>
    </property>
    <property name="text">
@@ -845,7 +834,7 @@
   </action>
   <action name="actionView_Scientist">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
    </property>
    <property name="text">
@@ -854,7 +843,7 @@
   </action>
   <action name="actionView_Computer">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
    </property>
    <property name="text">
@@ -863,7 +852,7 @@
   </action>
   <action name="actionEdit_Scientist">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
    </property>
    <property name="text">
@@ -872,7 +861,7 @@
   </action>
   <action name="actionEdit_computer">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
    </property>
    <property name="text">
@@ -882,23 +871,19 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
+  <tabstop>add_button</tabstop>
   <tabstop>display_table_combo</tabstop>
+  <tabstop>tabWidget</tabstop>
   <tabstop>search_text</tabstop>
-  <tabstop>sort_combo_computer</tabstop>
   <tabstop>sort_combo_scientist</tabstop>
   <tabstop>sort_combo_order</tabstop>
   <tabstop>computer_table</tabstop>
   <tabstop>scientist_table</tabstop>
-  <tabstop>add_button</tabstop>
-  <tabstop>tabWidget</tabstop>
+  <tabstop>sort_combo_computer</tabstop>
   <tabstop>search_link_scientist</tabstop>
   <tabstop>search_link_computer</tabstop>
-  <tabstop>scientist_table_link</tabstop>
-  <tabstop>computer_table_link</tabstop>
   <tabstop>link_button</tabstop>
  </tabstops>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
