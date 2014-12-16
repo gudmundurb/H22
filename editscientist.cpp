@@ -15,7 +15,6 @@ EditScientist::EditScientist(QWidget *parent) :
     }
     newScientist.name = oldScientist.name;
     newScientist.gender = oldScientist.gender;
-    startingInput();
     succesful = false;
     ui->InvalidInput->hide();
 }
@@ -91,13 +90,14 @@ bool EditScientist::correctInput(){
     return true;
 }
 
-void EditScientist::startingInput(){
+void EditScientist::startingInput(Scientist oldScientist){
     ui->InputScientistName->setText(QString::fromStdString(oldScientist.name));
     ui->InputBirthYear->setText(QString::fromStdString(oldScientist.dateOfBirth));
     if(oldScientist.dateOfDeath != "----"){
         ui->InputDeathYear->setText(QString::fromStdString(oldScientist.dateOfDeath));
     }
     if(oldScientist.gender == "F") {
-        ui->ScientistGender->setCurrentIndex(2);
+        ui->ScientistGender->setCurrentIndex(1);
     }
+    newScientist = oldScientist;
 }

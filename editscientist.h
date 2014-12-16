@@ -19,8 +19,7 @@ public:
     Scientist getScientist();
     bool correctInput();
     bool success();
-    void startingInput();
-    Scientist oldScientist;
+    void startingInput(Scientist oldScientist);
 private slots:
     void on_RadioStillAlive_toggled(bool checked);
 
@@ -29,6 +28,7 @@ private slots:
     void on_S_add_ok_clicked();
 
 private:
+    Scientist oldScientist;
     Ui::EditScientist *ui;
     Scientist newScientist;
     bool succesful;
