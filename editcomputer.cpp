@@ -100,24 +100,24 @@ bool editComputer::correctInput() {
 void editComputer::startingInput(Computer oldComputer){
     ui->InputComputerName->setText(QString::fromStdString(oldComputer.name));
     ui->InputComputerType->setText(QString::fromStdString(oldComputer.type));
-    if(oldComputer.built != "no"){
-        ui->RadioWasBuilt->toggle();
+    if(oldComputer.built == "yes"){
+        ui->RadioWasBuilt->toggled(true);
         ui->InputBuiltYear->setText(QString::fromStdString(oldComputer.dateOfBuild));
     }
     if(oldComputer.type == "Mechanical") {
-        ui->TypeDropDown->setCurrentIndex(1);
+        ui->TypeDropDown->setCurrentIndex(0);
     }
     else if(oldComputer.type == "Vacuum") {
-        ui->TypeDropDown->setCurrentIndex(2);
+        ui->TypeDropDown->setCurrentIndex(1);
     }
     else if(oldComputer.type == "Transistors") {
-        ui->TypeDropDown->setCurrentIndex(3);
+        ui->TypeDropDown->setCurrentIndex(2);
     }
     else if(oldComputer.type == "Digital") {
-        ui->TypeDropDown->setCurrentIndex(4);
+        ui->TypeDropDown->setCurrentIndex(3);
     }
     else{
-        ui->TypeDropDown->setCurrentIndex(5);
+        ui->TypeDropDown->setCurrentIndex(4);
         ui->InputComputerType->setEnabled(true);
         ui->InputComputerType->setText(QString::fromStdString(oldComputer.type));
     }
