@@ -5,6 +5,10 @@
 #include "scientist.h"
 #include "computer.h"
 #include "editscientist.h"
+#include <QDebug>
+#include <QDate>
+#include <QMenu>
+#include <QPixmap>
 
 namespace Ui {
 class ViewScientistDialog;

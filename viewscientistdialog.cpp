@@ -1,9 +1,5 @@
 #include "viewscientistdialog.h"
 #include "ui_viewscientistdialog.h"
-#include <QDebug>
-#include <QDate>
-#include <QMenu>
-#include <QPixmap>
 
 ViewScientistDialog::ViewScientistDialog(QWidget *parent) :
     QDialog(parent),
