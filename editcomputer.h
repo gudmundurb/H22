@@ -11,13 +11,13 @@ namespace Ui {
 class editComputer;
 }
 
-class editComputer : public QDialog
+class EditComputerDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit editComputer(QWidget *parent = 0);
-    ~editComputer();
+    explicit EditComputerDialog(QWidget *parent = 0);
+    ~EditComputerDialog();
     Computer getComputer();
     bool success();
     bool correctInput();

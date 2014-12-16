@@ -1,7 +1,7 @@
 #include "editcomputer.h"
 #include "ui_editcomputer.h"
 
-editComputer::editComputer(QWidget *parent) :
+EditComputerDialog::EditComputerDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::editComputer) {
     ui->setupUi(this);
@@ -18,19 +18,19 @@ editComputer::editComputer(QWidget *parent) :
     ui->InvalidInput->hide();
 }
 
-editComputer::~editComputer() {
+EditComputerDialog::~EditComputerDialog() {
     delete ui;
 }
 
-Computer editComputer::getComputer() {
+Computer EditComputerDialog::getComputer() {
     return newComputer;
 }
 
-bool editComputer::success() {
+bool EditComputerDialog::success() {
     return successful;
 }
 
-void editComputer::on_C_add_ok_clicked() {
+void EditComputerDialog::on_C_add_ok_clicked() {
     if(ui->RadioWasBuilt->isChecked()) {
         newComputer.built = "yes";
         newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
@@ -52,7 +52,7 @@ void editComputer::on_C_add_ok_clicked() {
     }
 }
 
-void editComputer::on_RadioWasBuilt_toggled(bool checked) {
+void EditComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
     if(checked) {
         ui->InputBuiltYear->setEnabled(true);
     }
@@ -61,11 +61,11 @@ void editComputer::on_RadioWasBuilt_toggled(bool checked) {
     }
 }
 
-void editComputer::on_Cancel_clicked() {
+void EditComputerDialog::on_Cancel_clicked() {
     close();
 }
 
-void editComputer::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
+void EditComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
     if(ui->TypeDropDown->currentText().toStdString() == "Other...") {
         ui->InputComputerType->setEnabled(true);
     }
@@ -74,7 +74,7 @@ void editComputer::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
     }
 }
 
-bool editComputer::correctInput() {
+bool EditComputerDialog::correctInput() {
     if(newComputer.name == "") {
         ui->InvalidInput->setText("Invalid name.");
         ui->InvalidInput->show();
@@ -96,7 +96,7 @@ bool editComputer::correctInput() {
     return true;
 }
 
-void editComputer::startingInput(Computer oldComputer){
+void EditComputerDialog::startingInput(Computer oldComputer){
     ui->InputComputerName->setText(QString::fromStdString(oldComputer.name));
     ui->InputComputerType->setText(QString::fromStdString(oldComputer.type));
     if(oldComputer.built == "yes"){
@@ -129,7 +129,7 @@ void editComputer::startingInput(Computer oldComputer){
     newComputer = oldComputer;
 }
 
-void editComputer::on_browseImagePath_clicked() {
+void EditComputerDialog::on_browseImagePath_clicked() {
     QString filename = QFileDialog::getOpenFileName(
                                 this,
                                 "Browse for image",

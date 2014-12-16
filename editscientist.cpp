@@ -3,7 +3,7 @@
 #include <QFileDialog>
 #include <QPixmap>
 
-EditScientist::EditScientist(QWidget *parent) :
+EditScientistDialog::EditScientistDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EditScientist)
 {
@@ -12,19 +12,19 @@ EditScientist::EditScientist(QWidget *parent) :
     ui->InvalidInput->hide();
 }
 
-EditScientist::~EditScientist() {
+EditScientistDialog::~EditScientistDialog() {
     delete ui;
 }
 
-Scientist EditScientist::getScientist() {
+Scientist EditScientistDialog::getScientist() {
     return newScientist;
 }
 
-bool EditScientist::success() {
+bool EditScientistDialog::success() {
     return succesful;
 }
 
-void EditScientist::on_RadioStillAlive_toggled(bool checked) {
+void EditScientistDialog::on_RadioStillAlive_toggled(bool checked) {
     if(checked) {
         ui->InputDeathYear->setEnabled(false);
     }
@@ -33,11 +33,11 @@ void EditScientist::on_RadioStillAlive_toggled(bool checked) {
     }
 }
 
-void EditScientist::on_Cancel_clicked() {
+void EditScientistDialog::on_Cancel_clicked() {
     close();
 }
 
-void EditScientist::on_S_add_ok_clicked() {
+void EditScientistDialog::on_S_add_ok_clicked() {
     newScientist.name = ui->InputScientistName->text().toStdString();
     newScientist.dateOfBirth = ui->InputBirthYear->text().toStdString();
     if(ui->RadioStillAlive->isChecked()) {
@@ -62,7 +62,7 @@ void EditScientist::on_S_add_ok_clicked() {
     }
 }
 
-bool EditScientist::correctInput(){
+bool EditScientistDialog::correctInput(){
     if(newScientist.name == "") {
         ui->InvalidInput->setText("Invalid name.");
         ui->InvalidInput->show();
@@ -84,7 +84,7 @@ bool EditScientist::correctInput(){
     return true;
 }
 
-void EditScientist::startingInput(Scientist oldScientist){
+void EditScientistDialog::startingInput(Scientist oldScientist){
     ui->InputScientistName->setText(QString::fromStdString(oldScientist.name));
     ui->InputBirthYear->setText(QString::fromStdString(oldScientist.dateOfBirth));
     if(oldScientist.dateOfDeath != "----"){
@@ -105,7 +105,7 @@ void EditScientist::startingInput(Scientist oldScientist){
     newScientist = oldScientist;
 }
 
-void EditScientist::on_browseImagePath_clicked() {
+void EditScientistDialog::on_browseImagePath_clicked() {
     QString filename = QFileDialog::getOpenFileName(
                                 this,
                                 "Browse for image",

@@ -9,13 +9,13 @@ namespace Ui {
 class EditScientist;
 }
 
-class EditScientist : public QDialog
+class EditScientistDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit EditScientist(QWidget *parent = 0);
-    ~EditScientist();
+    explicit EditScientistDialog(QWidget *parent = 0);
+    ~EditScientistDialog();
     Scientist getScientist();
     bool correctInput();
     bool success();

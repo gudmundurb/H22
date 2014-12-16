@@ -396,7 +396,7 @@ void MainWindow::on_actionEdit_Scientist_triggered() {
             break;
         }
     }
-    EditScientist dialog;
+    EditScientistDialog dialog;
     dialog.startingInput(tempScientist);
     dialog.exec();
     if(dialog.success()) {
@@ -416,7 +416,7 @@ void MainWindow::on_actionEdit_computer_triggered() {
             break;
         }
     }
-    editComputer dialog;
+    EditComputerDialog dialog;
     dialog.startingInput(tempComputer);
     dialog.exec();
     if(dialog.success()) {
