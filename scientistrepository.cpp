@@ -87,15 +87,16 @@ QSqlDatabase ScientistRepository::getDatabaseConnection() {
 }
 
 void ScientistRepository::editScientist(Scientist oldScientist, Scientist newScientist) {
-
     scientistDB = getDatabaseConnection();
-            QSqlQuery query(scientistDB);
-            query.prepare("UPDATE Scientists (Name, Dob, Dod, Gender)VALUES(:name, :dob, :dod, :gender)");
-
-            QString q = "SET :name = " + QString::fromStdString(newScientist.name) +
-                    ", :dob = " + QString::fromStdString(newScientist.dateOfBirth) +
-                    ", :dod = " + QString::fromStdString(newScientist.dateOfDeath) +
-                    ", :gender = " + QString::fromStdString(newScientist.gender) +
-                    " WHERE ID = " + QString::fromStdString(oldScientist.id);
-    query.exec(q);
+    QSqlQuery query(scientistDB);
+    QString qu =    "UPDATE Scientists ";
+    qu +=           "SET Name=':name',Dob=':dob',Dod=':dod',Gender=':gender'";
+    qu +=           "WHERE ID=:id";
+    query.prepare(qu);
+    query.bindValue(":name", QString::fromStdString(newScientist.name));
+    query.bindValue(":dob", QString::fromStdString(newScientist.dateOfBirth));
+    query.bindValue(":dod", QString::fromStdString(newScientist.dateOfDeath));
+    query.bindValue(":gender", QString::fromStdString(newScientist.gender));
+    query.bindValue(":id", QString::fromStdString(oldScientist.id));
+    query.exec();
 }
