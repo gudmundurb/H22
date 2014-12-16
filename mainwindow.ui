@@ -60,7 +60,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Display information from the database.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="display_tab">
      <attribute name="title">
@@ -577,7 +577,7 @@
      <widget class="QTableWidget" name="scientist_table_link">
       <property name="geometry">
        <rect>
-        <x>9</x>
+        <x>10</x>
         <y>50</y>
         <width>201</width>
         <height>321</height>
