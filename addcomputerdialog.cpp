@@ -1,8 +1,5 @@
 #include "addcomputerdialog.h"
 #include "ui_addcomputerdialog.h"
-#include <QFileDialog>
-#include <QDebug>
-#include <QPixmap>
 
 addComputerDialog::addComputerDialog(QWidget *parent) :
     QDialog(parent),
@@ -110,12 +107,4 @@ void addComputerDialog::on_browseImagePath_clicked() {
     ui->ComputerImageLabel->setScaledContents(true);
 //myndakóði endar hér
 }
-/*
-void addComputerDialog::setComputer(Computer c) {
-    QPixmap pixmap(QString::fromStdString(c.c_imagefilepath));
 
-    ui->ComputerImageLabel->setPixmap(pixmap);
-
-    ui->ComputerImageLabel->setScaledContents(true);
-}
-*/
