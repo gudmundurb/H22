@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>460</height>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>600</width>
-    <height>460</height>
+    <width>500</width>
+    <height>400</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -32,7 +32,7 @@
    <string>Additional information</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
   </property>
   <property name="toolTipDuration">
@@ -41,9 +41,9 @@
   <widget class="QLabel" name="scientist_name">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>561</width>
+     <x>280</x>
+     <y>20</y>
+     <width>261</width>
      <height>41</height>
     </rect>
    </property>
@@ -62,8 +62,8 @@
   <widget class="Line" name="name_line">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>50</y>
+     <x>90</x>
+     <y>260</y>
      <width>451</width>
      <height>20</height>
     </rect>
@@ -75,8 +75,8 @@
   <widget class="QLabel" name="born_year">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>70</y>
+     <x>440</x>
+     <y>150</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -138,8 +138,8 @@
   <widget class="QLabel" name="gender">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>60</y>
+     <x>140</x>
+     <y>170</y>
      <width>381</width>
      <height>41</height>
     </rect>
@@ -180,10 +180,10 @@
   <widget class="QTableWidget" name="computer_table">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>290</y>
+     <x>20</x>
+     <y>300</y>
      <width>541</width>
-     <height>151</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -296,8 +296,8 @@
   <widget class="QLabel" name="ScientistImageLabel">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>100</y>
+     <x>20</x>
+     <y>10</y>
      <width>181</width>
      <height>161</height>
     </rect>
@@ -318,7 +318,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources.qrc">:/icons/noImage.png</pixmap>
+    <pixmap>:/icons/noImage.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -326,7 +326,7 @@
   </widget>
   <action name="actionUnlink_computer">
    <property name="icon">
-    <iconset resource="resources.qrc">
+    <iconset>
      <normaloff>:/icons/broken_link.png</normaloff>:/icons/broken_link.png</iconset>
    </property>
    <property name="text">
@@ -334,8 +334,6 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
