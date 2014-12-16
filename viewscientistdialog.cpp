@@ -77,16 +77,6 @@ void ViewScientistDialog::displayScientist() {
     }
 }
 
-void ViewScientistDialog::on_Edit_button_clicked()
-{
-    EditScientist edit;
-    edit.startingInput(scientist);
-    edit.exec();
-    if(edit.success()) {
-        service.updateScientist(scientist, edit.getScientist());
-    }
-}
-
 void ViewScientistDialog::on_actionUnlink_computer_triggered() {
     int currentRow = ui->computer_table->currentRow();
     std::string computerId = ui->computer_table->item(currentRow, 0)->text().toStdString();
