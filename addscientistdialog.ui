@@ -32,7 +32,7 @@
    <string>Add a new scientist</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources.qrc">
     <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -175,7 +175,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="ComputerImageLabel">
+  <widget class="QLabel" name="ScientistImageLabel">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -200,7 +200,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>:/icons/noImage.png</pixmap>
+    <pixmap resource="resources.qrc">:/icons/noImage.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -264,6 +264,8 @@
   <tabstop>Cancel</tabstop>
   <tabstop>C_input_imagepath</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

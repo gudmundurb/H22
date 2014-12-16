@@ -5,7 +5,6 @@
 #include "scientist.h"
 #include "computer.h"
 #include "editscientist.h"
-#include "services.h"
 
 namespace Ui {
 class ViewScientistDialog;
@@ -37,7 +36,6 @@ private:
     void displayScientist();
     void displayPicture();
     Ui::ViewScientistDialog *ui;
-    Services service;
 };
 
 #endif // VIEWSCIENTISTDIALOG_H

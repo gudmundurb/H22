@@ -27,6 +27,8 @@ private slots:
 
     void on_S_add_ok_clicked();
 
+    void on_browseImagePath_clicked();
+
 private:
     Scientist oldScientist;
     Ui::EditScientist *ui;

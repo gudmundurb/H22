@@ -9,11 +9,6 @@ AddScientistDialog::AddScientistDialog(QWidget *parent) :
     ui(new Ui::AddScientistDialog)
 {
     ui->setupUi(this);
-    newScientist.dateOfBirth = "";
-    newScientist.dateOfDeath = "";
-    newScientist.name = "";
-    newScientist.gender = "";
-    newScientist.s_imagefilepath = "";
     succesful = false;
     ui->InvalidInput->hide();
 }
@@ -109,7 +104,7 @@ void AddScientistDialog::on_browseImagePath_clicked()
     ui->C_input_imagepath->setText(filename);
 //myndakóði hefst hér (debug)
     QPixmap pixmap(filename);
-    ui->ComputerImageLabel->setPixmap(pixmap);
-    ui->ComputerImageLabel->setScaledContents(true);
+    ui->ScientistImageLabel->setPixmap(pixmap);
+    ui->ScientistImageLabel->setScaledContents(true);
 //myndakóði endar hér
 }

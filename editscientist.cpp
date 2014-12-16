@@ -1,20 +1,13 @@
 #include "editscientist.h"
 #include "ui_editscientist.h"
+#include <QFileDialog>
+#include <QPixmap>
 
 EditScientist::EditScientist(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EditScientist)
 {
     ui->setupUi(this);
-    newScientist.dateOfBirth = oldScientist.dateOfBirth;
-    if(oldScientist.dateOfDeath != "----"){
-        newScientist.dateOfDeath = oldScientist.dateOfDeath;
-    }
-    else{
-        ui->RadioStillAlive->toggle();
-    }
-    newScientist.name = oldScientist.name;
-    newScientist.gender = oldScientist.gender;
     succesful = false;
     ui->InvalidInput->hide();
 }
@@ -59,6 +52,7 @@ void EditScientist::on_S_add_ok_clicked() {
     else {
         newScientist.gender = "F";
     }
+    newScientist.s_imagefilepath = ui->C_input_imagepath->text().toStdString();
     if(correctInput()) {
         succesful = true;
         close();
@@ -99,5 +93,24 @@ void EditScientist::startingInput(Scientist oldScientist){
     if(oldScientist.gender == "F") {
         ui->ScientistGender->setCurrentIndex(1);
     }
+    ui->C_input_imagepath->setText(QString::fromStdString(oldScientist.s_imagefilepath));
+    if(oldScientist.s_imagefilepath != "") {
+        QPixmap pixmap(QString::fromStdString(oldScientist.s_imagefilepath));
+        ui->ScientistImageLabel->setPixmap(pixmap);
+        ui->ScientistImageLabel->setScaledContents(true);
+    }
     newScientist = oldScientist;
+}
+
+void EditScientist::on_browseImagePath_clicked() {
+    QString filename = QFileDialog::getOpenFileName(
+                                this,
+                                "Browse for image",
+                                 "",
+                                 "Image files (*.png *.jpg *.jpeg)"
+                                 );
+    ui->C_input_imagepath->setText(filename);
+    QPixmap pixmap(filename);
+    ui->ScientistImageLabel->setPixmap(pixmap);
+    ui->ScientistImageLabel->setScaledContents(true);
 }
