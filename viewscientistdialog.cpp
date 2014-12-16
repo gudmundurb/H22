@@ -59,3 +59,8 @@ void ViewScientistDialog::displayScientist() {
     QString age = QString::number(QString::fromStdString(scientist.dateOfDeath).toInt() - QString::fromStdString(scientist.dateOfBirth).toInt());
     ui->aged->setText("Age: " + age);
 }
+
+void ViewScientistDialog::on_Edit_button_clicked()
+{
+
+}

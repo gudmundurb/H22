@@ -17,6 +17,7 @@ public:
     //Adds a scientist to the database
     void add(Scientist);
     void remove(std::string id);
+    void editScientist(Scientist oldScientist, Scientist newScientist);
     //Gets a new connection to the database file
     QSqlDatabase getDatabaseConnection();
     // Returns all scientists that match the search term

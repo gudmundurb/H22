@@ -19,6 +19,9 @@ public:
     void setConnectedComputers(const std::vector<Computer> &input);
     void setScientist(const Scientist &input);
     void setup();
+private slots:
+    void on_Edit_button_clicked();
+
 private:
     std::vector<Computer> connectedComputers;
     Scientist scientist;

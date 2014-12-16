@@ -56,3 +56,6 @@ std::vector<Computer> Services::computerLink(std::string scientist_id) {
     return linkRepository.getComputers(scientist_id);
 }
 
+void Services::updateScientist(Scientist oldScientist, Scientist newScientist) {
+    scientistRepository.editScientist(oldScientist, newScientist);
+}

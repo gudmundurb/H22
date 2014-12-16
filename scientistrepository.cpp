@@ -85,3 +85,16 @@ QSqlDatabase ScientistRepository::getDatabaseConnection() {
     }
     return db;
 }
+
+void ScientistRepository::editScientist(Scientist oldScientist, Scientist newScientist) {
+
+    scientistDB = getDatabaseConnection();
+    QString q = "UPDATE Scientists "
+                    "SET Name= " + QString::fromStdString(newScientist.name) +
+                    ", Dob= " + QString::fromStdString(newScientist.dateOfBirth) +
+                    ", Dod= " + QString::fromStdString(newScientist.dateOfDeath) +
+                    ", Gender= " + QString::fromStdString(newScientist.gender) +
+                    " WHERE ID= " + QString::fromStdString(oldScientist.id);
+    QSqlQuery query(scientistDB);
+    query.exec(q);
+}

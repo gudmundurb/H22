@@ -275,6 +275,19 @@
     </property>
    </column>
   </widget>
+  <widget class="QPushButton" name="Edit_button">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>20</y>
+     <width>113</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="resources.qrc"/>
