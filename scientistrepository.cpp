@@ -50,11 +50,11 @@ std::vector<Scientist> ScientistRepository::getList(QString sQuery) {
         query.exec(sQuery);
         while(query.next()) {
             Scientist s = Scientist();
-            s.id =          query.value("ID").toString().toStdString();
-            s.name =        query.value("Name").toString().toStdString();
-            s.dateOfBirth = query.value("Dob").toString().toStdString();
-            s.dateOfDeath = query.value("Dod").toString().toStdString();
-            s.gender =      query.value("Gender").toString().toStdString();
+            s.id =              query.value("ID").toString().toStdString();
+            s.name =            query.value("Name").toString().toStdString();
+            s.dateOfBirth =     query.value("Dob").toString().toStdString();
+            s.dateOfDeath =     query.value("Dod").toString().toStdString();
+            s.gender =          query.value("Gender").toString().toStdString();
             s.s_imagefilepath = query.value("ScientistImagePath").toString().toStdString();
             newList.push_back(s);
         }
@@ -95,7 +95,8 @@ void ScientistRepository::editScientist(Scientist oldScientist, Scientist newSci
     qu +=           "SET Name='" +  QString::fromStdString(newScientist.name) + "', ";
     qu +=           "Dob='" +       QString::fromStdString(newScientist.dateOfBirth) + "', ";
     qu +=           "Dod='" +       QString::fromStdString(newScientist.dateOfDeath) + "', ";
-    qu +=           "Gender='" + QString::fromStdString(newScientist.gender) + "' ";
+    qu +=           "Gender='" + QString::fromStdString(newScientist.gender) + "', ";
+    qu +=           "ScientistImagePath='" + QString::fromStdString(newScientist.s_imagefilepath) + "' ";
     qu +=           "WHERE ID=" + QString::fromStdString(oldScientist.id);
     query.exec(qu);
 }
