@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     addcomputerdialog.cpp \
     addscientistdialog.cpp \
     viewscientistdialog.cpp \
-    viewcomputerdialog.cpp
+    viewcomputerdialog.cpp \
+    editscientist.cpp
 
 HEADERS  += mainwindow.h \
     computer.h \
@@ -40,13 +41,15 @@ HEADERS  += mainwindow.h \
     addcomputerdialog.h \
     addscientistdialog.h \
     viewscientistdialog.h \
-    viewcomputerdialog.h
+    viewcomputerdialog.h \
+    editscientist.h
 
 FORMS    += mainwindow.ui \
     addcomputerdialog.ui \
     addscientistdialog.ui \
     viewscientistdialog.ui \
-    viewcomputerdialog.ui
+    viewcomputerdialog.ui \
+    editscientist.ui
 
 RESOURCES += \
     resources.qrc

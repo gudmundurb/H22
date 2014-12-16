@@ -62,5 +62,10 @@ void ViewScientistDialog::displayScientist() {
 
 void ViewScientistDialog::on_Edit_button_clicked()
 {
-
+    EditScientist edit;
+    edit.oldScientist = scientist;
+    edit.exec();
+    if(edit.success()) {
+        service.updateScientist(scientist, edit.getScientist());
+    }
 }
