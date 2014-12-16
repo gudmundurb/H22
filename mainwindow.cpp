@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->computer_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->computer_table_link->setEditTriggers(QAbstractItemView::NoEditTriggers);
     this->statusBar()->setSizeGripEnabled(false);
+    ui->scientist_table->setTabKeyNavigation(false);
 }
 
 MainWindow::~MainWindow() {
@@ -32,29 +33,37 @@ MainWindow::~MainWindow() {
 void MainWindow::setTable () {
     QString selectedTable = ui->display_table_combo->currentText();
     if(selectedTable == "Scientists") {
-        hideAllTables();
         hideAllSortCombos();
+        hideAllTables();
         ui->scientist_table->show();
+        ui->scientist_table->setEnabled(true);
         ui->sort_combo_scientist->show();
+        ui->sort_combo_scientist->setEnabled(true);
         setTableScientist();
     }
     else if(selectedTable == "Computers") {
-        hideAllTables();
         hideAllSortCombos();
+        hideAllTables();
         ui->computer_table->show();
+        ui->computer_table->setEnabled(true);
         ui->sort_combo_computer->show();
+        ui->sort_combo_computer->setEnabled(true);
         setTableComputer();
     }
 }
 
 void MainWindow::hideAllTables() {
     ui->scientist_table->hide();
+    ui->scientist_table->setEnabled(false);
     ui->computer_table->hide();
+    ui->computer_table->setEnabled(false);
 }
 
 void MainWindow::hideAllSortCombos() {
     ui->sort_combo_computer->hide();
+    ui->sort_combo_computer->setEnabled(false);
     ui->sort_combo_scientist->hide();
+    ui->sort_combo_computer->setEnabled(false);
 }
 
 void MainWindow::setTableScientist() {
@@ -310,10 +319,24 @@ void MainWindow::on_actionRemove_Computer_triggered() {
 
 void MainWindow::on_search_link_scientist_textChanged(const QString &arg1) {
     setLinkTableScientist();
+    if(currentlyDisplayedScientists.size() == 1) {
+        QString onlyID = ui->scientist_table_link->item(0, 0)->text();
+        ui->link_scientist_selected->setText(onlyID);
+    }
+    else {
+        ui->link_scientist_selected->clear();
+    }
 }
 
 void MainWindow::on_search_link_computer_textChanged(const QString &arg1) {
     setLinkTableComputer();
+    if(currentlyDisplayedComputers.size() == 1) {
+        QString onlyID = ui->computer_table_link->item(0, 0)->text();
+        ui->link_computer_selected->setText(onlyID);
+    }
+    else {
+        ui->link_computer_selected->clear();
+    }
 }
 
 void MainWindow::on_actionView_Scientist_triggered() {
