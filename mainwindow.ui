@@ -816,6 +816,15 @@
     <string>View computer</string>
    </property>
   </action>
+  <action name="actionEdit_Scientist">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Scientist</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
