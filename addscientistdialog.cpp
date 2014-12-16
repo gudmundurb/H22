@@ -13,6 +13,7 @@ AddScientistDialog::AddScientistDialog(QWidget *parent) :
     newScientist.dateOfDeath = "";
     newScientist.name = "";
     newScientist.gender = "";
+    newScientist.s_imagefilepath = "";
     succesful = false;
     ui->InvalidInput->hide();
 }
@@ -57,6 +58,7 @@ void AddScientistDialog::on_S_add_ok_clicked() {
     else {
         newScientist.gender = "F";
     }
+    newScientist.s_imagefilepath = ui->C_input_imagepath->text().toStdString();
     if(correctInput()) {
         succesful = true;
         close();
@@ -80,6 +82,13 @@ bool AddScientistDialog::correctInput(){
     if(!(ui->RadioStillAlive->isChecked())) {
         if(!util::validYear(newScientist.dateOfDeath)) {
             ui->InvalidInput->setText("Invalid death year.");
+            ui->InvalidInput->show();
+            return false;
+        }
+    }
+    if(newScientist.dateOfDeath != "----") {
+        if(QString::fromStdString(newScientist.dateOfDeath).toInt() < QString::fromStdString(newScientist.dateOfBirth).toInt()) {
+            ui->InvalidInput->setText("Death cannot happen before birth.");
             ui->InvalidInput->show();
             return false;
         }

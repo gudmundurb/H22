@@ -46,7 +46,6 @@ void editComputer::on_C_add_ok_clicked() {
         newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
     newComputer.name = ui->InputComputerName->text().toStdString();
-    newComputer.c_imagefilepath = ui->C_input_imagepath->text().toStdString();
     if(correctInput()) {
         successful = true;
         close();
