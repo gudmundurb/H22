@@ -60,7 +60,7 @@ void AddScientistDialog::on_S_add_ok_clicked() {
     }
 }
 
-bool AddScientistDialog::correctInput(){
+bool AddScientistDialog::correctInput() {
     if(newScientist.name == "") {
         ui->InvalidInput->setText("Invalid name.");
         ui->InvalidInput->show();
@@ -96,11 +96,8 @@ void AddScientistDialog::on_browseImagePath_clicked() {
                                  "",
                                  "Image files (*.png *.jpg *.jpeg)"
                                  );
-    qDebug() << filename;
     ui->C_input_imagepath->setText(filename);
-//myndakóði hefst hér (debug)
     QPixmap pixmap(filename);
     ui->ScientistImageLabel->setPixmap(pixmap);
     ui->ScientistImageLabel->setScaledContents(true);
-//myndakóði endar hér
 }

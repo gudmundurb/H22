@@ -1,11 +1,12 @@
 #ifndef ADDSCIENTISTDIALOG_H
 #define ADDSCIENTISTDIALOG_H
 
-#include <QDialog>
 #include "scientist.h"
+#include <QDialog>
 #include <QPixmap>
 #include <QFileDialog>
 #include <QDebug>
+
 namespace Ui {
 class AddScientistDialog;
 }
@@ -20,6 +21,7 @@ public:
     Scientist getScientist();
     bool correctInput();
     bool success();
+
 private slots:
     void on_RadioStillAlive_toggled(bool checked);
 

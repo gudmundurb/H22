@@ -14,9 +14,9 @@ class ScientistRepository {
 public:
     ScientistRepository();
     ~ScientistRepository();
-    //Adds a scientist to the database
     void add(Scientist);
     void remove(std::string id);
+    //Edits an existing scientist in the database
     void editScientist(Scientist oldScientist, Scientist newScientist);
     //Gets a new connection to the database file
     QSqlDatabase getDatabaseConnection();

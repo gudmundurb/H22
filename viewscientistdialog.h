@@ -1,10 +1,10 @@
 #ifndef VIEWSCIENTISTDIALOG_H
 #define VIEWSCIENTISTDIALOG_H
 
-#include <QDialog>
 #include "scientist.h"
 #include "computer.h"
 #include "editscientist.h"
+#include <QDialog>
 #include <QDebug>
 #include <QDate>
 #include <QMenu>
@@ -21,19 +21,20 @@ class ViewScientistDialog : public QDialog
 public:
     explicit ViewScientistDialog(QWidget *parent = 0);
     ~ViewScientistDialog();
-    void setConnectedComputers(const std::vector<Computer> &input);
-    void setScientist(const Scientist &input);
+    void setConnectedComputers(std::vector<Computer> input);
+    void setScientist(Scientist input);
     void setup();
     bool wantRemove();
     std::vector<std::string> getRemoveIds();
+
 private slots:
     void on_actionUnlink_computer_triggered();
 
     void on_computer_table_customContextMenuRequested(const QPoint &pos);
 
 private:
-    std::vector<Computer> connectedComputers;
     Scientist scientist;
+    std::vector<Computer> connectedComputers;
     bool wantsToRemoveLinks;
     std::vector<std::string> idsToRemove;
     void setTable();

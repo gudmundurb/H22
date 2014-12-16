@@ -1,9 +1,10 @@
 #ifndef EDITSCIENTIST_H
 #define EDITSCIENTIST_H
 
-#include <QDialog>
 #include "scientist.h"
-#include <cctype>
+#include <QDialog>
+#include <QFileDialog>
+#include <QPixmap>
 
 namespace Ui {
 class EditScientist;
@@ -20,6 +21,7 @@ public:
     bool correctInput();
     bool success();
     void startingInput(Scientist oldScientist);
+
 private slots:
     void on_RadioStillAlive_toggled(bool checked);
 

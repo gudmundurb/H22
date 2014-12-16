@@ -1,8 +1,8 @@
 #ifndef ADDCOMPUTERDIALOG_H
 #define ADDCOMPUTERDIALOG_H
 
-#include <QDialog>
 #include "services.h"
+#include <QDialog>
 #include <QFileDialog>
 #include <QDebug>
 #include <QPixmap>
@@ -21,13 +21,16 @@ public:
     Computer getComputer();
     bool success();
     bool correctInput();
-    //void setComputer(Computer c);
 
 private slots:
     void on_C_add_ok_clicked();
+
     void on_RadioWasBuilt_toggled(bool checked);
+
     void on_Cancel_clicked();
+
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
+
     void on_browseImagePath_clicked();
 
 private:

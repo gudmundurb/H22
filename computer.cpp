@@ -34,7 +34,7 @@ bool Computer::contains(std::string str) {
 }
 
 std::string Computer::toString() {
-    return id + " " + name + " " + dateOfBuild + " " + type + " " + built;  //no filepath here currently (debug)
+    return id + " " + name + " " + dateOfBuild + " " + type + " " + built;
 }
 
 

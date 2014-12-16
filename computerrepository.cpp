@@ -91,10 +91,11 @@ void ComputerRepository::editComputer(Computer oldComputer, Computer newComputer
     computerDB = getDatabaseConnection();
     QSqlQuery query(computerDB);
     QString qu =    "UPDATE Computers ";
-    qu +=           "SET Computer='" +  QString::fromStdString(newComputer.name) + "', ";
-    qu +=           "BuiltYear='" +       QString::fromStdString(newComputer.dateOfBuild) + "', ";
-    qu +=           "Type='" +       QString::fromStdString(newComputer.type) + "', ";
-    qu +=           "WasBuilt='" + QString::fromStdString(newComputer.built) + "' ";
-    qu +=           "WHERE ID=" + QString::fromStdString(oldComputer.id);
+    qu +=           "SET Computer='" + QString::fromStdString(newComputer.name) + "', ";
+    qu +=           "BuiltYear='" + QString::fromStdString(newComputer.dateOfBuild) + "', ";
+    qu +=           "Type='" + QString::fromStdString(newComputer.type) + "', ";
+    qu +=           "WasBuilt='" + QString::fromStdString(newComputer.built) +  "', ";
+    qu +=           "ComputerImagePath='" + QString::fromStdString(newComputer.c_imagefilepath) + "' ";
+    qu +=           "WHERE ID=" +      QString::fromStdString(oldComputer.id);
     query.exec(qu);
 }

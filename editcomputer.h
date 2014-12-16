@@ -2,7 +2,6 @@
 #define EDITCOMPUTER_H
 
 #include "computer.h"
-#include <cctype>
 #include <QDialog>
 #include <QPixmap>
 #include <QFileDialog>
@@ -22,11 +21,16 @@ public:
     bool success();
     bool correctInput();
     void startingInput(Computer oldComputer);
+
 private slots:
     void on_C_add_ok_clicked();
+
     void on_RadioWasBuilt_toggled(bool checked);
+
     void on_Cancel_clicked();
+
     void on_TypeDropDown_currentIndexChanged(const QString &arg1);
+
     void on_browseImagePath_clicked();
 
 private:

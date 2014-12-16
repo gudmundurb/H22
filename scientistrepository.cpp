@@ -91,12 +91,12 @@ QSqlDatabase ScientistRepository::getDatabaseConnection() {
 void ScientistRepository::editScientist(Scientist oldScientist, Scientist newScientist) {
     scientistDB = getDatabaseConnection();
     QSqlQuery query(scientistDB);
-    QString qu =    "UPDATE Scientists ";
-    qu +=           "SET Name='" +  QString::fromStdString(newScientist.name) + "', ";
-    qu +=           "Dob='" +       QString::fromStdString(newScientist.dateOfBirth) + "', ";
-    qu +=           "Dod='" +       QString::fromStdString(newScientist.dateOfDeath) + "', ";
-    qu +=           "Gender='" + QString::fromStdString(newScientist.gender) + "', ";
-    qu +=           "ScientistImagePath='" + QString::fromStdString(newScientist.s_imagefilepath) + "' ";
-    qu +=           "WHERE ID=" + QString::fromStdString(oldScientist.id);
-    query.exec(qu);
+    QString q =    "UPDATE Scientists ";
+    q +=           "SET Name='" +  QString::fromStdString(newScientist.name) + "', ";
+    q +=           "Dob='" +       QString::fromStdString(newScientist.dateOfBirth) + "', ";
+    q +=           "Dod='" +       QString::fromStdString(newScientist.dateOfDeath) + "', ";
+    q +=           "Gender='" +    QString::fromStdString(newScientist.gender) + "', ";
+    q +=           "ScientistImagePath='" + QString::fromStdString(newScientist.s_imagefilepath) + "' ";
+    q +=           "WHERE ID=" +   QString::fromStdString(oldScientist.id);
+    query.exec(q);
 }

@@ -1,7 +1,5 @@
 #include "editscientist.h"
 #include "ui_editscientist.h"
-#include <QFileDialog>
-#include <QPixmap>
 
 EditScientistDialog::EditScientistDialog(QWidget *parent) :
     QDialog(parent),

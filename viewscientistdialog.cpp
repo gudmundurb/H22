@@ -12,11 +12,11 @@ ViewScientistDialog::~ViewScientistDialog() {
     delete ui;
 }
 
-void ViewScientistDialog::setConnectedComputers(const std::vector<Computer> &input) {
+void ViewScientistDialog::setConnectedComputers(std::vector<Computer> input) {
     connectedComputers = input;
 }
 
-void ViewScientistDialog::setScientist(const Scientist &input) {
+void ViewScientistDialog::setScientist(Scientist input) {
     scientist = input;
 }
 

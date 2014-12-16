@@ -99,12 +99,9 @@ void AddComputerDialog::on_browseImagePath_clicked() {
                                  "",
                                  "Image files (*.png *.jpg *.jpeg)"
                                  );
-    qDebug() << filename;
     ui->C_input_imagepath->setText(filename);
-//myndakóði hefst hér (debug)
     QPixmap pixmap(filename);
     ui->ComputerImageLabel->setPixmap(pixmap);
     ui->ComputerImageLabel->setScaledContents(true);
-//myndakóði endar hér
 }
 

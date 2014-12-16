@@ -179,19 +179,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="addWebpage">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>150</y>
-     <width>101</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add webpage...</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="ComputerImageLabel">
    <property name="geometry">
     <rect>

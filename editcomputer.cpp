@@ -6,15 +6,6 @@ EditComputerDialog::EditComputerDialog(QWidget *parent) :
     ui(new Ui::editComputer) {
     ui->setupUi(this);
     successful = false;
-    if(oldComputer.built == "yes"){
-        newComputer.built = oldComputer.built;
-        newComputer.dateOfBuild = oldComputer.dateOfBuild;
-    }
-    else{
-        ui->RadioWasBuilt->toggle();
-    }
-    newComputer.name = oldComputer.name;
-    newComputer.type = oldComputer.type;
     ui->InvalidInput->hide();
 }
 
@@ -46,6 +37,7 @@ void EditComputerDialog::on_C_add_ok_clicked() {
         newComputer.type = ui->TypeDropDown->currentText().toStdString();
     }
     newComputer.name = ui->InputComputerName->text().toStdString();
+    newComputer.c_imagefilepath = ui->C_input_imagepath->text().toStdString();
     if(correctInput()) {
         successful = true;
         close();
@@ -98,9 +90,8 @@ bool EditComputerDialog::correctInput() {
 
 void EditComputerDialog::startingInput(Computer oldComputer){
     ui->InputComputerName->setText(QString::fromStdString(oldComputer.name));
-    ui->InputComputerType->setText(QString::fromStdString(oldComputer.type));
     if(oldComputer.built == "yes"){
-        ui->RadioWasBuilt->toggled(true);
+        ui->RadioWasBuilt->toggle();
         ui->InputBuiltYear->setText(QString::fromStdString(oldComputer.dateOfBuild));
     }
     if(oldComputer.type == "Mechanical") {

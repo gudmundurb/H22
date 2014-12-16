@@ -82,6 +82,7 @@ void ViewComputerDialog::on_actionUnlink_scientist_triggered() {
     wantsToRemoveLinks = true;
 }
 
+
 void ViewComputerDialog::displayPicture() {
     if(computer.c_imagefilepath != "") {
         QPixmap pixmap(QString::fromStdString(computer.c_imagefilepath));

@@ -1,9 +1,9 @@
 #ifndef VIEWCOMPUTERDIALOG_H
 #define VIEWCOMPUTERDIALOG_H
 
-#include <QDialog>
 #include "scientist.h"
 #include "computer.h"
+#include <QDialog>
 #include <QDate>
 #include <QMenu>
 
@@ -23,14 +23,15 @@ public:
     void setup();
     bool wantRemove();
     std::vector<std::string> getRemoveIds();
+
 private slots:
     void on_scientist_table_customContextMenuRequested(const QPoint &pos);
 
     void on_actionUnlink_scientist_triggered();
 
 private:
-    std::vector<Scientist> connectedScientists;
     Computer computer;
+    std::vector<Scientist> connectedScientists;
     bool wantsToRemoveLinks;
     std::vector<std::string> idsToRemove;
     void setTable();

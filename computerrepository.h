@@ -22,7 +22,7 @@ public:
     std::vector<Computer> search(std::string searchTerm);
     // Returns a list ordered by column and modifier
     std::vector<Computer> list(std::string col,std::string mod);
-
+    //Updates a computer already in the database
     void editComputer(Computer oldComputer, Computer newComputer);
 private:
     //The database connection that is used to retrieve data and persist data
