@@ -1,7 +1,7 @@
 #include "addcomputerdialog.h"
 #include "ui_addcomputerdialog.h"
 
-addComputerDialog::addComputerDialog(QWidget *parent) :
+AddComputerDialog::AddComputerDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::addComputerDialog) {
     ui->setupUi(this);
@@ -13,19 +13,19 @@ addComputerDialog::addComputerDialog(QWidget *parent) :
     ui->InvalidInput->hide();
 }
 
-addComputerDialog::~addComputerDialog() {
+AddComputerDialog::~AddComputerDialog() {
     delete ui;
 }
 
-Computer addComputerDialog::getComputer() {
+Computer AddComputerDialog::getComputer() {
     return newComputer;
 }
 
-bool addComputerDialog::success() {
+bool AddComputerDialog::success() {
     return successful;
 }
 
-void addComputerDialog::on_C_add_ok_clicked() {
+void AddComputerDialog::on_C_add_ok_clicked() {
     if(ui->RadioWasBuilt->isChecked()) {
         newComputer.built = "yes";
         newComputer.dateOfBuild = ui->InputBuiltYear->text().toStdString();
@@ -48,7 +48,7 @@ void addComputerDialog::on_C_add_ok_clicked() {
     }
 }
 
-void addComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
+void AddComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
     if(checked) {
         ui->InputBuiltYear->setEnabled(true);
     }
@@ -57,11 +57,11 @@ void addComputerDialog::on_RadioWasBuilt_toggled(bool checked) {
     }
 }
 
-void addComputerDialog::on_Cancel_clicked() {
+void AddComputerDialog::on_Cancel_clicked() {
     close();
 }
 
-void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
+void AddComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1) {
     if(ui->TypeDropDown->currentText().toStdString() == "Other...") {
         ui->InputComputerType->setEnabled(true);
     }
@@ -70,7 +70,7 @@ void addComputerDialog::on_TypeDropDown_currentIndexChanged(const QString &arg1)
     }
 }
 
-bool addComputerDialog::correctInput() {
+bool AddComputerDialog::correctInput() {
     if(newComputer.name == "") {
         ui->InvalidInput->setText("Invalid name.");
         ui->InvalidInput->show();
@@ -92,7 +92,7 @@ bool addComputerDialog::correctInput() {
     return true;
 }
 
-void addComputerDialog::on_browseImagePath_clicked() {
+void AddComputerDialog::on_browseImagePath_clicked() {
     QString filename = QFileDialog::getOpenFileName(
                                 this,
                                 "Browse for image",

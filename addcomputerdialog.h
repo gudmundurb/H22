@@ -11,13 +11,13 @@ namespace Ui {
 class addComputerDialog;
 }
 
-class addComputerDialog : public QDialog
+class AddComputerDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit addComputerDialog(QWidget *parent = 0);
-    ~addComputerDialog();
+    explicit AddComputerDialog(QWidget *parent = 0);
+    ~AddComputerDialog();
     Computer getComputer();
     bool success();
     bool correctInput();

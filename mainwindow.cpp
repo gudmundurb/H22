@@ -205,7 +205,7 @@ void MainWindow::on_add_button_clicked() {
         }
     }
     else if(selectedTable == "Computers") {
-        addComputerDialog add;
+        AddComputerDialog add;
         add.exec();
         if(add.success()) {
             service.addComputer(add.getComputer());
