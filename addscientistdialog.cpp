@@ -89,8 +89,7 @@ bool AddScientistDialog::correctInput(){
     return true;
 }
 
-void AddScientistDialog::on_browseImagePath_clicked()
-{
+void AddScientistDialog::on_browseImagePath_clicked() {
     QString filename = QFileDialog::getOpenFileName(
                                 this,
                                 "Browse for image",
