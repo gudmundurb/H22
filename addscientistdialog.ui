@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Add a new scientist</string>
+   <string>Add</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -224,7 +224,7 @@
     <rect>
      <x>210</x>
      <y>220</y>
-     <width>75</width>
+     <width>93</width>
      <height>21</height>
     </rect>
    </property>
@@ -259,10 +259,10 @@
   <tabstop>RadioStillAlive</tabstop>
   <tabstop>InputDeathYear</tabstop>
   <tabstop>ScientistGender</tabstop>
+  <tabstop>C_input_imagepath</tabstop>
   <tabstop>browseImagePath</tabstop>
   <tabstop>S_add_ok</tabstop>
   <tabstop>Cancel</tabstop>
-  <tabstop>C_input_imagepath</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>

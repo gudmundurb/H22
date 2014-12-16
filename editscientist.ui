@@ -39,9 +39,9 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>210</y>
+     <y>220</y>
      <width>93</width>
-     <height>28</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -52,9 +52,9 @@
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>210</y>
+     <y>220</y>
      <width>93</width>
-     <height>28</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -64,8 +64,8 @@
   <widget class="QComboBox" name="ScientistGender">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>140</y>
+     <x>200</x>
+     <y>130</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -87,9 +87,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>170</y>
-     <width>291</width>
+     <x>200</x>
+     <y>180</y>
+     <width>311</width>
      <height>31</height>
     </rect>
    </property>
@@ -108,8 +108,8 @@
   <widget class="QRadioButton" name="RadioStillAlive">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>90</y>
+     <x>320</x>
+     <y>80</y>
      <width>71</width>
      <height>31</height>
     </rect>
@@ -121,8 +121,8 @@
   <widget class="QLineEdit" name="InputScientistName">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>40</y>
+     <x>200</x>
+     <y>30</y>
      <width>291</width>
      <height>31</height>
     </rect>
@@ -140,8 +140,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>90</y>
+     <x>200</x>
+     <y>80</y>
      <width>100</width>
      <height>31</height>
     </rect>
@@ -159,8 +159,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>90</y>
+     <x>390</x>
+     <y>80</y>
      <width>100</width>
      <height>31</height>
     </rect>
@@ -208,7 +208,7 @@
     <rect>
      <x>200</x>
      <y>220</y>
-     <width>75</width>
+     <width>93</width>
      <height>21</height>
     </rect>
    </property>
@@ -230,6 +230,17 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>InputScientistName</tabstop>
+  <tabstop>InputBirthYear</tabstop>
+  <tabstop>RadioStillAlive</tabstop>
+  <tabstop>InputDeathYear</tabstop>
+  <tabstop>ScientistGender</tabstop>
+  <tabstop>C_input_imagepath</tabstop>
+  <tabstop>browseImagePath</tabstop>
+  <tabstop>S_add_ok</tabstop>
+  <tabstop>Cancel</tabstop>
+ </tabstops>
  <resources>
   <include location="resources.qrc"/>
  </resources>

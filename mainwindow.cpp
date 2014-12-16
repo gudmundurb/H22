@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->computer_table->setColumnWidth(2,100);
     ui->scientist_table->setColumnWidth(3,150);
     ui->computer_table->setColumnWidth(3,150);
+    this->statusBar()->setSizeGripEnabled(false);
 }
 
 MainWindow::~MainWindow() {
