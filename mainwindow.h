@@ -59,6 +59,10 @@ private slots:
 
     void on_actionView_Computer_triggered();
 
+    void on_actionEdit_Scientist_triggered();
+
+    void on_actionEdit_computer_triggered();
+
 private:
     Ui::MainWindow *ui;
     Services service;

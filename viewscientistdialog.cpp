@@ -1,6 +1,8 @@
 #include "viewscientistdialog.h"
 #include "ui_viewscientistdialog.h"
 #include <QDebug>
+#include <QDate>
+
 ViewScientistDialog::ViewScientistDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ViewScientistDialog)
@@ -55,9 +57,15 @@ void ViewScientistDialog::displayScientist() {
     else {
         ui->gender->setText("Female");
     }
-
-    QString age = QString::number(QString::fromStdString(scientist.dateOfDeath).toInt() - QString::fromStdString(scientist.dateOfBirth).toInt());
-    ui->aged->setText("Age: " + age);
+    int thisYear = QDate::currentDate().year();
+    if(scientist.dateOfDeath != "----") {
+        QString age = QString::number(QString::fromStdString(scientist.dateOfDeath).toInt() - QString::fromStdString(scientist.dateOfBirth).toInt());
+        ui->aged->setText("Age: " + age);
+    }
+    else {
+        QString age = QString::number(thisYear - QString::fromStdString(scientist.dateOfBirth).toInt());
+        ui->aged->setText("Age: " + age);
+    }
 }
 
 void ViewScientistDialog::on_Edit_button_clicked()

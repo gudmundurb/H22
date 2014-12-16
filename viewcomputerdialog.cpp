@@ -58,8 +58,13 @@ void ViewComputerDialog::displayComputer() {
     ui->was_built->setText(QString::fromStdString(computer.built));
     ui->type->setText(QString::fromStdString(computer.type));
     int thisYear = QDate::currentDate().year();
-    QString age = QString::number(thisYear - QString::fromStdString(computer.dateOfBuild).toInt());
-    ui->aged->setText("Age: " + age);
+    if(computer.built == "yes") {
+        QString age = QString::number(thisYear - QString::fromStdString(computer.dateOfBuild).toInt());
+        ui->aged->setText("Age: " + age);
+    }
+    else {
+        ui->aged->setText("");
+    }
 }
 
 void ViewComputerDialog::on_scientist_table_customContextMenuRequested(const QPoint &pos) {

@@ -4,6 +4,7 @@
 #include "addscientistdialog.h"
 #include "viewscientistdialog.h"
 #include "viewcomputerdialog.h"
+#include "editscientist.h"
 
 #include <QMenu>
 #include <QMessageBox>
@@ -274,6 +275,7 @@ void MainWindow::on_link_button_clicked() {
 void MainWindow::on_scientist_table_customContextMenuRequested(const QPoint &pos) {
     QMenu menu;
     menu.addAction(ui->actionView_Scientist);
+    menu.addAction(ui->actionEdit_Scientist);
     menu.addAction(ui->actionRemove_scientist);
     menu.exec(QCursor::pos());
 }
@@ -302,6 +304,7 @@ void MainWindow::on_actionRemove_scientist_triggered() {
 void MainWindow::on_computer_table_customContextMenuRequested(const QPoint &pos) {
     QMenu menu;
     menu.addAction(ui->actionView_Computer);
+    menu.addAction(ui->actionEdit_computer);
     menu.addAction(ui->actionRemove_Computer);
     menu.exec(QCursor::pos());
 }
@@ -384,4 +387,43 @@ void MainWindow::on_actionView_Computer_triggered() {
             service.removeLink(removeIds.at(i), computerId);
         }
     }
+}
+
+void MainWindow::on_actionEdit_Scientist_triggered() {
+    int row = ui->scientist_table->currentRow();
+    std::string scientistId = ui->scientist_table->item(row, 0)->text().toStdString();
+    Scientist tempScientist;
+    for(unsigned int i = 0; i < currentlyDisplayedScientists.size(); i++) {
+        if(currentlyDisplayedScientists[i].id == scientistId) {
+            tempScientist = currentlyDisplayedScientists[i];
+            break;
+        }
+    }
+    EditScientist dialog;
+    dialog.startingInput(tempScientist);
+    dialog.exec();
+    if(dialog.success()) {
+        service.updateScientist(tempScientist, dialog.getScientist());
+        ui->statusBar->showMessage("Scientist was updated.", 4500);
+    }
+    setTable();
+}
+
+void MainWindow::on_actionEdit_computer_triggered() {
+    int row = ui->computer_table->currentRow();
+    std::string computerId = ui->computer_table->item(row, 0)->text().toStdString();
+    Computer tempComputer;
+    for(unsigned int i = 0; i < currentlyDisplayedComputers.size(); i++) {
+        if(currentlyDisplayedComputers[i].id == computerId) {
+            tempComputer = currentlyDisplayedComputers[i];
+            break;
+        }
+    }
+    /*EditComputer dialog;
+    dialog.startingInput(tempComputer);
+    if(dialog.success()) {
+        service.updateComputer(tempComputer, dialog.getcomputer());
+        ui->statusBar->showMessage("Computer was updated.", 4500);
+    }
+    setTable();*/
 }

@@ -822,7 +822,16 @@
      <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
    </property>
    <property name="text">
-    <string>Edit Scientist</string>
+    <string>Edit scientist</string>
+   </property>
+  </action>
+  <action name="actionEdit_computer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit computer</string>
    </property>
   </action>
  </widget>
