@@ -12,11 +12,11 @@ ViewComputerDialog::~ViewComputerDialog() {
     delete ui;
 }
 
-void ViewComputerDialog::setConnectedScientists(const std::vector<Scientist> &input) {
+void ViewComputerDialog::setConnectedScientists(std::vector<Scientist> input) {
     connectedScientists = input;
 }
 
-void ViewComputerDialog::setComputer(const Computer &input) {
+void ViewComputerDialog::setComputer(Computer input) {
     computer = input;
 }
 
@@ -25,6 +25,14 @@ void ViewComputerDialog::setup() {
     displayComputer();
     ui->scientist_table->setColumnWidth(0,35);
     ui->scientist_table->setColumnWidth(1,200);
+}
+
+bool ViewComputerDialog::wantRemove() {
+    return wantsToRemoveLinks;
+}
+
+std::vector<std::string> ViewComputerDialog::getRemoveIds() {
+    return idsToRemove;
 }
 
 void ViewComputerDialog::setTable() {
@@ -50,6 +58,20 @@ void ViewComputerDialog::displayComputer() {
     ui->was_built->setText(QString::fromStdString(computer.built));
     ui->type->setText(QString::fromStdString(computer.type));
     int thisYear = QDate::currentDate().year();
-    QString age = "Age: " + QString::number(thisYear - QString::fromStdString(computer.dateOfBuild).toInt());
-    ui->aged->setText(age);
+    QString age = QString::number(thisYear - QString::fromStdString(computer.dateOfBuild).toInt());
+    ui->aged->setText("Age: " + age);
+}
+
+void ViewComputerDialog::on_scientist_table_customContextMenuRequested(const QPoint &pos) {
+    QMenu menu;
+    menu.addAction(ui->actionUnlink_scientist);
+    menu.exec(QCursor::pos());
+}
+
+void ViewComputerDialog::on_actionUnlink_scientist_triggered() {
+    int currentRow = ui->scientist_table->currentRow();
+    std::string scientistId = ui->scientist_table->item(currentRow, 0)->text().toStdString();
+    ui->scientist_table->setRowHidden(currentRow, true);
+    idsToRemove.push_back(scientistId);
+    wantsToRemoveLinks = true;
 }

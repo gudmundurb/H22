@@ -5,6 +5,7 @@
 #include "scientist.h"
 #include "computer.h"
 #include <QDate>
+#include <QMenu>
 
 namespace Ui {
 class ViewComputerDialog;
@@ -17,12 +18,21 @@ class ViewComputerDialog : public QDialog
 public:
     explicit ViewComputerDialog(QWidget *parent = 0);
     ~ViewComputerDialog();
-    void setConnectedScientists(const std::vector<Scientist> &input);
-    void setComputer(const Computer &input);
+    void setConnectedScientists(std::vector<Scientist> input);
+    void setComputer(Computer input);
     void setup();
+    bool wantRemove();
+    std::vector<std::string> getRemoveIds();
+private slots:
+    void on_scientist_table_customContextMenuRequested(const QPoint &pos);
+
+    void on_actionUnlink_scientist_triggered();
+
 private:
     std::vector<Scientist> connectedScientists;
     Computer computer;
+    bool wantsToRemoveLinks;
+    std::vector<std::string> idsToRemove;
     void setTable();
     void displayComputer();
     Ui::ViewComputerDialog *ui;

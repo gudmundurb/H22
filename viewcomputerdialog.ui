@@ -313,6 +313,15 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <action name="actionUnlink_scientist">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/broken_link.png</normaloff>:/icons/broken_link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unlink scientist</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="resources.qrc"/>

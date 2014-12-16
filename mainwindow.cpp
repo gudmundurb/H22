@@ -374,4 +374,10 @@ void MainWindow::on_actionView_Computer_triggered() {
     viewDialog.setComputer(tempComputer);
     viewDialog.setup();
     viewDialog.exec();
+    if(viewDialog.wantRemove()) {
+        std::vector<std::string> removeIds = viewDialog.getRemoveIds();
+        for(unsigned int i = 0; i < removeIds.size(); i++) {
+            service.removeLink(removeIds.at(i), computerId);
+        }
+    }
 }
