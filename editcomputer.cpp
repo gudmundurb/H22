@@ -120,5 +120,24 @@ void editComputer::startingInput(Computer oldComputer){
         ui->InputComputerType->setEnabled(true);
         ui->InputComputerType->setText(QString::fromStdString(oldComputer.type));
     }
+    if(oldComputer.c_imagefilepath != "") {
+        ui->C_input_imagepath->setText(QString::fromStdString(oldComputer.c_imagefilepath));
+        QPixmap pixmap(QString::fromStdString(oldComputer.c_imagefilepath));
+        ui->ComputerImageLabel->setPixmap(pixmap);
+        ui->ComputerImageLabel->setScaledContents(true);
+    }
     newComputer = oldComputer;
+}
+
+void editComputer::on_browseImagePath_clicked() {
+    QString filename = QFileDialog::getOpenFileName(
+                                this,
+                                "Browse for image",
+                                 "",
+                                 "Image files (*.png *.jpg *.jpeg)"
+                                 );
+    ui->C_input_imagepath->setText(filename);
+    QPixmap pixmap(filename);
+    ui->ComputerImageLabel->setPixmap(pixmap);
+    ui->ComputerImageLabel->setScaledContents(true);
 }

@@ -90,6 +90,9 @@ void EditScientist::startingInput(Scientist oldScientist){
     if(oldScientist.dateOfDeath != "----"){
         ui->InputDeathYear->setText(QString::fromStdString(oldScientist.dateOfDeath));
     }
+    else {
+        ui->RadioStillAlive->toggle();
+    }
     if(oldScientist.gender == "F") {
         ui->ScientistGender->setCurrentIndex(1);
     }
