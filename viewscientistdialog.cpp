@@ -2,6 +2,7 @@
 #include "ui_viewscientistdialog.h"
 #include <QDebug>
 #include <QDate>
+#include <QMenu>
 
 ViewScientistDialog::ViewScientistDialog(QWidget *parent) :
     QDialog(parent),
@@ -28,6 +29,14 @@ void ViewScientistDialog::setup() {
     ui->computer_table->setColumnWidth(0, 35);
     ui->computer_table->setColumnWidth(1, 200);
     ui->computer_table->setColumnWidth(3, 150);
+}
+
+bool ViewScientistDialog::wantRemove() {
+    return wantsToRemoveLinks;
+}
+
+std::vector<std::string> ViewScientistDialog::getRemoveIds() {
+    return idsToRemove;
 }
 
 void ViewScientistDialog::setTable() {
@@ -76,4 +85,18 @@ void ViewScientistDialog::on_Edit_button_clicked()
     if(edit.success()) {
         service.updateScientist(scientist, edit.getScientist());
     }
+}
+
+void ViewScientistDialog::on_actionUnlink_computer_triggered() {
+    int currentRow = ui->computer_table->currentRow();
+    std::string computerId = ui->computer_table->item(currentRow, 0)->text().toStdString();
+    ui->computer_table->setRowHidden(currentRow, true);
+    idsToRemove.push_back(computerId);
+    wantsToRemoveLinks = true;
+}
+
+void ViewScientistDialog::on_computer_table_customContextMenuRequested(const QPoint &pos) {
+    QMenu menu;
+    menu.addAction(ui->actionUnlink_computer);
+    menu.exec(QCursor::pos());
 }

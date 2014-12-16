@@ -18,14 +18,15 @@ MainWindow::MainWindow(QWidget *parent) :
     setTable();
     setLinkTableComputer();
     setLinkTableScientist();
+    ui->scientist_table->setColumnWidth(0,35);
+    ui->computer_table->setColumnWidth(0,35);
     ui->scientist_table->setColumnWidth(1,200);
     ui->computer_table->setColumnWidth(1,200);
-    ui->scientist_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->scientist_table_link->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->computer_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->computer_table_link->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    this->statusBar()->setSizeGripEnabled(false);
-    ui->scientist_table->setTabKeyNavigation(false);
+    ui->scientist_table->setColumnWidth(2,100);
+    ui->computer_table->setColumnWidth(2,100);
+    ui->scientist_table->setColumnWidth(3,150);
+    ui->computer_table->setColumnWidth(3,150);
+
 }
 
 MainWindow::~MainWindow() {
@@ -363,6 +364,12 @@ void MainWindow::on_actionView_Scientist_triggered() {
     viewDialog.setScientist(tempScientist);
     viewDialog.setup();
     viewDialog.exec();
+    if(viewDialog.wantRemove()) {
+        std::vector<std::string> removeIds = viewDialog.getRemoveIds();
+        for(unsigned int i = 0; i < removeIds.size(); i++) {
+            service.removeLink(scientistId, removeIds[i]);
+        }
+    }
 }
 
 void MainWindow::on_actionView_Computer_triggered() {
@@ -384,7 +391,7 @@ void MainWindow::on_actionView_Computer_triggered() {
     if(viewDialog.wantRemove()) {
         std::vector<std::string> removeIds = viewDialog.getRemoveIds();
         for(unsigned int i = 0; i < removeIds.size(); i++) {
-            service.removeLink(removeIds.at(i), computerId);
+            service.removeLink(removeIds[i], computerId);
         }
     }
 }

@@ -156,6 +156,15 @@
       <property name="sizeAdjustPolicy">
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
       </property>
@@ -347,6 +356,15 @@
       <property name="sizeAdjustPolicy">
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
       </property>
@@ -480,13 +498,19 @@
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
       <property name="editTriggers">
-       <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
       </property>
       <property name="dragEnabled">
        <bool>false</bool>
       </property>
+      <property name="dragDropOverwriteMode">
+       <bool>false</bool>
+      </property>
       <property name="dragDropMode">
-       <enum>QAbstractItemView::DragDrop</enum>
+       <enum>QAbstractItemView::NoDragDrop</enum>
       </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
@@ -563,13 +587,16 @@
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
       <property name="editTriggers">
-       <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
       </property>
       <property name="dragEnabled">
        <bool>false</bool>
       </property>
       <property name="dragDropOverwriteMode">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="dragDropMode">
        <enum>QAbstractItemView::NoDragDrop</enum>
