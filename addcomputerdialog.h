@@ -19,6 +19,8 @@ public:
     Computer getComputer();
     bool success();
     bool correctInput();
+    //void setComputer(Computer c);
+
 private slots:
     void on_C_add_ok_clicked();
     void on_RadioWasBuilt_toggled(bool checked);

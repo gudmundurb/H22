@@ -2,6 +2,7 @@
 #include "ui_addcomputerdialog.h"
 #include <QFileDialog>
 #include <QDebug>
+#include <QPixmap>
 
 addComputerDialog::addComputerDialog(QWidget *parent) :
     QDialog(parent),
@@ -94,8 +95,7 @@ bool addComputerDialog::correctInput() {
     return true;
 }
 
-void addComputerDialog::on_browseImagePath_clicked()
-{
+void addComputerDialog::on_browseImagePath_clicked() {
     QString filename = QFileDialog::getOpenFileName(
                                 this,
                                 "Browse for image",
@@ -104,4 +104,18 @@ void addComputerDialog::on_browseImagePath_clicked()
                                  );
     qDebug() << filename;
     ui->C_input_imagepath->setText(filename);
+//myndakóði hefst hér (debug)
+    QPixmap pixmap(filename);
+    ui->ComputerImageLabel->setPixmap(pixmap);
+    ui->ComputerImageLabel->setScaledContents(true);
+//myndakóði endar hér
 }
+/*
+void addComputerDialog::setComputer(Computer c) {
+    QPixmap pixmap(QString::fromStdString(c.c_imagefilepath));
+
+    ui->ComputerImageLabel->setPixmap(pixmap);
+
+    ui->ComputerImageLabel->setScaledContents(true);
+}
+*/
