@@ -1,15 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "addcomputerdialog.h"
-#include "addscientistdialog.h"
-#include "viewscientistdialog.h"
-#include "viewcomputerdialog.h"
-#include "editscientist.h"
-#include "editcomputer.h"
 
-#include <QMenu>
-#include <QMessageBox>
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),

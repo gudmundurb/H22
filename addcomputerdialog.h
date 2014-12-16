@@ -2,7 +2,7 @@
 #define ADDCOMPUTERDIALOG_H
 
 #include <QDialog>
-#include <services.h>
+#include "services.h"
 #include <QFileDialog>
 #include <QDebug>
 #include <QPixmap>
