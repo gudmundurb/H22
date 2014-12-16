@@ -3,6 +3,7 @@
 #include "addcomputerdialog.h"
 #include "addscientistdialog.h"
 #include "viewscientistdialog.h"
+#include "viewcomputerdialog.h"
 
 #include <QMenu>
 #include <QMessageBox>
@@ -353,6 +354,24 @@ void MainWindow::on_actionView_Scientist_triggered() {
     ViewScientistDialog viewDialog;
     viewDialog.setConnectedComputers(tempComputers);
     viewDialog.setScientist(tempScientist);
+    viewDialog.setup();
+    viewDialog.exec();
+}
+
+void MainWindow::on_actionView_Computer_triggered() {
+    int row = ui->computer_table->currentRow();
+    std::string computerId = ui->computer_table->item(row, 0)->text().toStdString();
+    Computer tempComputer;
+    for(unsigned int i = 0; i < currentlyDisplayedComputers.size(); i++) {
+        if(currentlyDisplayedComputers[i].id == computerId) {
+            tempComputer = currentlyDisplayedComputers[i];
+            break;
+        }
+    }
+    std::vector<Scientist> tempScientists = service.scientistLink(tempComputer.id);
+    ViewComputerDialog viewDialog;
+    viewDialog.setConnectedScientists(tempScientists);
+    viewDialog.setComputer(tempComputer);
     viewDialog.setup();
     viewDialog.exec();
 }

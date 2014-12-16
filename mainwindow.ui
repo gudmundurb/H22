@@ -336,7 +336,7 @@
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
+       <enum>Qt::TabFocus</enum>
       </property>
       <property name="contextMenuPolicy">
        <enum>Qt::CustomContextMenu</enum>

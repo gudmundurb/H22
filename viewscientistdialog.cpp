@@ -31,7 +31,7 @@ void ViewScientistDialog::setup() {
 void ViewScientistDialog::setTable() {
     ui->computer_table->setRowCount(connectedComputers.size());
     for(unsigned int i = 0; i < connectedComputers.size(); i++) {
-        Computer currentComputer = connectedComputers[i];
+        Computer currentComputer = connectedComputers.at(i);
         QString computerId =       QString::fromStdString(currentComputer.id);
         QString computerName =     QString::fromStdString(currentComputer.name);
         QString computerDob =      QString::fromStdString(currentComputer.dateOfBuild);
