@@ -24,8 +24,8 @@ void ViewScientistDialog::setup() {
     setTable();
     displayScientist();
     ui->computer_table->setColumnWidth(0, 35);
-    ui->computer_table->setColumnWidth(1, 200);
-    ui->computer_table->setColumnWidth(3, 150);
+    ui->computer_table->setColumnWidth(1, 150);
+    ui->computer_table->setColumnWidth(3, 100);
 }
 
 bool ViewScientistDialog::wantRemove() {
