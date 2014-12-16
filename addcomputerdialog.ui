@@ -35,7 +35,7 @@
    <string>Add a new computer</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
   </property>
   <property name="sizeGripEnabled">
@@ -215,7 +215,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources.qrc">:/icons/Pictures/noImage.png</pixmap>
+    <pixmap>:/icons/Pictures/noImage.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -300,11 +300,12 @@
   <tabstop>InputComputerType</tabstop>
   <tabstop>RadioWasBuilt</tabstop>
   <tabstop>InputBuiltYear</tabstop>
+  <tabstop>addWebpage</tabstop>
+  <tabstop>browseImagePath</tabstop>
   <tabstop>C_add_ok</tabstop>
   <tabstop>Cancel</tabstop>
+  <tabstop>C_input_imagepath</tabstop>
  </tabstops>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
