@@ -425,3 +425,11 @@ void MainWindow::on_actionEdit_computer_triggered() {
     }
     setTable();
 }
+
+void MainWindow::on_scientist_table_doubleClicked(const QModelIndex &index) {
+    ui->actionView_Scientist->trigger();
+}
+
+void MainWindow::on_computer_table_doubleClicked(const QModelIndex &index) {
+    ui->actionView_Computer->trigger();
+}

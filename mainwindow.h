@@ -71,6 +71,10 @@ private slots:
 
     void on_actionEdit_computer_triggered();
 
+    void on_scientist_table_doubleClicked(const QModelIndex &index);
+
+    void on_computer_table_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     Services service;
