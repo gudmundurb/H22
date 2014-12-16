@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QDate>
 #include <QMenu>
+#include <QPixmap>
 
 ViewScientistDialog::ViewScientistDialog(QWidget *parent) :
     QDialog(parent),
@@ -75,6 +76,7 @@ void ViewScientistDialog::displayScientist() {
         QString age = QString::number(thisYear - QString::fromStdString(scientist.dateOfBirth).toInt());
         ui->aged->setText("Age: " + age);
     }
+    displayPicture();
 }
 
 void ViewScientistDialog::on_actionUnlink_computer_triggered() {
@@ -89,4 +91,12 @@ void ViewScientistDialog::on_computer_table_customContextMenuRequested(const QPo
     QMenu menu;
     menu.addAction(ui->actionUnlink_computer);
     menu.exec(QCursor::pos());
+}
+
+void ViewScientistDialog::displayPicture() {
+    if(scientist.s_imagefilepath != "") {
+        QPixmap pixmap(QString::fromStdString(scientist.s_imagefilepath));
+        ui->ScientistImageLabel->setPixmap(pixmap);
+        ui->ScientistImageLabel->setScaledContents(true);
+    }
 }
