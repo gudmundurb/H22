@@ -43,7 +43,7 @@
    <string>Listinn</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="resources.qrc">
     <normaloff>:/icons/icon.png</normaloff>:/icons/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -126,7 +126,7 @@
         <x>10</x>
         <y>50</y>
         <width>561</width>
-        <height>281</height>
+        <height>270</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -138,13 +138,13 @@
       <property name="minimumSize">
        <size>
         <width>561</width>
-        <height>281</height>
+        <height>270</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>561</width>
-        <height>281</height>
+        <height>270</height>
        </size>
       </property>
       <property name="font">
@@ -216,6 +216,9 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <attribute name="verticalHeaderDefaultSectionSize">
+       <number>30</number>
+      </attribute>
       <attribute name="verticalHeaderMinimumSectionSize">
        <number>19</number>
       </attribute>
@@ -285,7 +288,7 @@
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>350</y>
+        <y>340</y>
         <width>131</width>
         <height>41</height>
        </rect>
@@ -338,7 +341,7 @@
         <x>10</x>
         <y>50</y>
         <width>561</width>
-        <height>291</height>
+        <height>270</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -346,6 +349,18 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>561</width>
+        <height>270</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>561</width>
+        <height>270</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -468,9 +483,9 @@
        </property>
       </item>
      </widget>
+     <zorder>scientist_table</zorder>
      <zorder>computer_table</zorder>
      <zorder>sort_combo_computer</zorder>
-     <zorder>scientist_table</zorder>
      <zorder>sort_label</zorder>
      <zorder>sort_combo_scientist</zorder>
      <zorder>search_text</zorder>
@@ -816,7 +831,7 @@
   </action>
   <action name="actionRemove_scientist">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/White_X_in_red_background.png</normaloff>:/icons/White_X_in_red_background.png</iconset>
    </property>
    <property name="text">
@@ -825,7 +840,7 @@
   </action>
   <action name="actionRemove_Computer">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/White_X_in_red_background.png</normaloff>:/icons/White_X_in_red_background.png</iconset>
    </property>
    <property name="text">
@@ -834,7 +849,7 @@
   </action>
   <action name="actionView_Scientist">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/scientist.jpg</normaloff>:/icons/scientist.jpg</iconset>
    </property>
    <property name="text">
@@ -843,7 +858,7 @@
   </action>
   <action name="actionView_Computer">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/computer2.png</normaloff>:/icons/computer2.png</iconset>
    </property>
    <property name="text">
@@ -852,7 +867,7 @@
   </action>
   <action name="actionEdit_Scientist">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
    </property>
    <property name="text">
@@ -861,7 +876,7 @@
   </action>
   <action name="actionEdit_computer">
    <property name="icon">
-    <iconset>
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/Update.png</normaloff>:/icons/Update.png</iconset>
    </property>
    <property name="text">
@@ -884,6 +899,8 @@
   <tabstop>search_link_computer</tabstop>
   <tabstop>link_button</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
